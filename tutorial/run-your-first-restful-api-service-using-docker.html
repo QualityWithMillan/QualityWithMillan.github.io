@@ -1,0 +1,1132 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Run your first RESTful API service using docker | Quality With Millan</title>
+<meta name="description" content="Written by -       Millan Kaul">
+
+
+  <meta name="author" content="Millan Kaul">
+  
+  <meta property="article:author" content="Millan Kaul">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Quality With Millan">
+<meta property="og:title" content="Run your first RESTful API service using docker">
+<meta property="og:url" content="https://qualitywithmillan.github.io/tutorial/run-your-first-restful-api-service-using-docker.html">
+
+
+  <meta property="og:description" content="Written by -       Millan Kaul">
+
+
+
+  <meta property="og:image" content="https://qualitywithmillan.github.io/assets/images/2023/06/docker/docker_rstful.png">
+
+
+
+  <meta name="twitter:site" content="@millankaul">
+  <meta name="twitter:title" content="Run your first RESTful API service using docker">
+  <meta name="twitter:description" content="Written by -       Millan Kaul">
+  <meta name="twitter:url" content="https://qualitywithmillan.github.io/tutorial/run-your-first-restful-api-service-using-docker.html">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://qualitywithmillan.github.io/assets/images/2023/06/docker/docker_rstful.png">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2023-06-25T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://qualitywithmillan.github.io/tutorial/run-your-first-restful-api-service-using-docker.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Millan Kaul",
+      "url": "https://qualitywithmillan.github.io/",
+      "sameAs": ["https://twitter.com/millankaul","https://www.linkedin.com/in/millankaul"]
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Quality With Millan Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- ToDo QualityWithMillan -->
+
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="millankaul" data-description="Support me on Buy me a coffee!" data-message="Support this blog - click here to Donate! ❤️ " data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+
+
+
+    <!-- start custom head snippets -->
+
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/fav/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/fav/android-chrome-512x512.png">
+<link rel="apple-touch-icon type" type="image/png" sizes="512x512" href="/assets/images/fav/apple-touch-icon.png">
+
+<!-- <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/fav/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="16x16" href="/assets/images/fav/favicon-16x16.png"> -->
+
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/fav/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="shortcut icon" href="/assets/images/fav/favicon.ico">
+<link rel="manifest" href="/assets/images/fav/site.webmanifest">
+
+<!-- new files generated https://favicon.io/favicon-converter/ -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/88x88.png" alt="Quality With Millan"></a>
+        
+        <a class="site-title" href="/">
+          Quality With Millan
+          <span class="site-subtitle">All about #QualityWithMillan</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About ℹ️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags 🏷️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/">Tools ⚒️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/funding">Support 🙏</a>
+            </li><li class="masthead__menu-item">
+              <a href="/terms/">Terms & Privacy</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://qualitywithmillan.github.io/">
+        <img src="/assets/images/bio-photo.jpg" alt="Millan Kaul" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://qualitywithmillan.github.io/" itemprop="url">Millan Kaul</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">AU 🇦🇺 | CA 🇨🇦</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Run your first RESTful API service using docker">
+    <meta itemprop="description" content=" Written by -    Millan Kaul         ">
+    <meta itemprop="datePublished" content="2023-06-25T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://qualitywithmillan.github.io/tutorial/run-your-first-restful-api-service-using-docker.html" class="u-url" itemprop="url">Run your first RESTful API service using docker
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-06-25T00:00:00+00:00">June 25, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <hr />
+
+<p>
+ Written by -
+
+
+    Millan Kaul         
+
+</p>
+
+<hr />
+
+<p>❓ Did you always wanted to run your API using docker 🐋</p>
+
+<p>Run your own micro-service or REST API’s
+ handling :
+<code class="language-plaintext highlighter-rouge">GET</code><br />
+<code class="language-plaintext highlighter-rouge">POST</code><br />
+<code class="language-plaintext highlighter-rouge">PUT</code> / <code class="language-plaintext highlighter-rouge">PATCH</code><br />
+<code class="language-plaintext highlighter-rouge">DELETE</code><br />
+i.e all <strong>CRUD</strong> operations.</p>
+
+<p><img src="/assets/images/2023/06/docker/docker_rstful.png" alt="shift-left" /></p>
+
+<p>❓❓ You always ran them locally, and wanted to run them inside a <code class="language-plaintext highlighter-rouge">docker</code> / dockrized with <code class="language-plaintext highlighter-rouge">docker</code> images</p>
+
+<p><br />
+❓❓❓You wanted a service to run locally and for <strong>API testing</strong> , by hitting a API running (<em>inside</em>) a <code class="language-plaintext highlighter-rouge">docker</code> container</p>
+
+<h3 id="this-article-is--for-you">This article is 💯 for you.</h3>
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>In this article you will learn:
+
+1. How to run a RESTful service locally using `docker` 🐋 
+     1.1 Code available on GitHub 
+2. How to create a - docker image from your code.
+2. Verify abd list image created - docker image  
+3. Running a docker image - docker run
+4. How to start a running docker container - docker start
+5. How to stop a running docker container - docker stop
+
+🙌 And few tricks on the way we learn all of the above...
+
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="lets-call-that-dockrized-microservice-as--node-app-http-docker">Lets call that dockrized microservice as  <code class="language-plaintext highlighter-rouge">node-app-http-docker</code></h2>
+
+<p>I will explain step by step how to achieve that, as well as share the complete source code.</p>
+
+<h1 id="table-of-contents">Table of Contents</h1>
+
+<ol>
+  <li><a href="#what-is-this-project">What is this project</a></li>
+  <li><a href="#project-setup-">Project setup</a></li>
+  <li><a href="#running-the-project-using-docker-">Running project using docker</a>
+    <ul>
+      <li><a href="#verify-docker-image">Verify docker Image</a></li>
+    </ul>
+  </li>
+  <li><a href="#running-docker-image-">Running docker Image</a></li>
+  <li><a href="#testing-is-it-working--">Testing (is it working)</a></li>
+  <li><a href="#stopping-docker-docker-container-">STOPPING docker (running container)</a></li>
+</ol>
+
+<h2 id="what-is-this-project">What is this project❓</h2>
+
+<p>⚠️ NOTE: NOT SUITABLE FOR PRODUCTION USAGE</p>
+
+<p><code class="language-plaintext highlighter-rouge">node-app-http-docker</code> is a working project.</p>
+
+<p>For getting started with a RESTful api server locally using <a href="https://docs.docker.com/">docker</a></p>
+
+<ul>
+  <li>It 🏃runs a server (docker) using <code class="language-plaintext highlighter-rouge">nodejs</code> [v18]</li>
+  <li>Exposes following  RESTful endpoints ( no database required) with all <strong>CRUD</strong> operations</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Rest API</strong> call</th>
+      <th style="text-align: center"><strong>CRUD</strong> operation</th>
+      <th style="text-align: center">REST endpoints</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>GET</strong></td>
+      <td style="text-align: center"><strong>R</strong>ead</td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">http://0.0.0.0:8080/</code> <br /> <code class="language-plaintext highlighter-rouge">http://0.0.0.0:8080/health</code>  <br /> <code class="language-plaintext highlighter-rouge">http://0.0.0.0:8080/api/todos</code>  <br /> <code class="language-plaintext highlighter-rouge">http://0.0.0.0:8080/api/todos/{id}</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>PATCH/PUT</strong></td>
+      <td style="text-align: center"><strong>U</strong>pdate</td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">http://0.0.0.0:8080/api/todos/{id}</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>POST</strong> {with body}</td>
+      <td style="text-align: center"><strong>C</strong>reate</td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">http://0.0.0.0:8080/api/todos</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>DELETE</strong></td>
+      <td style="text-align: center"><strong>D</strong>elete</td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">http://0.0.0.0:8080/api/todos/{id}</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>You may get 3 types of <strong>response</strong></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Response Code</strong></th>
+      <th style="text-align: center"><strong>Response Status</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>200</strong></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">OK</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>201</strong></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">Created</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>404</strong></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">Not Found</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>back to <a href="#table-of-contents">top</a>
+<br /><br /></p>
+
+<h2 id="project-setup-">Project setup 💼</h2>
+
+<ol>
+  <li>
+    <p>Prequisite
+<a href="https://docs.docker.com/get-docker/">Get docker</a> [ I used version : <code class="language-plaintext highlighter-rouge">v4.20.1</code>]</p>
+
+    <p>1.1 confirm by running <code class="language-plaintext highlighter-rouge">dockdocker ps</code>.</p>
+    <blockquote>
+      <p>if you are using it first time you will see this</p>
+    </blockquote>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
+
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="/assets/images/2023/06/docker/docker_desktop_started.png" alt="Image-docker desktop started" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /><br /></p>
+<ol>
+  <li>Clone this repository</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Using</strong></th>
+      <th style="text-align: center"><strong>Comand</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">via <strong>https</strong></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">git clone https://github.com/eaccmk/node-app-http-docker.git &amp;&amp; cd node-app-http-docker</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">via <strong>ssh</strong></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">git clone git@github.com:eaccmk/node-app-http-docker.git &amp;&amp; cd node-app-http-docker</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>back to <a href="#table-of-contents">top</a>
+<br /><br /></p>
+
+<h2 id="running-the-project-using-docker-">Running the project using docker 🐋</h2>
+
+<p>It’s very simple and easy to start this service/application locally :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build <span class="nb">.</span> <span class="nt">-t</span> node-app-http-docker
+</code></pre></div></div>
+<p>⚠️ This may take a some time, if you are running this command first time or with slow internet connections speed.</p>
+
+<blockquote>
+  <p>Some interesting background why we use <code class="language-plaintext highlighter-rouge">-t</code> to <code class="language-plaintext highlighter-rouge">Allocate a pseudo-TTY</code> , read <a href="https://stackoverflow.com/a/40026942">this stackoverflow thread</a></p>
+</blockquote>
+
+<h3 id="verify-docker-image">Verify docker Image</h3>
+
+<p>After <code class="language-plaintext highlighter-rouge">docker build</code> is completed, verify if a docker image is created and listed, run command <code class="language-plaintext highlighter-rouge">docker images</code> like :</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker images
+REPOSITORY           TAG    IMAGE ID     CREATED       SIZE
+node-app-http-docker latest ea23b8f98141 2 minutes ago 1.09GB
+</code></pre></div></div>
+<blockquote>
+  <p>You may have more than one row in result, but make sure you have the one with  <strong>REPOSITORY</strong> <code class="language-plaintext highlighter-rouge">node-app-http-docker</code></p>
+</blockquote>
+
+<p>also you may notice that a random (uniqie) <strong>IMAGE ID</strong> got assigned to your docker image, in my case it was <code class="language-plaintext highlighter-rouge">ea23b8f98141</code></p>
+
+<p>back to <a href="#table-of-contents">top</a>
+<br /><br /></p>
+
+<h2 id="running-docker-image-">Running docker Image 🎽</h2>
+
+<p>Now that you have a <strong>IMAGE ID</strong>, lets run that image using <code class="language-plaintext highlighter-rouge">docker run</code> command like :</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-p</span> 8080:8080 ea23b8f98141
+</code></pre></div></div>
+
+<p>Syntax: <code class="language-plaintext highlighter-rouge">docker run -p &lt;your-port-external&gt;:&lt;docker-internal-port-exposed-for-access&gt; IMAGE_ID</code></p>
+
+<p>For more details on <code class="language-plaintext highlighter-rouge">-p</code>  read <a href="https://docs.docker.com/engine/reference/commandline/run/#publish-or-expose-port--p---expose">Publish or expose port (-p, –expose)🔗</a></p>
+
+<p>❗ open a new tab on terminal and verify this docker (running)</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker ps
+</code></pre></div></div>
+
+<p><img src="/assets/images/2023/06/docker/docker_process_command.png" alt="Image-docker process command" /></p>
+
+<p><br /><br /></p>
+
+<p>back to <a href="#table-of-contents">top</a>
+<br /><br /></p>
+
+<h2 id="testing-is-it-working--">Testing (is it working ✅ ❎)</h2>
+
+<p>Lets hit the docker image as a <strong>client</strong> / <strong>User</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Test Type (Positive /Negative)</th>
+      <th style="text-align: center"><strong>CLIENT</strong> On terminal</th>
+      <th style="text-align: center">Response</th>
+      <th style="text-align: center"><strong>SERVER</strong> (if Docker running with logs)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">✅ <code class="language-plaintext highlighter-rouge">Home Page</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">curl http://0.0.0.0:8080</code></td>
+      <td style="text-align: center"><em>Welcome, this is your Home page</em></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">CalledGET : /</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">❎ <code class="language-plaintext highlighter-rouge">Invalid endpoint</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">curl http://0.0.0.0:8080/dascbajb</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">{"message":"Route not found"}</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">CalledGET : /dascbajb</code>  <br /> This endpoint is not implemented / unavailable at the moment !!</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">✅ <code class="language-plaintext highlighter-rouge">health check</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">curl http://0.0.0.0:8080/health</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">{"uptime":29.560686169,</code> <br /> <code class="language-plaintext highlighter-rouge">"message":"OK","timestamp":1644057630652}</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">CalledGET : /health</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Some Screen shots from Postman</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>API</strong></th>
+      <th style="text-align: left"><strong>Screen</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>GET</strong></td>
+      <td style="text-align: left"><img src="/assets/images/2023/06/docker/docker_GET.png" alt="Image description" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>POST</strong></td>
+      <td style="text-align: left"><img src="/assets/images/2023/06/docker/docker_POST.png" alt="Image description" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>PATCH</strong></td>
+      <td style="text-align: left"><img src="/assets/images/2023/06/docker/docker_PATCH.png" alt="Image description" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>DELETE</strong></td>
+      <td style="text-align: left"><img src="/assets/images/2023/06/docker/docker_DELETE.png" alt="Image description" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>back to <a href="#table-of-contents">top</a>
+<br /><br /></p>
+
+<h2 id="stopping-docker-docker-container-">STOPPING docker (docker container) 🛑</h2>
+
+<p>First lets find the running one <code class="language-plaintext highlighter-rouge">docker ps</code> and then stop it using <code class="language-plaintext highlighter-rouge">docker stop</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CONTAINER ID  IMAGE        ....  .. . NAMES
+06b6693e2e4a  ea23b8f98141 ....  .. . hardcore_black
+</code></pre></div></div>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># stop using CONTAINER ID</span>
+<span class="n">docker</span> <span class="n">stop</span> <span class="mo">06</span><span class="n">b6693e2e4a</span>
+
+<span class="c1"># stop using image name</span>
+<span class="n">docker</span> <span class="n">stop</span> <span class="n">hardcore_black</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>In case you want to confirm —-» run again <code class="language-plaintext highlighter-rouge">docker ps</code> it should show no running image</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker ps
+CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
+
+</code></pre></div></div>
+
+<p>Go back to <a href="#table-of-contents">top</a></p>
+
+<h1 id="thats-it-">That’s it !</h1>
+
+<p>Bookmark this blog : <a href="https://qualitywithmillan.github.io">https://qualitywithmillan.github.io</a> or follow me using <a href="https://www.linkedin.com/feed/hashtag/?keywords=qualitywithmillan">#QualityWithMillan</a></p>
+
+<blockquote>
+  <p>This post was re-published on  <code class="language-plaintext highlighter-rouge">2023-06-25</code> (Initiallly written on/before<code class="language-plaintext highlighter-rouge">2022-01-01</code>)</p>
+</blockquote>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#api" class="page__taxonomy-item p-category" rel="tag">api</a><span class="sep">, </span>
+    
+      <a href="/tags/#development" class="page__taxonomy-item p-category" rel="tag">development</a><span class="sep">, </span>
+    
+      <a href="/tags/#docker" class="page__taxonomy-item p-category" rel="tag">docker</a><span class="sep">, </span>
+    
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">java</a><span class="sep">, </span>
+    
+      <a href="/tags/#microservices" class="page__taxonomy-item p-category" rel="tag">microservices</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#tutorial" class="page__taxonomy-item p-category" rel="tag">tutorial</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-06-25T00:00:00+00:00">June 25, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=millankaul&text=Run+your+first+RESTful+API+service+using+docker%20https%3A%2F%2Fqualitywithmillan.github.io%2Ftutorial%2Frun-your-first-restful-api-service-using-docker.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fqualitywithmillan.github.io%2Ftutorial%2Frun-your-first-restful-api-service-using-docker.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fqualitywithmillan.github.io%2Ftutorial%2Frun-your-first-restful-api-service-using-docker.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/post/how-to-shift-left-without-writing-code.html" class="pagination--pager" title="How to Shift-Left without writing Code 👩‍💻
+">Previous</a>
+    
+    
+      <a href="/tutorial/2023/api-testing-with-nightwatch-v3-in-15-mins.html" class="pagination--pager" title="API testing with nightwatch in 15 mins
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/11/triangle/speed-quality-cost.gif" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/choosing-between-speed-quality-and-cost-in-test-automation.html" rel="permalink">Choosing between : Speed, Quality, Cost - in Test Automation
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-11-11T00:00:00+00:00">November 11, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/10/json/json_n_lang_logo.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/json-parsing-guide-with-code-examples.html" rel="permalink">The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-10-16T00:00:00+00:00">October 16, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/09/test_data/data.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/test-data-generation-in-test-automation.html" rel="permalink">Importance of Test Data - with code example
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-09-14T00:00:00+00:00">September 14, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/04/webdriver/webdriver-saga.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/web-driver-saga.html" rel="permalink">WebDriver Saga
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-04-24T00:00:00+00:00">April 24, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Neelam Pal
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Search a blog...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Search a blog..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="https://qualitywithmillan.github.io/" rel="nofollow noopener noreferrer"><i class="fa fa-hashtag" aria-hidden="true"></i> QualityWithMillan</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Millan Kaul. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+  
+    <script src="/assets/js/custom/format.js"></script>
+  
+    <script src="/assets/js/custom/main.js"></script>
+  
+
+
+   
+  <!--custom External JavaScript file-->
+	<script src="/assets/js/custom/format.js"></script>
+
+  </body>
+</html>

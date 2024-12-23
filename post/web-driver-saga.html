@@ -1,0 +1,870 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>WebDriver Saga | Quality With Millan</title>
+<meta name="description" content="Written by -                         Neelam Pal">
+
+
+  <meta name="author" content="Neelam Pal">
+  
+  <meta property="article:author" content="Neelam Pal">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Quality With Millan">
+<meta property="og:title" content="WebDriver Saga">
+<meta property="og:url" content="https://qualitywithmillan.github.io/post/web-driver-saga.html">
+
+
+  <meta property="og:description" content="Written by -                         Neelam Pal">
+
+
+
+  <meta property="og:image" content="https://qualitywithmillan.github.io/assets/images/2024/04/webdriver/webdriver-saga.jpg">
+
+
+
+  <meta name="twitter:site" content="@millankaul">
+  <meta name="twitter:title" content="WebDriver Saga">
+  <meta name="twitter:description" content="Written by -                         Neelam Pal">
+  <meta name="twitter:url" content="https://qualitywithmillan.github.io/post/web-driver-saga.html">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://qualitywithmillan.github.io/assets/images/2024/04/webdriver/webdriver-saga.jpg">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2024-04-24T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://qualitywithmillan.github.io/post/web-driver-saga.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Millan Kaul",
+      "url": "https://qualitywithmillan.github.io/",
+      "sameAs": ["https://twitter.com/millankaul","https://www.linkedin.com/in/millankaul"]
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Quality With Millan Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- ToDo QualityWithMillan -->
+
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="millankaul" data-description="Support me on Buy me a coffee!" data-message="Support this blog - click here to Donate! ❤️ " data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+
+
+
+    <!-- start custom head snippets -->
+
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/fav/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/fav/android-chrome-512x512.png">
+<link rel="apple-touch-icon type" type="image/png" sizes="512x512" href="/assets/images/fav/apple-touch-icon.png">
+
+<!-- <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/fav/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="16x16" href="/assets/images/fav/favicon-16x16.png"> -->
+
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/fav/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="shortcut icon" href="/assets/images/fav/favicon.ico">
+<link rel="manifest" href="/assets/images/fav/site.webmanifest">
+
+<!-- new files generated https://favicon.io/favicon-converter/ -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/88x88.png" alt="Quality With Millan"></a>
+        
+        <a class="site-title" href="/">
+          Quality With Millan
+          <span class="site-subtitle">All about #QualityWithMillan</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About ℹ️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags 🏷️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/">Tools ⚒️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/funding">Support 🙏</a>
+            </li><li class="masthead__menu-item">
+              <a href="/terms/">Terms & Privacy</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://qualitywithmillan.github.io/">
+        <img src="/assets/images/co-author/neelam-pal.jpeg" alt="Neelam Pal" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://qualitywithmillan.github.io/" itemprop="url">Neelam Pal</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am a Software Test Automation architect with 17 years of experience. I am passionate about explore test automation tools and implementing them effectively. Also, I love to coach any non-programmer to the test automation techniques.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">India 🇮🇳</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/palneelam" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="WebDriver Saga">
+    <meta itemprop="description" content=" Written by -                    Neelam Pal    ">
+    <meta itemprop="datePublished" content="2024-04-24T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://qualitywithmillan.github.io/post/web-driver-saga.html" class="u-url" itemprop="url">WebDriver Saga
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-04-24T00:00:00+00:00">April 24, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>
+ Written by -
+
+    
+    
+    
+        <strong>Neelam Pal</strong>
+    
+
+</p>
+
+<hr style="border: none; height:2px; background-color: #A9F1E4; position: relative;" />
+
+<p>Once upon a time, there existed a powerful tool known as <strong>WebDriver</strong>, in software test automation
+world of <a href="https://www.selenium.dev/documentation/webdriver">Selenium</a> Its journey begins with method known as <strong><code class="language-plaintext highlighter-rouge">get(String url)</code></strong> , a magical journey that
+navigated the <strong>WebDriver</strong> to distant URLs, opening the door to a grand adventure in testing.</p>
+
+<p>Like a magician’s wand 🪄 , the method <strong><code class="language-plaintext highlighter-rouge">sendKeys(CharSequence... keysToSend)</code></strong> cast a spell, sending
+keystrokes to web elements, allowing testers to interact with input fields and forms with effortless
+grace.</p>
+
+<p>With a simple click 🖱️, the method <strong><code class="language-plaintext highlighter-rouge">click()</code></strong> invoked the element’s click event, unleashing the power to
+simulate user interactions and trigger button clicks and link navigations.</p>
+
+<p>Ah, but the journey 🏞️ did not end there! The method <strong><code class="language-plaintext highlighter-rouge">getText()</code></strong> emerged as a beacon of truth, retrieving
+the visible inner text of web elements, offering valuable insights for verification and assertion.</p>
+
+<p>As our quest unfolded, <strong><code class="language-plaintext highlighter-rouge">findElement(By by)</code></strong> became our steadfast guide, leading us to the first web
+element within the page using intricate locator strategies, while <strong><code class="language-plaintext highlighter-rouge">findElements(By by)</code></strong> expanded our
+horizons, revealing a plethora of matching elements to explore and conquer.</p>
+
+<p>Like a treasure map 🌎 , <strong><code class="language-plaintext highlighter-rouge">getAttribute(String name)</code></strong> unlocked hidden insights, revealing the secrets encoded
+within the attributes of web elements.</p>
+
+<blockquote>
+  <p>But amidst the glory, challenges emerged.</p>
+</blockquote>
+
+<p>The method <strong><code class="language-plaintext highlighter-rouge">isDisplayed()</code></strong> became our lantern in the
+darkness, illuminating the visibility of web elements, while <strong><code class="language-plaintext highlighter-rouge">isEnabled()</code></strong> acted as a vigilant gatekeeper,
+verifying the accessibility of interactive elements.</p>
+
+<p>And so, <strong><code class="language-plaintext highlighter-rouge">isSelected()</code></strong> stood as our guide through the maze of checkboxes ☑️ and dropdowns, confirming the
+user’s choices with unwavering certainty. 😌</p>
+
+<p>In moments of uncertainty, <strong><code class="language-plaintext highlighter-rouge">navigate().refresh()</code></strong> refreshed ♻️ our spirits, renewing the canvas of our testing
+odyssey, while <strong><code class="language-plaintext highlighter-rouge">navigate().to(String url)</code></strong> charted a course to new lands within the same browser window.</p>
+
+<p>When unexpected perils arose, <strong><code class="language-plaintext highlighter-rouge">switchTo().alert()</code></strong> beckoned us to face them head-on, guiding the
+WebDriver’s focus to handle pop-up alerts with grace and composure. 🧘🏻‍♀️</p>
+
+<p>As we ventured deeper, <strong><code class="language-plaintext highlighter-rouge">switchTo().frame(int index)</code></strong> and <strong><code class="language-plaintext highlighter-rouge">switchTo().frame(String nameOrId)</code></strong> extended
+our reach, allowing us to interact with embedded content within iframes 🖼️ , while
+<strong><code class="language-plaintext highlighter-rouge">switchTo().window(String windowHandle)</code></strong> orchestrated seamless transitions between browser
+windows.</p>
+
+<p>And like expanding our view, <strong><code class="language-plaintext highlighter-rouge">manage().window().maximize()</code></strong> bestowed upon us the power to maximize
+browser windows, providing ample space to conduct our testing endeavors with clarity and focus. 🔍</p>
+
+<p>In moments of anticipation, <strong><code class="language-plaintext highlighter-rouge">manage().timeouts().implicitlyWait()</code></strong> instilled stability and reliability,
+setting a global timeout ⏰ for the WebDriver to patiently await the appearance of elements.</p>
+
+<p>With Actions, we danced with finesse, as <strong><code class="language-plaintext highlighter-rouge">moveToElement(WebElement toElement)</code></strong> guided the mouse
+cursor with intuition, and <strong><code class="language-plaintext highlighter-rouge">clickAndHold(WebElement onElement)</code></strong> held web elements with steady
+resolve, paving the way for intricate interactions and drag-and-drop operations.</p>
+
+<p>And when the need arose, <strong><code class="language-plaintext highlighter-rouge">release()</code></strong> set our captives free, concluding our mouse-related actions with
+grace and 🎯 precision.</p>
+
+<p>But amidst the earthly realms, <strong><code class="language-plaintext highlighter-rouge">keyDown(Keys theKey)</code></strong> and <strong><code class="language-plaintext highlighter-rouge">keyUp(Keys theKey)</code></strong> bestowed upon us the
+power of keyboard-driven interactions, enabling us to simulate pressing and releasing specific keys with
+finesse and control.</p>
+
+<p>In moments of unparalleled power, <strong><code class="language-plaintext highlighter-rouge">JavascriptExecutor</code></strong> cast its spell, executing JavaScript code with
+unparalleled flexibility and power ⚙️ , transforming our testing rituals into a symphony of digital magic. 🔮</p>
+
+<p>And so, our journey with WebDriver, adorned with challenges and triumphs, continued to unfold, as we
+embraced the tools and techniques that paved the way for a glorious testing adventure……</p>
+
+<p>You can folow <strong>Neelam</strong> on <a href="https://www.linkedin.com/in/palneelam">LinkedIn</a></p>
+
+<p><strong>Swaroop</strong> started <a href="https://www.linkedin.com/posts/swaroopnadella_swaroopnadella-selenium-activity-7186197149745909762-Ypqd">this post</a> on LinkedIn and based upon that <strong>Neelam</strong> came up with an <a href="https://www.linkedin.com/posts/palneelam_testautomation-testing-activity-7187767031474114560-d4UW">interesting version of it</a> further that go converted to this full-fledged blog.</p>
+
+<p><br />
+<br /></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<p>Want to learn more❓
+<br /> 
+Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/post/web-driver-saga.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#selenium" class="page__taxonomy-item p-category" rel="tag">selenium</a><span class="sep">, </span>
+    
+      <a href="/tags/#testing" class="page__taxonomy-item p-category" rel="tag">Testing</a><span class="sep">, </span>
+    
+      <a href="/tags/#webdriver" class="page__taxonomy-item p-category" rel="tag">webdriver</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">blog</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-04-24T00:00:00+00:00">April 24, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=millankaul&text=WebDriver+Saga%20https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Fweb-driver-saga.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Fweb-driver-saga.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Fweb-driver-saga.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/post/new-performance-testing-tool-multiple.html" class="pagination--pager" title="Say hello to Multiple : New Performance testing tool
+">Previous</a>
+    
+    
+      <a href="/post/test-data-generation-in-test-automation.html" class="pagination--pager" title="Importance of Test Data - with code example
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/11/triangle/speed-quality-cost.gif" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/choosing-between-speed-quality-and-cost-in-test-automation.html" rel="permalink">Choosing between : Speed, Quality, Cost - in Test Automation
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-11-11T00:00:00+00:00">November 11, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/10/json/json_n_lang_logo.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/json-parsing-guide-with-code-examples.html" rel="permalink">The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-10-16T00:00:00+00:00">October 16, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/09/test_data/data.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/test-data-generation-in-test-automation.html" rel="permalink">Importance of Test Data - with code example
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-09-14T00:00:00+00:00">September 14, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/04/multiple/multiple_teaser.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/new-performance-testing-tool-multiple.html" rel="permalink">Say hello to <code class="language-plaintext highlighter-rouge">Multiple</code> : New Performance testing tool
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-04-06T00:00:00+00:00">April 6, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Search a blog...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Search a blog..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="https://qualitywithmillan.github.io/" rel="nofollow noopener noreferrer"><i class="fa fa-hashtag" aria-hidden="true"></i> QualityWithMillan</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Millan Kaul. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+  
+    <script src="/assets/js/custom/format.js"></script>
+  
+    <script src="/assets/js/custom/main.js"></script>
+  
+
+
+   
+  <!--custom External JavaScript file-->
+	<script src="/assets/js/custom/format.js"></script>
+
+  </body>
+</html>

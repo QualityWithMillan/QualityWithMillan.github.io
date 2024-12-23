@@ -1,0 +1,1007 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java | Quality With Millan</title>
+<meta name="description" content="Written by -                         Millan Kaul">
+
+
+  <meta name="author" content="Millan Kaul">
+  
+  <meta property="article:author" content="Millan Kaul">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Quality With Millan">
+<meta property="og:title" content="The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java">
+<meta property="og:url" content="https://qualitywithmillan.github.io/post/json-parsing-guide-with-code-examples.html">
+
+
+  <meta property="og:description" content="Written by -                         Millan Kaul">
+
+
+
+  <meta property="og:image" content="https://qualitywithmillan.github.io/assets/images/2024/09/json/json_n_lang_logo.jpg">
+
+
+
+  <meta name="twitter:site" content="@millankaul">
+  <meta name="twitter:title" content="The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java">
+  <meta name="twitter:description" content="Written by -                         Millan Kaul">
+  <meta name="twitter:url" content="https://qualitywithmillan.github.io/post/json-parsing-guide-with-code-examples.html">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://qualitywithmillan.github.io/assets/images/2024/09/json/json_n_lang_logo.jpg">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2024-10-16T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://qualitywithmillan.github.io/post/json-parsing-guide-with-code-examples.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Millan Kaul",
+      "url": "https://qualitywithmillan.github.io/",
+      "sameAs": ["https://twitter.com/millankaul","https://www.linkedin.com/in/millankaul"]
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Quality With Millan Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- ToDo QualityWithMillan -->
+
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="millankaul" data-description="Support me on Buy me a coffee!" data-message="Support this blog - click here to Donate! ❤️ " data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+
+
+
+    <!-- start custom head snippets -->
+
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/fav/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/fav/android-chrome-512x512.png">
+<link rel="apple-touch-icon type" type="image/png" sizes="512x512" href="/assets/images/fav/apple-touch-icon.png">
+
+<!-- <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/fav/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="16x16" href="/assets/images/fav/favicon-16x16.png"> -->
+
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/fav/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="shortcut icon" href="/assets/images/fav/favicon.ico">
+<link rel="manifest" href="/assets/images/fav/site.webmanifest">
+
+<!-- new files generated https://favicon.io/favicon-converter/ -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/88x88.png" alt="Quality With Millan"></a>
+        
+        <a class="site-title" href="/">
+          Quality With Millan
+          <span class="site-subtitle">All about #QualityWithMillan</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About ℹ️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags 🏷️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/">Tools ⚒️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/funding">Support 🙏</a>
+            </li><li class="masthead__menu-item">
+              <a href="/terms/">Terms & Privacy</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://qualitywithmillan.github.io/">
+        <img src="/assets/images/bio-photo.jpg" alt="Millan Kaul" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://qualitywithmillan.github.io/" itemprop="url">Millan Kaul</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">AU 🇦🇺 | CA 🇨🇦</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java">
+    <meta itemprop="description" content=" Written by -                    Millan Kaul    ">
+    <meta itemprop="datePublished" content="2024-10-16T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://qualitywithmillan.github.io/post/json-parsing-guide-with-code-examples.html" class="u-url" itemprop="url">The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-10-16T00:00:00+00:00">October 16, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>
+ Written by -
+
+    
+    
+    
+        <strong>Millan Kaul</strong>
+    
+
+</p>
+
+<hr style="border: none; height:2px; background-color: #A9F1E4; position: relative;" />
+
+<p>In the era of monolithic relational databases, structured data dominated how systems communicated.</p>
+
+<p>However, with the rise of microservices, flexible, unstructured data became crucial for inter-service communication. <code class="language-plaintext highlighter-rouge">JSON</code> (JavaScript Object Notation) quickly became the industry standard due to its lightweight nature, human readability, and compatibility across languages. Unlike XML or other formats, <strong>JSON</strong> provides an intuitive way to manage data in distributed systems and APIs, which are essential in modern microservices architectures.</p>
+
+<h2 id="background-why-json-became-the-industry-standard">Background: Why JSON Became the Industry Standard</h2>
+
+<p>As software architectures shifted towards microservices, systems moved from tightly coupled databases to more unstructured data exchanges. Relational databases couldn’t always efficiently handle the dynamic and flexible data structures needed by microservices. JSON emerged as the go-to format because:</p>
+
+<ol>
+  <li>
+    <p><strong>Human readability</strong>: Easy to read and write for both humans and machines.</p>
+  </li>
+  <li>
+    <p><strong>Lightweight</strong>: Smaller data format than alternatives like XML, saving bandwidth.</p>
+  </li>
+  <li>
+    <p><strong>Language agnostic</strong>: Natively supported in most programming languages.</p>
+  </li>
+  <li>
+    <p><strong>Microservices-friendly</strong>: Easily handles unstructured, flexible data required by distributed systems.</p>
+  </li>
+</ol>
+
+<h3 id="sample-complex-user-data-json">Sample Complex User Data JSON</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Main St"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Metropolis"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Laptop"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">1499.99</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smartphone"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">799.49</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="parsing-json-in-4-programming-languages">Parsing JSON in 4 Programming Languages</h2>
+
+<p>Let’s take this complex JSON response and parse the <code class="language-plaintext highlighter-rouge">name</code> and the <code class="language-plaintext highlighter-rouge">product</code> of the first order in different programming languages.</p>
+
+<h1 id="1-javascript-nodejs">1. JavaScript (Node.js)</h1>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//index.js</span>
+
+<span class="kd">const</span> <span class="nx">userData</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="s2">`{
+  "userId": 12345,
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "address": {
+    "street": "123 Main St",
+    "city": "Metropolis",
+    "zipcode": "12345"
+  },
+  "orders": [
+    {
+      "orderId": 101,
+      "product": "Laptop",
+      "amount": 1499.99
+    },
+    {
+      "orderId": 102,
+      "product": "Smartphone",
+      "amount": 799.49
+    }
+  ]
+}`</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userData</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// Output: John Doe</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userData</span><span class="p">.</span><span class="nx">orders</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">product</span><span class="p">);</span> <span class="c1">// Output: Laptop</span>
+</code></pre></div></div>
+
+<h2 id="2-java">2. Java</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//main.java</span>
+
+<span class="kn">import</span> <span class="nn">org.json.JSONObject</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.json.JSONArray</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JsonParseExample</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">jsonString</span> <span class="o">=</span> <span class="s">"{ \"userId\": 12345, \"name\": \"John Doe\", \"email\": \"john.doe@example.com\", \"address\": { \"street\": \"123 Main St\", \"city\": \"Metropolis\", \"zipcode\": \"12345\" }, \"orders\": [ { \"orderId\": 101, \"product\": \"Laptop\", \"amount\": 1499.99 }, { \"orderId\": 102, \"product\": \"Smartphone\", \"amount\": 799.49 } ] }"</span><span class="o">;</span>
+        
+        <span class="nc">JSONObject</span> <span class="n">jsonObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JSONObject</span><span class="o">(</span><span class="n">jsonString</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">jsonObject</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"name"</span><span class="o">));</span> <span class="c1">// Output: John Doe</span>
+        
+        <span class="nc">JSONArray</span> <span class="n">orders</span> <span class="o">=</span> <span class="n">jsonObject</span><span class="o">.</span><span class="na">getJSONArray</span><span class="o">(</span><span class="s">"orders"</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">orders</span><span class="o">.</span><span class="na">getJSONObject</span><span class="o">(</span><span class="mi">0</span><span class="o">).</span><span class="na">getString</span><span class="o">(</span><span class="s">"product"</span><span class="o">));</span> <span class="c1">// Output: Laptop</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="3-golang">3. Golang</h2>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// main.go</span>
+
+<span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+	<span class="s">"encoding/json"</span>
+	<span class="s">"fmt"</span>
+<span class="p">)</span>
+
+<span class="k">type</span> <span class="n">Address</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">Street</span>  <span class="kt">string</span> <span class="s">`json:"street"`</span>
+	<span class="n">City</span>    <span class="kt">string</span> <span class="s">`json:"city"`</span>
+	<span class="n">Zipcode</span> <span class="kt">string</span> <span class="s">`json:"zipcode"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Order</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">OrderId</span> <span class="kt">int</span>     <span class="s">`json:"orderId"`</span>
+	<span class="n">Product</span> <span class="kt">string</span>  <span class="s">`json:"product"`</span>
+	<span class="n">Amount</span>  <span class="kt">float64</span> <span class="s">`json:"amount"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">User</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">UserId</span>  <span class="kt">int</span>     <span class="s">`json:"userId"`</span>
+	<span class="n">Name</span>    <span class="kt">string</span>  <span class="s">`json:"name"`</span>
+	<span class="n">Email</span>   <span class="kt">string</span>  <span class="s">`json:"email"`</span>
+	<span class="n">Address</span> <span class="n">Address</span> <span class="s">`json:"address"`</span>
+	<span class="n">Orders</span>  <span class="p">[]</span><span class="n">Order</span> <span class="s">`json:"orders"`</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">data</span> <span class="o">:=</span> <span class="s">`{
+		"userId": 12345,
+		"name": "John Doe",
+		"email": "john.doe@example.com",
+		"address": {
+			"street": "123 Main St",
+			"city": "Metropolis",
+			"zipcode": "12345"
+		},
+		"orders": [
+			{
+				"orderId": 101,
+				"product": "Laptop",
+				"amount": 1499.99
+			},
+			{
+				"orderId": 102,
+				"product": "Smartphone",
+				"amount": 799.49
+			}
+		]
+	}`</span>
+
+	<span class="k">var</span> <span class="n">user</span> <span class="n">User</span>
+	<span class="n">json</span><span class="o">.</span><span class="n">Unmarshal</span><span class="p">([]</span><span class="kt">byte</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">user</span><span class="p">)</span>
+
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>                <span class="c">// Output: John Doe</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">Orders</span><span class="p">[</span><span class="m">0</span><span class="p">]</span><span class="o">.</span><span class="n">Product</span><span class="p">)</span>   <span class="c">// Output: Laptop</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="4-python">4. Python</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># __main__.py
+</span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">user_data</span> <span class="o">=</span> <span class="s">'''
+{
+  "userId": 12345,
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "address": {
+    "street": "123 Main St",
+    "city": "Metropolis",
+    "zipcode": "12345"
+  },
+  "orders": [
+    {
+      "orderId": 101,
+      "product": "Laptop",
+      "amount": 1499.99
+    },
+    {
+      "orderId": 102,
+      "product": "Smartphone",
+      "amount": 799.49
+    }
+  ]
+}
+'''</span>
+
+<span class="n">user</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">user_data</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">user</span><span class="p">[</span><span class="s">"name"</span><span class="p">])</span>  <span class="c1"># Output: John Doe
+</span><span class="k">print</span><span class="p">(</span><span class="n">user</span><span class="p">[</span><span class="s">"orders"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">"product"</span><span class="p">])</span>  <span class="c1"># Output: Laptop
+</span></code></pre></div></div>
+
+<p>Yes it’s that easy to parse nested JSON values in different languages.</p>
+
+<p>Give it a go 🚀!</p>
+
+<p><br /></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<p>Want to learn more❓
+<br /> 
+Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/post/json-parsing-guide-with-code-examples.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#automation" class="page__taxonomy-item p-category" rel="tag">Automation</a><span class="sep">, </span>
+    
+      <a href="/tags/#json" class="page__taxonomy-item p-category" rel="tag">json</a><span class="sep">, </span>
+    
+      <a href="/tags/#test-data" class="page__taxonomy-item p-category" rel="tag">Test Data</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">blog</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-10-16T00:00:00+00:00">October 16, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=millankaul&text=The+Ultimate+guide+to+complex+JSON+parsing+using+JavaScript%2C+Python%2C+Go%2C+and+Java%20https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Fjson-parsing-guide-with-code-examples.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Fjson-parsing-guide-with-code-examples.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Fjson-parsing-guide-with-code-examples.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/post/test-data-generation-in-test-automation.html" class="pagination--pager" title="Importance of Test Data - with code example
+">Previous</a>
+    
+    
+      <a href="/post/choosing-between-speed-quality-and-cost-in-test-automation.html" class="pagination--pager" title="Choosing between : Speed, Quality, Cost - in Test Automation
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/11/triangle/speed-quality-cost.gif" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/choosing-between-speed-quality-and-cost-in-test-automation.html" rel="permalink">Choosing between : Speed, Quality, Cost - in Test Automation
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-11-11T00:00:00+00:00">November 11, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/09/test_data/data.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/test-data-generation-in-test-automation.html" rel="permalink">Importance of Test Data - with code example
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-09-14T00:00:00+00:00">September 14, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/04/webdriver/webdriver-saga.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/web-driver-saga.html" rel="permalink">WebDriver Saga
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-04-24T00:00:00+00:00">April 24, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Neelam Pal
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/04/multiple/multiple_teaser.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/new-performance-testing-tool-multiple.html" rel="permalink">Say hello to <code class="language-plaintext highlighter-rouge">Multiple</code> : New Performance testing tool
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-04-06T00:00:00+00:00">April 6, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Search a blog...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Search a blog..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="https://qualitywithmillan.github.io/" rel="nofollow noopener noreferrer"><i class="fa fa-hashtag" aria-hidden="true"></i> QualityWithMillan</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Millan Kaul. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+  
+    <script src="/assets/js/custom/format.js"></script>
+  
+    <script src="/assets/js/custom/main.js"></script>
+  
+
+
+   
+  <!--custom External JavaScript file-->
+	<script src="/assets/js/custom/format.js"></script>
+
+  </body>
+</html>

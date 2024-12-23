@@ -1,0 +1,906 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>A/B Tetsing - in 5 steps | Quality With Millan</title>
+<meta name="description" content="Written by -       Millan Kaul">
+
+
+  <meta name="author" content="Millan Kaul">
+  
+  <meta property="article:author" content="Millan Kaul">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Quality With Millan">
+<meta property="og:title" content="A/B Tetsing - in 5 steps">
+<meta property="og:url" content="https://qualitywithmillan.github.io/post/a-b-testing.html">
+
+
+  <meta property="og:description" content="Written by -       Millan Kaul">
+
+
+
+  <meta property="og:image" content="https://qualitywithmillan.github.io/assets/images/2023/08/AB/a-b-testing-teaser.png">
+
+
+
+  <meta name="twitter:site" content="@millankaul">
+  <meta name="twitter:title" content="A/B Tetsing - in 5 steps">
+  <meta name="twitter:description" content="Written by -       Millan Kaul">
+  <meta name="twitter:url" content="https://qualitywithmillan.github.io/post/a-b-testing.html">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://qualitywithmillan.github.io/assets/images/2023/08/AB/a-b-testing-teaser.png">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2023-08-27T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://qualitywithmillan.github.io/post/a-b-testing.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Millan Kaul",
+      "url": "https://qualitywithmillan.github.io/",
+      "sameAs": ["https://twitter.com/millankaul","https://www.linkedin.com/in/millankaul"]
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Quality With Millan Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- ToDo QualityWithMillan -->
+
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="millankaul" data-description="Support me on Buy me a coffee!" data-message="Support this blog - click here to Donate! ❤️ " data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+
+
+
+    <!-- start custom head snippets -->
+
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/fav/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/fav/android-chrome-512x512.png">
+<link rel="apple-touch-icon type" type="image/png" sizes="512x512" href="/assets/images/fav/apple-touch-icon.png">
+
+<!-- <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/fav/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="16x16" href="/assets/images/fav/favicon-16x16.png"> -->
+
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/fav/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="shortcut icon" href="/assets/images/fav/favicon.ico">
+<link rel="manifest" href="/assets/images/fav/site.webmanifest">
+
+<!-- new files generated https://favicon.io/favicon-converter/ -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/88x88.png" alt="Quality With Millan"></a>
+        
+        <a class="site-title" href="/">
+          Quality With Millan
+          <span class="site-subtitle">All about #QualityWithMillan</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About ℹ️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags 🏷️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/">Tools ⚒️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/funding">Support 🙏</a>
+            </li><li class="masthead__menu-item">
+              <a href="/terms/">Terms & Privacy</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://qualitywithmillan.github.io/">
+        <img src="/assets/images/bio-photo.jpg" alt="Millan Kaul" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://qualitywithmillan.github.io/" itemprop="url">Millan Kaul</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">AU 🇦🇺 | CA 🇨🇦</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="A/B Tetsing - in 5 steps">
+    <meta itemprop="description" content=" Written by -    Millan Kaul         ">
+    <meta itemprop="datePublished" content="2023-08-27T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://qualitywithmillan.github.io/post/a-b-testing.html" class="u-url" itemprop="url">A/B Tetsing - in 5 steps
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-27T00:00:00+00:00">August 27, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <hr />
+
+<p>
+ Written by -
+
+
+    Millan Kaul         
+
+</p>
+
+<hr />
+
+<h3 id="so-waht-is-ab-tetsing-">So waht is A/B tetsing ?</h3>
+
+<blockquote>
+  <p>“A/B testing” is a shorthand for a simple randomized controlled experiment, in which a number of samples (e.g. A and B) of a single vector-variable are compared 
+~ from <a href="https://en.wikipedia.org/wiki/A/B_testing#Overview">Wiki</a></p>
+</blockquote>
+
+<p>Also known as bucket testing, split-run testing, or split testing. It is a user experience research methodology where randomized experiment usually involves two variants (A and B).</p>
+
+<p>GOLA 🎯 Determining which of the variants is more effective.</p>
+
+<p>I will explain to you <strong>A/B testing</strong> process in 5 steps - for continuous testing and improvement.</p>
+
+<p><img src="/assets/images/2023/08/AB/a-b-testing-feature.jpg" alt="&quot;Image showing 5 key point for A B tetsing&quot;" class="align-center" /></p>
+
+<hr />
+
+<p>Follow these 5 steps in sequence :</p>
+
+<ol>
+  <li><a href="#-𝟬𝟭-𝗗𝗲𝗳𝗶𝗻𝗲-g𝗼𝗮𝗹-𝗰𝗼𝗻𝘃𝗲𝗿𝘀𝗶𝗼𝗻--">𝗗𝗲𝗳𝗶𝗻𝗲 g𝗼𝗮𝗹</a></li>
+  <li><a href="#-𝟬𝟮-𝗕𝗿𝗮𝗶𝗻𝘀𝘁𝗼𝗿𝗺g𝗲𝗻𝗲𝗿𝗮𝘁𝗲-𝗱𝗲𝗮-%EF%B8%8F">𝗕𝗿𝗮𝗶𝗻𝘀𝘁𝗼𝗿𝗺/g𝗲𝗻𝗲𝗿𝗮𝘁𝗲 I𝗱𝗲𝗮</a></li>
+  <li><a href="#-𝟬𝟯-𝗜𝗺𝗽𝗹𝗲𝗺𝗲𝗻𝘁-c𝗵𝗮𝗻𝗴𝗲𝘀-">𝗜𝗺𝗽𝗹𝗲𝗺𝗲𝗻𝘁 c𝗵𝗮𝗻𝗴𝗲𝘀</a></li>
+  <li><a href="#-𝟬𝟰-𝗖𝗿𝗼𝘄𝗻-𝘁𝗵𝗲-n𝗲𝘄-c𝗵𝗮𝗺𝗽𝗶𝗼𝗻-">𝗖𝗿𝗼𝘄𝗻 𝘁𝗵𝗲 n𝗲𝘄 c𝗵𝗮𝗺𝗽𝗶𝗼𝗻 </a></li>
+  <li><a href="#-𝟬𝟱-𝗧𝗲𝘀𝘁-it-">𝗧𝗲𝘀𝘁 it</a></li>
+</ol>
+
+<p><br /></p>
+<hr />
+
+<h3 id="-𝟬𝟭-𝗗𝗲𝗳𝗶𝗻𝗲-g𝗼𝗮𝗹-𝗰𝗼𝗻𝘃𝗲𝗿𝘀𝗶𝗼𝗻--">🔷 𝟬𝟭 𝗗𝗲𝗳𝗶𝗻𝗲 g𝗼𝗮𝗹 (𝗰𝗼𝗻𝘃𝗲𝗿𝘀𝗶𝗼𝗻) 🏹… 🎯</h3>
+
+<p>Before your create a test, your need to know what, exactly, you’re hoping to accomplish.</p>
+
+<p>A gola can be :</p>
+
+<p>▸ Increasing click-through rates</p>
+
+<p>▸ Boosting sales</p>
+
+<p>▸Improving user engagement</p>
+
+<p>A well-defined goal means focus and direction for your experimentation that’s Aaa-Bee test.</p>
+
+<blockquote>
+  <p>Real life example 🎯 : Goal to increase product page conversion rate from 2% to 5% within 3 months.</p>
+</blockquote>
+
+<p><br /></p>
+<hr />
+
+<h3 id="-𝟬𝟮-𝗕𝗿𝗮𝗶𝗻𝘀𝘁𝗼𝗿𝗺g𝗲𝗻𝗲𝗿𝗮𝘁𝗲-𝗱𝗲𝗮-️">🔷 𝟬𝟮 𝗕𝗿𝗮𝗶𝗻𝘀𝘁𝗼𝗿𝗺/g𝗲𝗻𝗲𝗿𝗮𝘁𝗲 !𝗱𝗲𝗮 🤔🗯️</h3>
+
+<p>Once you’ve determined a goal you want to accomplish, you’ll need to generate ideas by use of qualitative and quantitative data to identify potential areas for improvement or innovation.</p>
+
+<blockquote>
+  <p>Real life example 🎯 : Analyzing user feedback and heatmaps to identify friction points in the checkout process.</p>
+</blockquote>
+
+<p><br /></p>
+<hr />
+
+<h3 id="-𝟬𝟯-𝗜𝗺𝗽𝗹𝗲𝗺𝗲𝗻𝘁-c𝗵𝗮𝗻𝗴𝗲𝘀-">🔷 𝟬𝟯 𝗜𝗺𝗽𝗹𝗲𝗺𝗲𝗻𝘁 c𝗵𝗮𝗻𝗴𝗲𝘀 🔄</h3>
+
+<p>You will be need to implement changes with highest potential, intuition and best practices.
+Maybe develop and execute variations of the original element, such as different headlines, layouts, or calls-to-action.</p>
+
+<blockquote>
+  <p>Real life example 🎯 : Creating two versions of a website’s homepage with different hero images and CTAs to test user engagement.</p>
+</blockquote>
+
+<p><br /></p>
+<hr />
+
+<h3 id="-𝟬𝟰-𝗖𝗿𝗼𝘄𝗻-𝘁𝗵𝗲-n𝗲𝘄-c𝗵𝗮𝗺𝗽𝗶𝗼𝗻-">🔷 𝟬𝟰 𝗖𝗿𝗼𝘄𝗻 𝘁𝗵𝗲 n𝗲𝘄 c𝗵𝗮𝗺𝗽𝗶𝗼𝗻 👑</h3>
+
+<p>Once you’ve launched your test, you need to let it run for a long enough period of time. Basically compare the performance of the control and variant using statistical analysis to determine the winner. Here you can use tools such as LaunchDarkley, two test environments, free vs preemium user account.</p>
+
+<blockquote>
+  <p>Real life example 🎯 : After running an A/B test on a e-commerce website, the variant with a prominent “Buy Now” button outperformed the control in terms of both click-through rate and conversion rate. The new design is implemented as the winner based on statistical significance.</p>
+</blockquote>
+
+<p><br /></p>
+<hr />
+
+<h3 id="-𝟬𝟱-𝗧𝗲𝘀𝘁-it-">🔷 𝟬𝟱 𝗧𝗲𝘀𝘁 it !</h3>
+
+<p><strong>𝗧𝗲𝘀𝘁 u𝗻𝘁𝗶𝗹 s𝘁𝗮𝘁𝗶𝘀𝘁𝗶𝗰𝗮𝗹𝗹𝘆 s𝗶𝗴𝗻𝗶𝗳𝗶𝗰𝗮𝗻𝘁</strong></p>
+
+<p>By this point, you’ve set a goal, select a page and determine what you want to test. However I would suggest to keep running the test until you achieve statistically significant results to ensure reliable conclusions or reach the goal you would have set above (#1)</p>
+
+<p><img src="/assets/images/2023/08/AB/a-b-testing-example.jpg" alt="&quot;Image showing A B tetsing example&quot;" class="align-center" /></p>
+
+<blockquote>
+  <p>Real life example’s 🎯 :</p>
+</blockquote>
+
+<p>▸  <strong>Examlpe 1 :</strong> A website’s A/B test showed inconclusive results initially. After increasing the sample size, the variant’s higher click-through rate became statistically significant.</p>
+
+<p>▸  <strong>Examlpe 2 :</strong> A social media platform with two versions of a user sign-up form. The version with simplified form fields and clearer instructions resulted in a 15% increase in completed sign-ups over a month.</p>
+
+<p>▸  <strong>Examlpe 3 :</strong> A mobile app with two variations of its onboarding process. The version with a step-by-step tutorial had a 25% higher user retention rate after one week.</p>
+
+<p>▸  <strong>Examlpe 4 :</strong> An online news website with two variations of its headline font size. The version with larger font size increased the time users spent on the page by 10%.</p>
+
+<p>▸  <strong>Examlpe 5 :</strong> A website with two versions of its online forms, one with enhanced color contrast and larger fonts. The version with improved accessibility features resulted in a 15% decrease in form abandonment and a higher completion rate among users with visual impairments.</p>
+
+<p>Hope these examples and overall blog would have provided you some insights into A/B testing. You can also tailor your experimentation strategy to your unique goals in your projects.</p>
+
+<hr />
+
+<p>Want to learn more❓ Follow my hashtag.<a href="https://www.linkedin.com/feed/hashtag/?keywords=qualitywithmillan">#QualityWithMillan</a> on or just follow <a href="https://www.linkedin.com/in/millankaul/">me on linkedIn</a></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#alpha" class="page__taxonomy-item p-category" rel="tag">alpha</a><span class="sep">, </span>
+    
+      <a href="/tags/#beta" class="page__taxonomy-item p-category" rel="tag">beta</a><span class="sep">, </span>
+    
+      <a href="/tags/#testing" class="page__taxonomy-item p-category" rel="tag">testing</a><span class="sep">, </span>
+    
+      <a href="/tags/#usertesting" class="page__taxonomy-item p-category" rel="tag">usertesting</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#article" class="page__taxonomy-item p-category" rel="tag">article</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-08-27T00:00:00+00:00">August 27, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=millankaul&text=A%2FB+Tetsing+-+in+5+steps%20https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Fa-b-testing.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Fa-b-testing.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Fa-b-testing.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/post/quality-and-testing-like-a-cake.html" class="pagination--pager" title="A tasty analogy: Quality and testing explained like a piece of cake 🍰
+">Previous</a>
+    
+    
+      <a href="/post/2024/01/how-appium-works-01.html" class="pagination--pager" title="Easiest way to understand How Appium works
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/11/triangle/speed-quality-cost.gif" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/choosing-between-speed-quality-and-cost-in-test-automation.html" rel="permalink">Choosing between : Speed, Quality, Cost - in Test Automation
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-11-11T00:00:00+00:00">November 11, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/10/json/json_n_lang_logo.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/json-parsing-guide-with-code-examples.html" rel="permalink">The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-10-16T00:00:00+00:00">October 16, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/09/test_data/data.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/test-data-generation-in-test-automation.html" rel="permalink">Importance of Test Data - with code example
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-09-14T00:00:00+00:00">September 14, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/04/webdriver/webdriver-saga.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/web-driver-saga.html" rel="permalink">WebDriver Saga
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-04-24T00:00:00+00:00">April 24, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Neelam Pal
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Search a blog...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Search a blog..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="https://qualitywithmillan.github.io/" rel="nofollow noopener noreferrer"><i class="fa fa-hashtag" aria-hidden="true"></i> QualityWithMillan</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Millan Kaul. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+  
+    <script src="/assets/js/custom/format.js"></script>
+  
+    <script src="/assets/js/custom/main.js"></script>
+  
+
+
+   
+  <!--custom External JavaScript file-->
+	<script src="/assets/js/custom/format.js"></script>
+
+  </body>
+</html>

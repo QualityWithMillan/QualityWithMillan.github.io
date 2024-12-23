@@ -1,0 +1,1386 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://qualitywithmillan.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://qualitywithmillan.github.io/" rel="alternate" type="text/html" /><updated>2024-12-23T04:47:27+00:00</updated><id>https://qualitywithmillan.github.io/feed.xml</id><title type="html">Quality With Millan</title><subtitle></subtitle><author><name>Millan Kaul</name></author><entry><title type="html">Choosing between : Speed, Quality, Cost - in Test Automation</title><link href="https://qualitywithmillan.github.io/post/choosing-between-speed-quality-and-cost-in-test-automation.html" rel="alternate" type="text/html" title="Choosing between : Speed, Quality, Cost - in Test Automation" /><published>2024-11-11T00:00:00+00:00</published><updated>2024-11-11T00:00:00+00:00</updated><id>https://qualitywithmillan.github.io/post/choosing-between-speed-quality-and-cost</id><content type="html" xml:base="https://qualitywithmillan.github.io/post/choosing-between-speed-quality-and-cost-in-test-automation.html"><![CDATA[<p>
+ Written by -
+
+    
+    
+    
+        <strong>Millan Kaul</strong>
+    
+
+</p>
+
+<hr style="border: none; height:2px; background-color: #A9F1E4; position: relative;" />
+
+<p>In the world of test automation, teams often have to make the difficult choice of focusing on two out of three aspects:</p>
+
+<ol>
+  <li>🚀 <strong>Speed</strong></li>
+  <li>👌 <strong>Quality</strong></li>
+  <li>💰 <strong>Cost</strong></li>
+</ol>
+
+<p>Achieving all three in balance is an attractive goal, yet <u>incredibly challenging</u>, especially with tight deadlines and limited resources ( here by resources I mean : Tools, Technology, Skill’s etc..)</p>
+
+<p>Let’s explore the different combinations, why balancing all three is nearly impossible and how a long-term vision can bring us closer to that ideal.</p>
+
+<blockquote>
+  <p>“Quality is never an accident; it is always the result of intelligent effort.” – <strong>John Ruskin</strong></p>
+</blockquote>
+
+<hr />
+
+<hr />
+
+<p><img src="/assets/images/2024/11/triangle/speed-quality-cost.gif" alt="Image showing a moving triangle of choice between - Speed, Quality and Cost" /></p>
+<figcaption align="center">Image showing a moving triangle of choice between - Speed, Quality and Cost</figcaption>
+
+<p><br /></p>
+
+<h2 id="the-three-choices-why-not-all-three-">The Three Choices: Why Not All Three? 🤔</h2>
+
+<p>When teams attempt to achieve speed, quality and low cost all at once, they often stretch themselves too thin, resulting in suboptimal results in each area. While the end goal of balancing all three is commendable, limited resources and unrealistic timelines often hinder these efforts. As a result, teams may ultimately fail to meet any of the objectives effectively, particularly when the pursuit lacks a strategic, long-term approach.</p>
+
+<h3 id="combination-1-speed--quality-higher-cost-">Combination 1: Speed + Quality (Higher Cost) 💰</h3>
+
+<p>Prioritizing speed and quality can yield robust results in a short time, but it often comes at a <u>financial cost</u>. When speed and quality are prioritized, automation tools and resources, such as high-end testing environments and skilled testers, require a significant budget.</p>
+
+<blockquote>
+  <p><strong><em>Example</em></strong>: Consider a software development team launching a new mobile app. By investing heavily in advanced automation tools and a dedicated testing team, they can meet quality standards and deliver in record time. However, the costs might be unsustainable long-term, making this a viable choice only for critical projects.</p>
+</blockquote>
+
+<blockquote>
+  <p>I have delivered 5+ mobile apps and this has happened in almost 3 of them. Yes, I was able to deliver high quality app with my team ( 4.7+/5 star on app/play store) as that mattered to the brand and cost was a short term issue.</p>
+</blockquote>
+
+<h3 id="combination-2-speed--cost-lower-quality-">Combination 2: Speed + Cost (Lower Quality) 🤒</h3>
+
+<p>Choosing speed and low cost often means <u>sacrificing quality</u>, as there is limited time for thorough testing. This approach typically leads to minimal test coverage and can overlook critical errors, impacting the end-user experience.</p>
+
+<blockquote>
+  <p><strong><em>Example</em></strong>: A startup aiming to quickly release new features might opt for a lean testing approach to minimize costs and speed up delivery. However, without rigorous testing, there’s a higher risk of bugs affecting the product. That could hurt user satisfaction and lead to more expenses in the future.</p>
+</blockquote>
+
+<blockquote>
+  <p>I have been through this too ( feature deliver over quality)</p>
+</blockquote>
+
+<h3 id="combination-3-quality--cost-slower-speed-">Combination 3: Quality + Cost (Slower Speed) 🐌</h3>
+
+<p>When quality and cost-efficiency are prioritized, delivery <u>timelines are extended</u> to allow detailed and comprehensive testing. This is common in regulated industries, such as finance or healthcare, where thorough testing is necessary to ensure safety and compliance.</p>
+
+<blockquote>
+  <p><strong><em>Example</em></strong>: A healthcare software provider may allocate limited resources but dedicate significant time to testing each feature meticulously. This approach ensures that the software meets stringent regulatory requirements but results in a longer time-to-market.</p>
+</blockquote>
+
+<blockquote>
+  <p>Think of next spaceX rocket rocket launch.</p>
+</blockquote>
+
+<h2 id="why-teams-may-fail-when-pursuing-all-three-at-once">Why teams may <code class="language-plaintext highlighter-rouge">Fail</code> when pursuing all three at once?</h2>
+
+<p>Teams frequently fail in test automation when attempting to achieve <strong>speed, quality and low cost</strong> simultaneously, often due to <u>limited time and resources</u>. This approach tends to :</p>
+
+<ul>
+  <li>Dilute focus</li>
+  <li>Stretching teams too thin and</li>
+  <li>Often leading to quick-fix solutions that do not align with sustainable quality goals.</li>
+</ul>
+
+<p>Attempting to achieve all three at once <u>without a clear, long-term strategy</u> ultimately impacts productivity and reduces the overall effectiveness of testing.</p>
+
+<hr />
+
+<h1 id="we-still-need-all-3-can-we-">We still need all 3, can we ?</h1>
+
+<p>Okay… let’s cover that as well.</p>
+
+<h2 id="getting-close-to-achieving-all-three-the-long-term-vision-">Getting close to achieving all three: The long-term Vision 🎯</h2>
+
+<p>While achieving a perfect balance is <em>unrealistic</em>, teams can approach it by adopting a <strong>long-term vision</strong> focused on continuous improvement and strategic investment in automation.</p>
+
+<ul>
+  <li>By building a reusable automation framework</li>
+  <li>Leveraging modular testing and</li>
+  <li>Automating critical paths, teams can increase efficiency over time, gradually reducing costs and maintaining high-quality standards.</li>
+</ul>
+
+<blockquote>
+  <p>“Vision without action is a daydream. Action without vision is a nightmare.” – <strong>Japanese Proverb</strong></p>
+</blockquote>
+
+<p>With the right approach, it’s possible to get close to balancing speed, quality and cost in test automation, if teams can build a foundation for sustainable success in testing, achieving a balance that works over time.</p>
+
+<p><br /></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<p>Want to learn more❓
+<br /> 
+Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/post/choosing-between-speed-quality-and-cost-in-test-automation.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />]]></content><author><name>Millan Kaul</name></author><category term="blog" /><category term="leadership" /><category term="test automation" /><category term="strategic" /><summary type="html"><![CDATA[Written by - Millan Kaul]]></summary></entry><entry><title type="html">The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java</title><link href="https://qualitywithmillan.github.io/post/json-parsing-guide-with-code-examples.html" rel="alternate" type="text/html" title="The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java" /><published>2024-10-16T00:00:00+00:00</published><updated>2024-10-16T00:00:00+00:00</updated><id>https://qualitywithmillan.github.io/post/json-parsing-guide</id><content type="html" xml:base="https://qualitywithmillan.github.io/post/json-parsing-guide-with-code-examples.html"><![CDATA[<p>
+ Written by -
+
+    
+    
+    
+        <strong>Millan Kaul</strong>
+    
+
+</p>
+
+<hr style="border: none; height:2px; background-color: #A9F1E4; position: relative;" />
+
+<p>In the era of monolithic relational databases, structured data dominated how systems communicated.</p>
+
+<p>However, with the rise of microservices, flexible, unstructured data became crucial for inter-service communication. <code class="language-plaintext highlighter-rouge">JSON</code> (JavaScript Object Notation) quickly became the industry standard due to its lightweight nature, human readability, and compatibility across languages. Unlike XML or other formats, <strong>JSON</strong> provides an intuitive way to manage data in distributed systems and APIs, which are essential in modern microservices architectures.</p>
+
+<h2 id="background-why-json-became-the-industry-standard">Background: Why JSON Became the Industry Standard</h2>
+
+<p>As software architectures shifted towards microservices, systems moved from tightly coupled databases to more unstructured data exchanges. Relational databases couldn’t always efficiently handle the dynamic and flexible data structures needed by microservices. JSON emerged as the go-to format because:</p>
+
+<ol>
+  <li>
+    <p><strong>Human readability</strong>: Easy to read and write for both humans and machines.</p>
+  </li>
+  <li>
+    <p><strong>Lightweight</strong>: Smaller data format than alternatives like XML, saving bandwidth.</p>
+  </li>
+  <li>
+    <p><strong>Language agnostic</strong>: Natively supported in most programming languages.</p>
+  </li>
+  <li>
+    <p><strong>Microservices-friendly</strong>: Easily handles unstructured, flexible data required by distributed systems.</p>
+  </li>
+</ol>
+
+<h3 id="sample-complex-user-data-json">Sample Complex User Data JSON</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Main St"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Metropolis"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Laptop"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">1499.99</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smartphone"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">799.49</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="parsing-json-in-4-programming-languages">Parsing JSON in 4 Programming Languages</h2>
+
+<p>Let’s take this complex JSON response and parse the <code class="language-plaintext highlighter-rouge">name</code> and the <code class="language-plaintext highlighter-rouge">product</code> of the first order in different programming languages.</p>
+
+<h1 id="1-javascript-nodejs">1. JavaScript (Node.js)</h1>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//index.js</span>
+
+<span class="kd">const</span> <span class="nx">userData</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="s2">`{
+  "userId": 12345,
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "address": {
+    "street": "123 Main St",
+    "city": "Metropolis",
+    "zipcode": "12345"
+  },
+  "orders": [
+    {
+      "orderId": 101,
+      "product": "Laptop",
+      "amount": 1499.99
+    },
+    {
+      "orderId": 102,
+      "product": "Smartphone",
+      "amount": 799.49
+    }
+  ]
+}`</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userData</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// Output: John Doe</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userData</span><span class="p">.</span><span class="nx">orders</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">product</span><span class="p">);</span> <span class="c1">// Output: Laptop</span>
+</code></pre></div></div>
+
+<h2 id="2-java">2. Java</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//main.java</span>
+
+<span class="kn">import</span> <span class="nn">org.json.JSONObject</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.json.JSONArray</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JsonParseExample</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">jsonString</span> <span class="o">=</span> <span class="s">"{ \"userId\": 12345, \"name\": \"John Doe\", \"email\": \"john.doe@example.com\", \"address\": { \"street\": \"123 Main St\", \"city\": \"Metropolis\", \"zipcode\": \"12345\" }, \"orders\": [ { \"orderId\": 101, \"product\": \"Laptop\", \"amount\": 1499.99 }, { \"orderId\": 102, \"product\": \"Smartphone\", \"amount\": 799.49 } ] }"</span><span class="o">;</span>
+        
+        <span class="nc">JSONObject</span> <span class="n">jsonObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JSONObject</span><span class="o">(</span><span class="n">jsonString</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">jsonObject</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"name"</span><span class="o">));</span> <span class="c1">// Output: John Doe</span>
+        
+        <span class="nc">JSONArray</span> <span class="n">orders</span> <span class="o">=</span> <span class="n">jsonObject</span><span class="o">.</span><span class="na">getJSONArray</span><span class="o">(</span><span class="s">"orders"</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">orders</span><span class="o">.</span><span class="na">getJSONObject</span><span class="o">(</span><span class="mi">0</span><span class="o">).</span><span class="na">getString</span><span class="o">(</span><span class="s">"product"</span><span class="o">));</span> <span class="c1">// Output: Laptop</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="3-golang">3. Golang</h2>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// main.go</span>
+
+<span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+	<span class="s">"encoding/json"</span>
+	<span class="s">"fmt"</span>
+<span class="p">)</span>
+
+<span class="k">type</span> <span class="n">Address</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">Street</span>  <span class="kt">string</span> <span class="s">`json:"street"`</span>
+	<span class="n">City</span>    <span class="kt">string</span> <span class="s">`json:"city"`</span>
+	<span class="n">Zipcode</span> <span class="kt">string</span> <span class="s">`json:"zipcode"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Order</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">OrderId</span> <span class="kt">int</span>     <span class="s">`json:"orderId"`</span>
+	<span class="n">Product</span> <span class="kt">string</span>  <span class="s">`json:"product"`</span>
+	<span class="n">Amount</span>  <span class="kt">float64</span> <span class="s">`json:"amount"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">User</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">UserId</span>  <span class="kt">int</span>     <span class="s">`json:"userId"`</span>
+	<span class="n">Name</span>    <span class="kt">string</span>  <span class="s">`json:"name"`</span>
+	<span class="n">Email</span>   <span class="kt">string</span>  <span class="s">`json:"email"`</span>
+	<span class="n">Address</span> <span class="n">Address</span> <span class="s">`json:"address"`</span>
+	<span class="n">Orders</span>  <span class="p">[]</span><span class="n">Order</span> <span class="s">`json:"orders"`</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">data</span> <span class="o">:=</span> <span class="s">`{
+		"userId": 12345,
+		"name": "John Doe",
+		"email": "john.doe@example.com",
+		"address": {
+			"street": "123 Main St",
+			"city": "Metropolis",
+			"zipcode": "12345"
+		},
+		"orders": [
+			{
+				"orderId": 101,
+				"product": "Laptop",
+				"amount": 1499.99
+			},
+			{
+				"orderId": 102,
+				"product": "Smartphone",
+				"amount": 799.49
+			}
+		]
+	}`</span>
+
+	<span class="k">var</span> <span class="n">user</span> <span class="n">User</span>
+	<span class="n">json</span><span class="o">.</span><span class="n">Unmarshal</span><span class="p">([]</span><span class="kt">byte</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">user</span><span class="p">)</span>
+
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>                <span class="c">// Output: John Doe</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">Orders</span><span class="p">[</span><span class="m">0</span><span class="p">]</span><span class="o">.</span><span class="n">Product</span><span class="p">)</span>   <span class="c">// Output: Laptop</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="4-python">4. Python</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># __main__.py
+</span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">user_data</span> <span class="o">=</span> <span class="s">'''
+{
+  "userId": 12345,
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "address": {
+    "street": "123 Main St",
+    "city": "Metropolis",
+    "zipcode": "12345"
+  },
+  "orders": [
+    {
+      "orderId": 101,
+      "product": "Laptop",
+      "amount": 1499.99
+    },
+    {
+      "orderId": 102,
+      "product": "Smartphone",
+      "amount": 799.49
+    }
+  ]
+}
+'''</span>
+
+<span class="n">user</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">user_data</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">user</span><span class="p">[</span><span class="s">"name"</span><span class="p">])</span>  <span class="c1"># Output: John Doe
+</span><span class="k">print</span><span class="p">(</span><span class="n">user</span><span class="p">[</span><span class="s">"orders"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">"product"</span><span class="p">])</span>  <span class="c1"># Output: Laptop
+</span></code></pre></div></div>
+
+<p>Yes it’s that easy to parse nested JSON values in different languages.</p>
+
+<p>Give it a go 🚀!</p>
+
+<p><br /></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<p>Want to learn more❓
+<br /> 
+Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/post/json-parsing-guide-with-code-examples.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />]]></content><author><name>Millan Kaul</name></author><category term="blog" /><category term="Automation" /><category term="json" /><category term="Test Data" /><summary type="html"><![CDATA[Written by - Millan Kaul]]></summary></entry><entry><title type="html">Importance of Test Data - with code example</title><link href="https://qualitywithmillan.github.io/post/test-data-generation-in-test-automation.html" rel="alternate" type="text/html" title="Importance of Test Data - with code example" /><published>2024-09-14T00:00:00+00:00</published><updated>2024-09-14T00:00:00+00:00</updated><id>https://qualitywithmillan.github.io/post/importance-of-test-data</id><content type="html" xml:base="https://qualitywithmillan.github.io/post/test-data-generation-in-test-automation.html"><![CDATA[<p>
+ Written by -
+
+    
+    
+    
+        <strong>Millan Kaul</strong>
+    
+
+</p>
+
+<hr style="border: none; height:2px; background-color: #A9F1E4; position: relative;" />
+
+<p>Information used to verify the functionality and performance of a software application.</p>
+
+<p><img src="/assets/images/2024/09/test_data/data.jpg" alt="Image showing a word cloud featuring DATA" class="align-left" /> There are vaiours way and definition to explain Test Data, I picked up the above definition for this blog.</p>
+
+<p><span style="font-size:0.5em;">Image credits: <a href="https://www.flickr.com/photos/182229932@N07/">www.epictop10.com</a></span></p>
+
+<p><em>Example: An e-commerce website testing may require <code class="language-plaintext highlighter-rouge">test data</code> such as product listings, user accounts, orders, and payment details to ensure all shopping, checkout, and payment processes.</em></p>
+
+<h2 id="why-test-data-management-is-important">Why Test Data management is important</h2>
+
+<ol>
+  <li><strong>Consistency and reliability:</strong>
+Ensures tests are repeatable under the same conditions.
+    <ul>
+      <li><em>Example:</em> <strong>(e.g)</strong> Running regression tests after each deployment to an e-commerce site to ensure no new bugs are introduced.</li>
+    </ul>
+  </li>
+  <li><strong>Comprehensive testing:</strong>
+Identifies hidden bugs with varied test data, including edge cases.
+    <ul>
+      <li><strong>e.g:</strong> Testing a banking application with various transaction types, amounts, and currencies to cover all possible scenarios.</li>
+    </ul>
+  </li>
+  <li><strong>Efficiency:</strong>
+Reduces setup time for tests, leading to faster development cycles.
+    <ul>
+      <li><strong>e.g:</strong> Automating nightly test runs for a social media platform to quickly identify and fix issues.</li>
+    </ul>
+  </li>
+  <li><strong>Compliance and security:</strong>
+Maintains data protection and prevents sensitive data exposure.
+    <ul>
+      <li><strong>e.g:</strong> Masking user personal information while testing a healthcare application to comply with data privacy laws.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="4-top-tricks-for-effective-test-data-management">4 Top tricks for effective Test Data management</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Trick</th>
+      <th>Explanation</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong>Data masking</strong></td>
+      <td>Protects sensitive information while using realistic data.</td>
+      <td>Masking credit card numbers in a payment processing</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong>Synthetic data</strong></td>
+      <td>Generates fake but realistic data.</td>
+      <td>Creating synthetic user profiles for a customer relationship management (CRM) system.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>Version control</strong></td>
+      <td>Tracks changes in test data over time.</td>
+      <td>Using Git to manage test datasets for a financial reporting application.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>Automated data generation</strong></td>
+      <td>Uses tools to generate data dynamically.</td>
+      <td>Creating user login data for a content management system (CMS) load testing.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="real-life-example-payment-transactions">Real-Life example: Payment transactions</h2>
+
+<p>Let me give you a practical example by generating sample test data for payment transactions using TypeScript:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">//npm i @faker-js/faker</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">faker</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@faker-js/faker</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kr">interface</span> <span class="nx">Transaction</span> <span class="p">{</span>
+  <span class="nl">id</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">amount</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">currency</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">date</span><span class="p">:</span> <span class="nb">Date</span><span class="p">;</span>
+  <span class="nl">status</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">customerId</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">generateTransaction</span> <span class="o">=</span> <span class="p">():</span> <span class="nx">Transaction</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">id</span><span class="p">:</span> <span class="nx">faker</span><span class="p">.</span><span class="nx">datatype</span><span class="p">.</span><span class="nx">uuid</span><span class="p">(),</span>
+    <span class="na">amount</span><span class="p">:</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">faker</span><span class="p">.</span><span class="nx">finance</span><span class="p">.</span><span class="nx">amount</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="na">currency</span><span class="p">:</span> <span class="nx">faker</span><span class="p">.</span><span class="nx">finance</span><span class="p">.</span><span class="nx">currencyCode</span><span class="p">(),</span>
+    <span class="na">date</span><span class="p">:</span> <span class="nx">faker</span><span class="p">.</span><span class="nx">date</span><span class="p">.</span><span class="nx">recent</span><span class="p">(),</span>
+    <span class="na">status</span><span class="p">:</span> <span class="nx">faker</span><span class="p">.</span><span class="nx">helpers</span><span class="p">.</span><span class="nx">arrayElement</span><span class="p">([</span><span class="dl">'</span><span class="s1">completed</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">pending</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">failed</span><span class="dl">'</span><span class="p">]),</span>
+    <span class="na">customerId</span><span class="p">:</span> <span class="nx">faker</span><span class="p">.</span><span class="nx">datatype</span><span class="p">.</span><span class="nx">uuid</span><span class="p">(),</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="c1">// Generate a list of transactions</span>
+<span class="kd">const</span> <span class="nx">generateTransactions</span> <span class="o">=</span> <span class="p">(</span><span class="nx">num</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="nx">Transaction</span><span class="p">[]</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">({</span> <span class="na">length</span><span class="p">:</span> <span class="nx">num</span> <span class="p">},</span> <span class="nx">generateTransaction</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">generateTransactions</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>Which would generate transactions like :</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">//</span><span class="w"> </span><span class="err">sample</span><span class="w"> </span><span class="err">json</span><span class="w"> </span><span class="err">response</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a6a65d7b-23c8-4c6c-94a1-7b0a0b2d7f0e"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">378.45</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-09-14T14:33:54.927Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d6e95d6c-0731-45b8-9b7e-29b062c3f5ed"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b4c5c8e4-5158-45b9-9db8-32e6a9d8a3de"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">529.78</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-09-14T18:22:37.432Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f5a4b7c9-d8e5-45ea-a4a8-1dfe31b1a2cf"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c8f1d8e3-9b7c-49e8-9f5c-8e6a9d8a3d4e"</span><span class="p">,</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="remember">Remember</h2>
+
+<p>Automating test data generation can enhance not only efficiency but also accuracy. Essentially leading to better test coverage for complex test data dependent scenario for the applications under test.</p>
+
+<p><br /></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<p>Want to learn more❓
+<br /> 
+Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/post/test-data-generation-in-test-automation.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />]]></content><author><name>Millan Kaul</name></author><category term="blog" /><category term="Automation" /><category term="Shift-Left" /><category term="Test Data" /><summary type="html"><![CDATA[Written by - Millan Kaul]]></summary></entry><entry><title type="html">WebDriver Saga</title><link href="https://qualitywithmillan.github.io/post/web-driver-saga.html" rel="alternate" type="text/html" title="WebDriver Saga" /><published>2024-04-24T00:00:00+00:00</published><updated>2024-04-24T00:00:00+00:00</updated><id>https://qualitywithmillan.github.io/post/co-author-neelam-pal-web-driver-saga</id><content type="html" xml:base="https://qualitywithmillan.github.io/post/web-driver-saga.html"><![CDATA[<p>
+ Written by -
+
+    
+    
+    
+        <strong>Neelam Pal</strong>
+    
+
+</p>
+
+<hr style="border: none; height:2px; background-color: #A9F1E4; position: relative;" />
+
+<p>Once upon a time, there existed a powerful tool known as <strong>WebDriver</strong>, in software test automation
+world of <a href="https://www.selenium.dev/documentation/webdriver">Selenium</a> Its journey begins with method known as <strong><code class="language-plaintext highlighter-rouge">get(String url)</code></strong> , a magical journey that
+navigated the <strong>WebDriver</strong> to distant URLs, opening the door to a grand adventure in testing.</p>
+
+<p>Like a magician’s wand 🪄 , the method <strong><code class="language-plaintext highlighter-rouge">sendKeys(CharSequence... keysToSend)</code></strong> cast a spell, sending
+keystrokes to web elements, allowing testers to interact with input fields and forms with effortless
+grace.</p>
+
+<p>With a simple click 🖱️, the method <strong><code class="language-plaintext highlighter-rouge">click()</code></strong> invoked the element’s click event, unleashing the power to
+simulate user interactions and trigger button clicks and link navigations.</p>
+
+<p>Ah, but the journey 🏞️ did not end there! The method <strong><code class="language-plaintext highlighter-rouge">getText()</code></strong> emerged as a beacon of truth, retrieving
+the visible inner text of web elements, offering valuable insights for verification and assertion.</p>
+
+<p>As our quest unfolded, <strong><code class="language-plaintext highlighter-rouge">findElement(By by)</code></strong> became our steadfast guide, leading us to the first web
+element within the page using intricate locator strategies, while <strong><code class="language-plaintext highlighter-rouge">findElements(By by)</code></strong> expanded our
+horizons, revealing a plethora of matching elements to explore and conquer.</p>
+
+<p>Like a treasure map 🌎 , <strong><code class="language-plaintext highlighter-rouge">getAttribute(String name)</code></strong> unlocked hidden insights, revealing the secrets encoded
+within the attributes of web elements.</p>
+
+<blockquote>
+  <p>But amidst the glory, challenges emerged.</p>
+</blockquote>
+
+<p>The method <strong><code class="language-plaintext highlighter-rouge">isDisplayed()</code></strong> became our lantern in the
+darkness, illuminating the visibility of web elements, while <strong><code class="language-plaintext highlighter-rouge">isEnabled()</code></strong> acted as a vigilant gatekeeper,
+verifying the accessibility of interactive elements.</p>
+
+<p>And so, <strong><code class="language-plaintext highlighter-rouge">isSelected()</code></strong> stood as our guide through the maze of checkboxes ☑️ and dropdowns, confirming the
+user’s choices with unwavering certainty. 😌</p>
+
+<p>In moments of uncertainty, <strong><code class="language-plaintext highlighter-rouge">navigate().refresh()</code></strong> refreshed ♻️ our spirits, renewing the canvas of our testing
+odyssey, while <strong><code class="language-plaintext highlighter-rouge">navigate().to(String url)</code></strong> charted a course to new lands within the same browser window.</p>
+
+<p>When unexpected perils arose, <strong><code class="language-plaintext highlighter-rouge">switchTo().alert()</code></strong> beckoned us to face them head-on, guiding the
+WebDriver’s focus to handle pop-up alerts with grace and composure. 🧘🏻‍♀️</p>
+
+<p>As we ventured deeper, <strong><code class="language-plaintext highlighter-rouge">switchTo().frame(int index)</code></strong> and <strong><code class="language-plaintext highlighter-rouge">switchTo().frame(String nameOrId)</code></strong> extended
+our reach, allowing us to interact with embedded content within iframes 🖼️ , while
+<strong><code class="language-plaintext highlighter-rouge">switchTo().window(String windowHandle)</code></strong> orchestrated seamless transitions between browser
+windows.</p>
+
+<p>And like expanding our view, <strong><code class="language-plaintext highlighter-rouge">manage().window().maximize()</code></strong> bestowed upon us the power to maximize
+browser windows, providing ample space to conduct our testing endeavors with clarity and focus. 🔍</p>
+
+<p>In moments of anticipation, <strong><code class="language-plaintext highlighter-rouge">manage().timeouts().implicitlyWait()</code></strong> instilled stability and reliability,
+setting a global timeout ⏰ for the WebDriver to patiently await the appearance of elements.</p>
+
+<p>With Actions, we danced with finesse, as <strong><code class="language-plaintext highlighter-rouge">moveToElement(WebElement toElement)</code></strong> guided the mouse
+cursor with intuition, and <strong><code class="language-plaintext highlighter-rouge">clickAndHold(WebElement onElement)</code></strong> held web elements with steady
+resolve, paving the way for intricate interactions and drag-and-drop operations.</p>
+
+<p>And when the need arose, <strong><code class="language-plaintext highlighter-rouge">release()</code></strong> set our captives free, concluding our mouse-related actions with
+grace and 🎯 precision.</p>
+
+<p>But amidst the earthly realms, <strong><code class="language-plaintext highlighter-rouge">keyDown(Keys theKey)</code></strong> and <strong><code class="language-plaintext highlighter-rouge">keyUp(Keys theKey)</code></strong> bestowed upon us the
+power of keyboard-driven interactions, enabling us to simulate pressing and releasing specific keys with
+finesse and control.</p>
+
+<p>In moments of unparalleled power, <strong><code class="language-plaintext highlighter-rouge">JavascriptExecutor</code></strong> cast its spell, executing JavaScript code with
+unparalleled flexibility and power ⚙️ , transforming our testing rituals into a symphony of digital magic. 🔮</p>
+
+<p>And so, our journey with WebDriver, adorned with challenges and triumphs, continued to unfold, as we
+embraced the tools and techniques that paved the way for a glorious testing adventure……</p>
+
+<p>You can folow <strong>Neelam</strong> on <a href="https://www.linkedin.com/in/palneelam">LinkedIn</a></p>
+
+<p><strong>Swaroop</strong> started <a href="https://www.linkedin.com/posts/swaroopnadella_swaroopnadella-selenium-activity-7186197149745909762-Ypqd">this post</a> on LinkedIn and based upon that <strong>Neelam</strong> came up with an <a href="https://www.linkedin.com/posts/palneelam_testautomation-testing-activity-7187767031474114560-d4UW">interesting version of it</a> further that go converted to this full-fledged blog.</p>
+
+<p><br />
+<br /></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<p>Want to learn more❓
+<br /> 
+Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/post/web-driver-saga.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />]]></content><author><name>Neelam Pal</name></author><category term="blog" /><category term="selenium" /><category term="webdriver" /><category term="Testing" /><summary type="html"><![CDATA[Written by - Neelam Pal]]></summary></entry><entry><title type="html">Say hello to `Multiple` : New Performance testing tool</title><link href="https://qualitywithmillan.github.io/post/new-performance-testing-tool-multiple.html" rel="alternate" type="text/html" title="Say hello to `Multiple` : New Performance testing tool" /><published>2024-04-06T00:00:00+00:00</published><updated>2024-04-06T00:00:00+00:00</updated><id>https://qualitywithmillan.github.io/post/performance-testing-tool-multiple</id><content type="html" xml:base="https://qualitywithmillan.github.io/post/new-performance-testing-tool-multiple.html"><![CDATA[<p>
+ Written by -
+
+    
+    
+    
+        <strong>Millan Kaul</strong>
+    
+
+</p>
+
+<hr style="border: none; height:2px; background-color: #A9F1E4; position: relative;" />
+
+<p>I recently came across this potentially game-changing performance testing tool called <strong>MULTIPLE</strong></p>
+
+<blockquote>
+  <p><em>Multiple is a load test platform built for developers. With a few lines of JavaScript, you can create and run scalable load tests, observe the results in real-time, and easily share them with your team.</em>
+<br /><br />
+<em>…from <a href="https://docs.multiple.dev/introduction">multiple.dev</a></em></p>
+</blockquote>
+
+<p><br /></p>
+
+<p><img src="/assets/images/2024/04/multiple/multiple_logo.png" alt="MULTIPLE company logo" /></p>
+<figcaption align="center">MULTIPLE logo</figcaption>
+
+<p><br /></p>
+
+<p><strong>In this blog I will cover</strong></p>
+
+<ol>
+  <li>
+    <p><a href="#introduction">Introduction to multiple.dev</a></p>
+  </li>
+  <li>
+    <p><a href="#my-research">My research 🔍</a></p>
+  </li>
+  <li>
+    <p><a href="#whats-the-selling-point">What’s the selling point? 🧐</a></p>
+  </li>
+  <li>
+    <p><a href="#usage---what-to-expect">Usage - What to expect</a></p>
+  </li>
+  <li>
+    <p><a href="#show-me-the-code">Show me the code!👨‍💻</a></p>
+  </li>
+  <li>
+    <p><a href="#good-to-know-things">Good to know things</a></p>
+  </li>
+  <li>
+    <p><a href="#final-verdict">Final Verdict 📣</a></p>
+  </li>
+</ol>
+
+<h1 id="introduction">Introduction</h1>
+
+<p><a href="https://www.multiple.dev/">Multiple.dev</a> looks promising in what I see redefining the approach to performance testing. Let’s dive into its features, capabilities, and potential of Multiple.dev, exploring whether it’s the revolutionary tool we’ve been waiting for.</p>
+
+<p>Let me quickly give you an overview of Multiple.dev’s followed by some cool performance testing tool features it offers.</p>
+
+<p>With some cool and innovative features it comes with a user-friendly, web based, interface <strong>Yes a website.!</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">Performance testing experience that we haven't seen so far.</code></p>
+
+<h2 id="my-research">My research</h2>
+
+<p>I did a short research and found that Multiple took off <a href="https://www.multiple.dev/blog/multiple-is-live">Multiple’s Signup is Live!</a> on December 7, 2023 and started with an idea to solve three challenges with existing tools, on the lines of :</p>
+
+<ol>
+  <li>
+    <p>Limited scripting capabilities. XML or GUI-based scripting can only test basic scenarios…</p>
+  </li>
+  <li>
+    <p>Cannot use existing libraries or code. Instead of forcing you to learn a new system and rewrite code, Multiple leverages the JavaScript and <code class="language-plaintext highlighter-rouge">NPM</code> ecosystem…. <em><strong>« my favourite</strong></em> ❤️</p>
+  </li>
+  <li>
+    <p>Tedious infrastructure management….</p>
+  </li>
+</ol>
+
+<h2 id="whats-the-selling-point">What’s the selling point?</h2>
+
+<p>Multiple state that with them you can:</p>
+
+<ul>
+  <li>Write load tests with Javascript and <code class="language-plaintext highlighter-rouge">NPM</code> packages; no proprietary tools or config files.</li>
+  <li>Works with almost any service, database, and protocol out of the box, including Kafka, EC2, MongoDB, Redis, and gRPC.</li>
+  <li>Managed infrastructure lets you spin up large load tests in seconds without setting up and tearing down your own cloud resources.</li>
+  <li>It’s easy to share tests and test results with your team.</li>
+</ul>
+
+<h2 id="usage---what-to-expect">Usage - What to expect</h2>
+
+<p>As per their <a href="https://docs.multiple.dev/quick-start-guide">Quick Start Guide</a> after creating account you will learn:</p>
+
+<ul>
+  <li><strong>Create new test</strong> : The first step is to create a new test.</li>
+  <li><strong>Write test spec</strong> : The next step is to write your load test. Initialize &gt; configure vus &gt; run (dry run) &gt; clean up.
+    <ul>
+      <li>You can set the environment variables using dotenv.</li>
+    </ul>
+  </li>
+  <li><strong>Run load test</strong> : Start actual test.</li>
+  <li><strong>View results</strong> : You can view any previously run load tests.
+    <ul>
+      <li>Export data</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/images/2024/04/multiple/multiple_result_graph.png" alt="Sample run result from multople.dev" /></p>
+<figcaption align="center">Sample run result</figcaption>
+
+<h2 id="show-me-the-code">Show me the code!</h2>
+
+<p>As I mentioned earlier my :heart: works with custom <code class="language-plaintext highlighter-rouge">NPM</code> packages.</p>
+
+<p>like how simple it is to use <code class="language-plaintext highlighter-rouge">faker-js</code> library, that’s why I see it game changer.</p>
+
+<p>This model allows users to use a basic version of the software for free, but they may need to pay for additional features or to unlock higher usage limits.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// faker for generating synthetic data</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">faker</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@faker-js/faker</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">LotsOfChatMxTestSpec</span> <span class="p">{</span>
+  <span class="nx">npmDeps</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">@faker-js/faker</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">7.6.0</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">};</span>
+
+  <span class="k">async</span> <span class="nx">vuInit</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">....</span>
+    <span class="c1">// Log in as a user and get a JWT</span>
+    <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">login</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">email</span><span class="p">:</span> <span class="s2">`user@email.com`</span><span class="p">,</span>
+      <span class="na">password</span><span class="p">:</span> <span class="dl">'</span><span class="s1">password</span><span class="dl">'</span><span class="p">,</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="k">async</span> <span class="nx">vuLoop</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Send a POST request to the chat endpoint </span>
+    <span class="c1">// with a random message</span>
+    <span class="k">await</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">chat</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="c1">// Generate synthetic data with faker</span>
+      <span class="na">message</span><span class="p">:</span> <span class="nx">faker</span><span class="p">.</span><span class="nx">lorem</span><span class="p">.</span><span class="nx">paragraph</span><span class="p">(),</span>
+    <span class="p">});</span>
+
+    <span class="c1">// Send a GET request to the chat endpoint</span>
+    <span class="k">await</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">chat</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1>++</h1>
+
+<p>It supports <code class="language-plaintext highlighter-rouge">dotenv</code> <strong>Environment Variables</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Base URL for the API</span>
+<span class="nv">API_BASE_URL</span><span class="o">=</span>https://www.qualitywithmillan.github.io
+</code></pre></div></div>
+
+<h2 id="good-to-know-things">Good to know things</h2>
+
+<p>Multiple does not have a CLI option as of 6th April 2024.
+I have no doubt that it would be in their top list of priorities as they claim their product to be dev-centric.</p>
+
+<p>⬆️ This specific option to run tests usin CLI makes the tool CI friendly.</p>
+
+<p>If you have been following my blog, you would remember I also wrote about another performance testing tool <code class="language-plaintext highlighter-rouge">k6</code>  :</p>
+
+<ul>
+  <li>
+    <p><a href="/post/2024/01/k6-with-real-time-performance-monitoring-with-web-dashboards.html" title="k6 - web dashboards + HTML report 📊" target="_blank">k6 - web dashboards + HTML report 📊</a>  early this year and</p>
+  </li>
+  <li>
+    <p>A <strong>memorable example</strong> in <a href="/post/how-to-shift-left-without-writing-code.html" title="How to Shift-Left without writing Code" target="_blank">How to Shift-Left without writing Code</a> back in June 2023</p>
+  </li>
+</ul>
+
+<p>back to multiple, worth sharing that Multiple is not <a href="//todo mk">open source like k6</a>; it’s freemium <a href="https://www.multiple.dev/pricing">see pricing</a></p>
+
+<p><br /></p>
+
+<p><img src="/assets/images/2024/04/multiple/multiple_pricing.png" alt="Pricing page on MULTIPLE website" /></p>
+<figcaption align="center">Pricing - multiple.dev</figcaption>
+
+<p><br /></p>
+
+<h2 id="final-verdict">Final Verdict</h2>
+
+<p>While choosing the right performance testing tool is always a tricky decision to make, what I see here is Multiple.dev brings a fresh perspective and a host of innovative features to the table. Multiple’s potential to revolutionize performance testing is undeniable.</p>
+
+<blockquote>
+  <p><em>Load Testing as a service using the full JavaScript and <code class="language-plaintext highlighter-rouge">NPM</code> Package ecosystem. No proprietary languages, unfamiliar paradigms, or complicated cloud configurations.</em>
+<br /><br />
+~By: multiple.dev</p>
+</blockquote>
+
+<p>I can’t wait to see what multiple team has planned to build, I appreciate how modern tools are solving complex and historic problem statemets. I would wait for to explore CLI option and may be open Community Support page.</p>
+
+<p>But the question still remains open.
+<strong>Could Multiple.dev be the revolutionary tool we’ve been waiting for..❓</strong></p>
+
+<p>maybe the answer lies in exploring it’s capabilities and discovering how it fits into your orgnizations performance testing strategy.</p>
+
+<p>Why not give it a go 🚀</p>
+
+<p>Do let us know if you decided to give it a try by sharing your experience and taging <a href="https://www.linkedin.com/company/quality-with-millan">@Quality With Millan</a></p>
+
+<p><br />
+<br /></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<p>Want to learn more❓
+<br /> 
+Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/post/new-performance-testing-tool-multiple.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />]]></content><author><name>Millan Kaul</name></author><category term="blog" /><category term="tools" /><category term="performance testing" /><category term="Shift-Left" /><category term="Test automation" /><summary type="html"><![CDATA[Written by - Millan Kaul]]></summary></entry><entry><title type="html">Exponential backoff strategy - explained with `{code}`</title><link href="https://qualitywithmillan.github.io/post/exponential-backoff-algo.html" rel="alternate" type="text/html" title="Exponential backoff strategy - explained with `{code}`" /><published>2024-04-01T00:00:00+00:00</published><updated>2024-04-01T00:00:00+00:00</updated><id>https://qualitywithmillan.github.io/post/exponential-backoff-strategy</id><content type="html" xml:base="https://qualitywithmillan.github.io/post/exponential-backoff-algo.html"><![CDATA[<p>
+ Written by -
+
+    
+    
+    
+        <strong>Millan Kaul</strong>
+    
+
+</p>
+
+<p><img src="/assets/images/2024/04/exponontial_backoff/Exponential_backoff_final_GIF.gif" alt="&quot;Image showing 4 steps of how appium works in mobile app automation&quot;" class="align-center" /></p>
+
+<blockquote>
+  <p>Let me start with a simple explanation from a common situation.
+Let’s say there is a smartphone app which is failing to connect to server ( <em>back-end</em>), it might try again 1 second later, then if it fails again, 2 seconds later, then 4, etc.. Each time the pause is multiplied by a fixed amount (in this case 2).</p>
+</blockquote>
+
+<h2 id="1-what-is-exponential-backoff-">1. What is Exponential backoff ?</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">Exponential Backoff</code> is a technique used to handle retries in a more intelligent and efficient manner.</p>
+
+<p>It involves progressively increasing the time between retries after encountering a transient error, such as a <code class="language-plaintext highlighter-rouge">500 Internal Server Error</code>, in an API response.</p>
+
+<p>The delay between retries grows <em>exponentially</em>, typically doubling with each retry attempt, like this graph below.</p>
+
+<p><img src="/assets/images/2024/04/exponontial_backoff/Exponential_chart.png" alt="Chart explaining Exponential backoff strategy and visualize how it grows" /></p>
+<figcaption align="center">Chart explaining Exponential backoff implementation</figcaption>
+
+<h2 id="2-why-use-of-exponential-backoff-strategy-">2. Why use of Exponential backoff strategy ?</h2>
+
+<p>The need for the Exponential backoff strategy stems from the unpredictable nature of network communications and server responses. Transient errors, such as temporary network issues or server overloads, can occur sporadically and may resolve themselves given time.</p>
+
+<p>By implementing an exponential backoff approach, we can reduce the load on servers during error spikes and increase the chances of successful retries.</p>
+
+<p><u>Let me give you two real life examples:</u></p>
+
+<ol>
+  <li>
+    <p><u>BLACK FRIDAY SALE [e-commerce]</u>  : A e-commerce platform with a checkout API endpoint. During peak hours, the server occasionally returns <code class="language-plaintext highlighter-rouge">500</code> errors due to high traffic. Implementing an Exponential Backoff Strategy in your API client helps alleviate server load by intelligently retrying failed requests with increasing delays. This ensures smoother checkout experiences for users during busy periods 🛍️ 🛒 .</p>
+  </li>
+  <li>
+    <p>In <u>system resilience testing</u>, simulate network fluctuations 📈 📉  by introducing intermittent delays and errors in API responses. Use the Exponential Backoff Strategy to model varying network conditions, such as increased latency or sporadic connection failures. This helps evaluate how well the system recovers and maintains functionality under adverse circumstances, enhancing overall resilience.</p>
+  </li>
+</ol>
+
+<h2 id="3-implementation-example">3. Implementation Example</h2>
+
+<p>Let me show you a simple <code class="language-plaintext highlighter-rouge">JavaScript</code> implementation example.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">fetchDataWithExponentialBackoff</span><span class="p">()</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="nx">apiUrl</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://qualitywithmillan.github.io</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">maxRetries</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">retryCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">delay</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span> <span class="c1">// Initial delay of 1 second</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="nx">retryCount</span> <span class="o">&lt;</span> <span class="nx">maxRetries</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">apiUrl</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Retrying in </span><span class="p">${</span><span class="nx">delay</span><span class="p">}</span><span class="s2"> milliseconds...`</span><span class="p">);</span>
+    <span class="k">await</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">delay</span><span class="p">));</span>
+    <span class="nx">delay</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Exponential increase in delay</span>
+    <span class="nx">retryCount</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">retryCount</span> <span class="o">===</span> <span class="nx">maxRetries</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Failed: Max retry limit reached.</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">fetchDataWithExponentialBackoff</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>So, if you ask me to explain in 1 line of code, thi is the key?</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Exponential backoff strategy in 1 line</span>
+<span class="nx">delay</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">delay</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">maxDelay</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><strong>So, that’s it!</strong></p>
+
+<h3 id="but"><strong>But!</strong></h3>
+<h2 id="but-1"><strong>But!!</strong></h2>
+<h1 id="but-2"><strong>But!!!</strong></h1>
+
+<p>should we implement all the time?</p>
+
+<p><br /></p>
+
+<h2 id="4-x-when-not-to-use-exponential-backoff">4. :x: When Not to use Exponential backoff?</h2>
+
+<p>While the Exponential Backoff Strategy is effective for transient errors, <strong><em>it may not be suitable for all error types</em></strong>. Let me share few examples.</p>
+
+<ol>
+  <li>
+    <p>For critical errors that require immediate attention or errors indicating permanent issues, such as authentication failures or invalid requests, a different error-handling approach should be employed.</p>
+  </li>
+  <li>
+    <p>Resource Utilization: Continuous retries with exponential delays consume system resources, such as CPU and memory, which may impact overall system performance and scalability.</p>
+  </li>
+  <li>
+    <p>Additionally, for real-time systems or time-sensitive operations, excessive retries with exponential delays may not be feasible.</p>
+  </li>
+</ol>
+
+<p>e.g In a share trading app handling transactions, certain errors like authentication failures or validation errors should not be retried using an Exponential Backoff Strategy.</p>
+
+<p>Immediate user feedback or intervention is required in such cases to prevent potential security risks or incorrect data processing. These errors should be handled with appropriate error-handling mechanisms instead of retries.</p>
+
+<p><strong>Once again :</strong></p>
+
+<p><strong>The purpose of using</strong> an <code class="language-plaintext highlighter-rouge">exponential backoff strategy</code> is to prevent overwhelming the API server with rapid retry attempts when it returns a <code class="language-plaintext highlighter-rouge">5xx</code> error. By increasing the delay between retries exponentially, the load on the server is reduced, and it gives the server more time to recover from the error before the next retry attempt.</p>
+
+<p><strong>Further reading and references:</strong></p>
+
+<ul>
+  <li>A <a href="https://cloud.google.com/memorystore/docs/redis/exponential-backoff#:~:text=Exponential%20backoff%20is%20a%20standard,and%20429%20response%20code%20errors">Post</a> by google cloud team.</li>
+  <li>Another <a href="https://learn.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/implement-retries-exponential-backoff">one</a> by Microsoft:</li>
+  <li>This <a href="https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">one</a> on AWS.</li>
+  <li>On Wikipedia <a href="https://en.wikipedia.org/wiki/Exponential_backoff">too</a>!</li>
+</ul>
+
+<p><br /></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<p>Want to learn more❓
+<br /> 
+Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/post/exponential-backoff-algo.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />]]></content><author><name>Millan Kaul</name></author><category term="blog" /><category term="engineering" /><category term="archialgorithm" /><summary type="html"><![CDATA[Written by - Millan Kaul]]></summary></entry><entry><title type="html">Navigating the Tempest: QA in the Age of Hyper-Driven Development</title><link href="https://qualitywithmillan.github.io/post/qa-in-the-age-of-hyper-driven-development.html" rel="alternate" type="text/html" title="Navigating the Tempest: QA in the Age of Hyper-Driven Development" /><published>2024-03-22T00:00:00+00:00</published><updated>2024-03-22T00:00:00+00:00</updated><id>https://qualitywithmillan.github.io/post/co-author-dennis-qa-in-the-Age-of-hyper-driven-development</id><content type="html" xml:base="https://qualitywithmillan.github.io/post/qa-in-the-age-of-hyper-driven-development.html"><![CDATA[<p>
+ Written by -
+
+    
+    
+    
+        <strong>Dennis Nyawira</strong>
+    
+
+</p>
+
+<hr style="border: none; height:2px; background-color: #A9F1E4; position: relative;" />
+
+<p>In the fast-paced world of software development, Quality Assurance (QA) often gets less limelight than it truly deserves. It’s easy to forget that behind every seamless app update and bug-free software release, there’s a dedicated QA team working tirelessly. But as we chase after the newest tools and technologies, it’s crucial to remember the human element at the core of QA.</p>
+
+<h2 id="the-hype-trap">The Hype Trap</h2>
+
+<p>Lately, there’s a lot of buzz around tools like Cypress, Playwright, and Selenium. These are powerful, no doubt, but the hype around them can lead to a sort of <strong><em>Fear of Missing Out (FOMO)</em></strong> among QA professionals. We’ve all been there - worrying that not jumping on the latest tech bandwagon might leave us behind.</p>
+
+<p>But here’s the thing: adopting a new tool just because it’s trending can feel a bit like buying the latest smartphone every year (<em>The latest iPhone</em> 😊). Sure, it’s new and shiny, but does it really fit your needs better than the last one?</p>
+
+<h2 id="making-the-right-choice">Making the Right Choice</h2>
+
+<p>The truth is, no single tool is a magic bullet. Each project has its unique challenges, and what works like a charm for one might be completely wrong for another. That’s why it’s crucial to evaluate tools based on how well they align with your specific project needs - not just because they’re the talk of the town.</p>
+
+<p>For example, Cypress is fantastic for web applications because of its real-time testing and automatic waiting. But if you’re working on a mobile app, you might find something like Appium or Espresso more up your alley.</p>
+
+<h2 id="the-human-element">The Human Element</h2>
+
+<p>At the end of the day, tools are just that - tools. They’re here to help us do our job, but they’re not the ones doing the job. The real magic happens thanks to the QA engineers who bring their expertise, intuition, and creativity to the table.</p>
+
+<p>Choosing the right tool isn’t just about ticking off a list of features. It’s about understanding your team’s workflow, the specific demands of your project, and even your own gut feeling about what’s going to work best.</p>
+
+<h2 id="keeping-it-real">Keeping It Real</h2>
+
+<p>As we navigate through the buzz and the hype, let’s not lose sight of what’s truly important: building software that people love and trust (𝚂𝚒𝚖𝚙𝚕𝚎 𝙻𝚘𝚟𝚎𝚊𝚋𝚕𝚎 &amp; 𝙲𝚘𝚖𝚙𝚕𝚎𝚝𝚎). The latest tools and frameworks can be exciting, but they’re only as good as the hands that wield them.</p>
+
+<p>So, let’s keep the conversation going - not just about which tools are trending, but about how we can use them (or not) to make our work even more impactful.</p>
+
+<p>After all, the goal isn’t to use the newest tools; it’s to ensure quality in the most efficient and effective way possible.</p>
+
+<p>You can folow <strong>Dennis</strong> on <a href="https://www.linkedin.com/in/gituto">LinkedIn</a></p>
+
+<p><br />
+<br /></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<p>Want to learn more❓
+<br /> 
+Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/post/qa-in-the-age-of-hyper-driven-development.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />]]></content><author><name>Dennis Nyawira</name></author><category term="blog" /><category term="qa" /><category term="Shift-Left &amp; Right" /><category term="Agile Testing" /><summary type="html"><![CDATA[Written by - Dennis Nyawira]]></summary></entry><entry><title type="html">How I turned my blog into a Docker based development paradise 🐳 - Try It Yourself!</title><link href="https://qualitywithmillan.github.io/post/2024/02/run-your-blog-as-a-docker-container-locally.html" rel="alternate" type="text/html" title="How I turned my blog into a Docker based development paradise 🐳 - Try It Yourself!" /><published>2024-02-28T00:00:00+00:00</published><updated>2024-02-28T00:00:00+00:00</updated><id>https://qualitywithmillan.github.io/post/2024/02/dockrize-a-blog</id><content type="html" xml:base="https://qualitywithmillan.github.io/post/2024/02/run-your-blog-as-a-docker-container-locally.html"><![CDATA[<hr />
+
+<p>
+ Written by -
+
+
+    Millan Kaul         
+
+</p>
+
+<hr />
+
+<blockquote>
+  <p>Dockerizing my blog running on Ruby Gem 💎 and Jekyll has proven to be a game-changer. In this short blog, I’ll share how straightforward the process was, the benefits of Dockerization, and the convenience it offers for making changes and running the blog locally.</p>
+</blockquote>
+
+<p><br /></p>
+
+<p><img src="/assets/images/2024/02/docker_jeklly/01_docker_jeklly.png" alt="&quot;Banner image with Jeklly and docker icons for the blog on using docker by Millan Kaul on his blog Quality With Millan&quot;" class="align-center" /></p>
+
+<hr />
+
+<h3 id="no-crap-straight-to-code-first">No crap, straight to code first</h3>
+
+<p>Dockerizing a Jekyll blog involves creating a <code class="language-plaintext highlighter-rouge">Dockerfile</code> and a <code class="language-plaintext highlighter-rouge">docker-compose.yaml</code> file. 
+These files encapsulate the environment and dependencies needed to run the blog on your local machine or on cloud seamlessly.</p>
+
+<h1 id="dockerfile"><code class="language-plaintext highlighter-rouge">Dockerfile</code></h1>
+
+<hr />
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use the official Jekyll image</span>
+FROM jekyll/jekyll:latest
+
+<span class="c"># Set the working directory</span>
+WORKDIR /srv/jekyll
+
+<span class="c"># Copy the Gemfile and Gemfile.lock to the container</span>
+COPY Gemfile Gemfile.lock ./
+
+<span class="c"># Install Jekyll and dependencies</span>
+RUN bundle <span class="nb">install</span>
+
+<span class="c"># Copy the rest of the application code to the container</span>
+COPY <span class="nb">.</span> <span class="nb">.</span>
+
+<span class="c"># Expose the default Jekyll port</span>
+EXPOSE 4000
+
+<span class="c"># Command to run the Jekyll server</span>
+CMD <span class="o">[</span><span class="s2">"jekyll"</span>, <span class="s2">"serve"</span>, <span class="s2">"--host"</span>, <span class="s2">"0.0.0.0"</span><span class="o">]</span>
+</code></pre></div></div>
+
+<h1 id="docker-composeyaml"><code class="language-plaintext highlighter-rouge">docker-compose.yaml</code></h1>
+
+<hr />
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>version: <span class="s1">'3'</span>
+services:
+  jekyll:
+    image: qwm
+    ports:
+      - <span class="s2">"4000:4000"</span>
+    volumes:
+      - <span class="s2">"./:/srv/jekyll"</span>
+    <span class="nb">command</span>: <span class="o">[</span><span class="s2">"bundle"</span>, <span class="s2">"exec"</span>, <span class="s2">"jekyll"</span>, <span class="s2">"serve"</span>,  <span class="s2">"--force_polling"</span> , <span class="s2">"--host"</span>, <span class="s2">"0.0.0.0"</span><span class="o">]</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="running-locally">Running Locally:</h3>
+
+<p>With the <code class="language-plaintext highlighter-rouge">Dockerfiles</code> and <code class="language-plaintext highlighter-rouge">docker-compose.yaml</code> in place, running the Jekyll blog locally becomes a breeze. 
+Execute the following commands:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Build the Docker image</span>
+<span class="nv">$ </span>docker-compose build
+
+<span class="c"># Run the Jekyll server locally</span>
+<span class="nv">$ </span>docker-compose up
+</code></pre></div></div>
+<hr />
+
+<p>This will initiate the Jekyll server, and you can access your blog locally at <a href="http://localhost:4000">http://localhost:4000</a></p>
+
+<h3 id="benefits-of-dockerization">Benefits of Dockerization</h3>
+
+<ol>
+  <li>
+    <p><strong>Isolation:</strong> Docker encapsulates the blog and its dependencies, ensuring consistency across different environments</p>
+  </li>
+  <li>
+    <p><strong>Portability:</strong> The Dockerized setup is easily transferable, making it convenient to share with collaborators ( linux / mac / windows).</p>
+  </li>
+  <li>
+    <p><strong>Ease of Development:</strong> Making changes and testing locally becomes seamless with the ability to run the blog in a controlled Docker environment.</p>
+  </li>
+</ol>
+
+<hr />
+
+<p>I am just loving it 😍</p>
+
+<hr />
+
+<p><strong>Wait ….You may ask Why, why Dockerize ?</strong></p>
+
+<p>Q. Why Dockerize a Blog?</p>
+
+<p><strong>Dockerizing my Jekyll blog was a game-changer for me!</strong></p>
+<blockquote>
+  <p>It’s all about creating a smoother experience. Regardless of my setup, I can dive into my blog hassle-free ( local, cloud..).</p>
+</blockquote>
+
+<p>Q. How Does Docker Benefit Blog Development?</p>
+
+<p><strong>Docker brings a level of consistency</strong></p>
+<blockquote>
+  <p>..and ease to blog development that I find invaluable. It’s not just about the code; it’s about creating an environment effortlessly and the benefits extend beyond my own work.</p>
+</blockquote>
+
+<p>Q. Can I Still Make Changes Locally?</p>
+
+<p><strong>Absolutely!</strong></p>
+<blockquote>
+  <p>Dockerization is designed to enhance, not limit, the development process. I’m just as passionate about the hands-on, creative aspect of blogging as you are. With Docker, making changes locally becomes a joy. You can tweak, experiment, and see your ideas come to life in real-time.</p>
+</blockquote>
+
+<p>It’s my way of extending an invitation to the community to explore and collaborate, creating a more accessible space for sharing insights and ideas. 🤗🤗🤗</p>
+
+<hr />
+
+<h3 id="image-showing-running-blog-on-local">“Image showing running blog on local</h3>
+
+<p><img src="/assets/images/2024/02/docker_jeklly/02_docker_blog.png" alt="&quot;Image showing running blog on local&quot;" class="align-center" /></p>
+
+<p><br />
+<br /></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<p>Want to learn more❓
+<br /> 
+Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/post/2024/02/run-your-blog-as-a-docker-container-locally.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />]]></content><author><name>Millan Kaul</name></author><category term="article" /><category term="blog" /><category term="automation" /><category term="docker" /><category term="Jekyll" /><summary type="html"><![CDATA[Written by - Millan Kaul]]></summary></entry><entry><title type="html">k6 - web dashboards + HTML report 📊</title><link href="https://qualitywithmillan.github.io/post/2024/01/k6-with-real-time-performance-monitoring-with-web-dashboards.html" rel="alternate" type="text/html" title="k6 - web dashboards + HTML report 📊" /><published>2024-01-29T00:00:00+00:00</published><updated>2024-01-29T00:00:00+00:00</updated><id>https://qualitywithmillan.github.io/post/2024/01/k6-web-dashboards</id><content type="html" xml:base="https://qualitywithmillan.github.io/post/2024/01/k6-with-real-time-performance-monitoring-with-web-dashboards.html"><![CDATA[<hr />
+
+<p>
+ Written by -
+
+
+    Millan Kaul         
+
+</p>
+
+<hr />
+
+<blockquote>
+  <p>Imagine running a test and having the ability to visualize and monitor its results in real-time. That’s exactly what the k6 web dashboard offers. As your test progresses, the dashboard provides a dynamic overview of the performance metrics observed by k6. This real-time feedback can be a game-changer, allowing you to identify and address potential reliability issues as they occur.</p>
+</blockquote>
+
+<h3 id="k6">K6</h3>
+
+<p>`k6’ is an open-source load testing tool that makes performance testing easy and productive for engineering teams. k6 is free, developer-centric, and extensible. Read more at <a href="https://k6.io/docs/#what-is-k6">what is k6</a>?</p>
+
+<p><strong>Use cases of K6</strong>
+k6 users are typically Developers, QA Engineers, SDETs, and SREs. They use k6 for testing the performance and reliability of APIs, microservices, and websites. Common k6 use cases are:</p>
+
+<ul>
+  <li>Load testing</li>
+  <li>Browser testing</li>
+  <li>Chaos and resilience testing</li>
+  <li>Performance and synthetic monitoring</li>
+</ul>
+
+<p>But this blog post is not related to that. <strong>It is dedicated to the latest cool k6 feature</strong> in release <a href="https://github.com/grafana/k6/releases/tag/v0.49.0">v0.49.0</a>.</p>
+
+<h1 id="️-free---real-time-web-dashboards--for-performance-monitoring-with-an-option-to-save-results-as-html-report">❤️ Free - real time web dashboards 📊 for performance monitoring with an option to save results as HTML report.</h1>
+
+<h3 id="whats-new-in-release-v0490">What’s New! in release <code class="language-plaintext highlighter-rouge">v0.49.0</code></h3>
+
+<p><code class="language-plaintext highlighter-rouge">k6</code> continues to stand out with its latest feature – a built-in web dashboard that takes real-time monitoring to a whole new level.</p>
+
+<p>Let’s jump straight to it.</p>
+
+<p><code class="language-plaintext highlighter-rouge">set K6_WEB_DASHBOARD=true</code> and then your k6 command, lets say <code class="language-plaintext highlighter-rouge">k6 run script.js</code></p>
+
+<p><strong>Usual run results on command line</strong></p>
+
+<p><img src="/assets/images/2024/01/k6_dash/tile.png" alt="&quot;Image showing port 5665 used as default for k6 web dashboards&quot;" class="align-center" /></p>
+
+<hr />
+
+<h4 id="web-html-dashboards">Web (HTML) Dashboards</h4>
+
+<p>There are mainly 3 tabs:</p>
+
+<p><strong>1. Overview</strong></p>
+
+<p><img src="/assets/images/2024/01/k6_dash/04_overview.png" alt="&quot;Image showing port 5665 used as default for k6 web dashboards&quot;" class="align-center" /></p>
+
+<hr />
+
+<p><strong>2. Timings</strong></p>
+
+<p><img src="/assets/images/2024/01/k6_dash/04_Timings.png" alt="&quot;Image showing port 5665 used as default for k6 web dashboards&quot;" class="align-center" /></p>
+
+<hr />
+<p><strong>3. Summary</strong></p>
+
+<p>This one is very close to what the <code class="language-plaintext highlighter-rouge">json</code> report result would usually look like</p>
+
+<p><img src="/assets/images/2024/01/k6_dash/04_summary.png" alt="&quot;Image showing port 5665 used as default for k6 web dashboards&quot;" class="align-center" /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="configurable-port-for-web-dashbord">Configurable port for web dashbord</h3>
+
+<p>By default, the web dashboard is accessible on localhost port <code class="language-plaintext highlighter-rouge">5665</code>.</p>
+
+<p><img src="/assets/images/2024/01/k6_dash/01_port.png" alt="&quot;Image showing port 5665 used as default for k6 web dashboards&quot;" class="align-center" /></p>
+
+<p>However, k6 is flexible, and you can customize the host and port according to your preferences. 
+using <code class="language-plaintext highlighter-rouge">K6_WEB_DASHBOARD_PORT</code>	you can use your choice of port number to bind the web dashboard to.</p>
+
+<hr />
+
+<h3 id="html-repport">HTML repport</h3>
+
+<p>This adaptability extends to features like <code class="language-plaintext highlighter-rouge">K6_WEB_DASHBOARD_EXPORT</code>. 
+You can use that by specifying a filename to automatically export the <code class="language-plaintext highlighter-rouge">HTML test report</code> at the end of the test run.</p>
+
+<blockquote>
+  <p>It’s worth noting that the default value is empty, meaning the report isn’t exported unless configured otherwise.</p>
+</blockquote>
+
+<p>for example <code class="language-plaintext highlighter-rouge">K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=html-report.html k6 run script.js</code></p>
+
+<p>So enabling the web dashboard with <code class="language-plaintext highlighter-rouge">K6_WEB_DASHBOARD=true</code>. Simultaneously, specifying the export feature with <code class="language-plaintext highlighter-rouge">K6_WEB_DASHBOARD_EXPORT=html-report.html</code>, for HTML test report generation at the end of the test run.</p>
+
+<hr />
+
+<p><br />
+<br /></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<p>Want to learn more❓
+<br /> 
+Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/post/2024/01/k6-with-real-time-performance-monitoring-with-web-dashboards.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />]]></content><author><name>Millan Kaul</name></author><category term="article" /><category term="testing" /><category term="automation" /><category term="performance-testing" /><category term="k6" /><category term="html-reporting" /><summary type="html"><![CDATA[Written by - Millan Kaul]]></summary></entry><entry><title type="html">Easiest way to understand `How Appium works`</title><link href="https://qualitywithmillan.github.io/post/2024/01/how-appium-works-01.html" rel="alternate" type="text/html" title="Easiest way to understand `How Appium works`" /><published>2024-01-08T00:00:00+00:00</published><updated>2024-01-08T00:00:00+00:00</updated><id>https://qualitywithmillan.github.io/post/2024/01/how-appium-works-01</id><content type="html" xml:base="https://qualitywithmillan.github.io/post/2024/01/how-appium-works-01.html"><![CDATA[<hr />
+
+<p>
+ Written by -
+
+
+    Millan Kaul         
+
+</p>
+
+<hr />
+
+<h3 id="appium">APPIUM</h3>
+
+<blockquote>
+  <p>In case you don’t know : <code class="language-plaintext highlighter-rouge">Appium</code> is an open-source project and ecosystem of related software, designed to facilitate UI automation of many app platforms, including mobile (iOS, Android, Tizen), browser (Chrome, Firefox, Safari), desktop (macOS, Windows), TV (Roku, tvOS, Android TV, Samsung), and more! ref - <a href="https://appium.io">appium.io</a></p>
+</blockquote>
+
+<p>Although it’s not required to for this article, here how to <a href="https://appium.io/docs/en/2.4/quickstart/install/">Install Appium</a></p>
+
+<h3 id="simplest-way-to-explain-how-appium-works-">Simplest way to explain how Appium works ?</h3>
+
+<p>Before you reach a point of demonstration of a straightforward login scenario in a mobile test automation demo, it’s essential to recognize the intricate blend of science, mathematics, and engineering that forms the backbone of this process.</p>
+
+<p>In this blog, I’ll break down the intricacies and shed light on the most crucial element’s, explaining it in the simplest way possible.</p>
+
+<p><br /></p>
+
+<p>You can get a deeper understanding of “How Appium works?” form <a href="https://appium.io/docs/en/2.4/intro/">Appium in a Nutshell</a>, for now let me present some easy and simple steps to provide you with a clearer understanding of the role of Appium in test automation.
+<br /> 
+<br /></p>
+
+<p><img src="/assets/images/2024/01/appium_24/how-appium-works-01.png" alt="&quot;Image showing 4 steps of how appium works in mobile app automation&quot;" class="align-center" /></p>
+
+<hr />
+
+<p>▸ <strong>Test Script</strong>:</p>
+
+<p>This is where your testing journey begins. You have a script that defines the actions you want to perform on a mobile application. To simplify this is your test automation framework. That has to ultimately interact with <code class="language-plaintext highlighter-rouge">Mobile App Elements</code> (Step #4).</p>
+
+<h3 id="step-1-test-script-to-appium-server">Step 1: Test Script to Appium Server</h3>
+
+<p>Using your <code class="language-plaintext highlighter-rouge">Test Script</code>, you create a test that outlines the actions you want to perform on the mobile app.</p>
+
+<p>And <code class="language-plaintext highlighter-rouge">Appium Server</code> serves as the bridge between your test script and the mobile app elements. Simple and easy: It’s responsible for receiving commands from the test script.</p>
+
+<p><br /></p>
+
+<h3 id="step-2-appium-server-translates-commands">Step 2: Appium Server Translates Commands</h3>
+
+<p>Upon receiving commands, the <code class="language-plaintext highlighter-rouge">Appium server</code> translates them into a format understandable by the WebDriver protocol.</p>
+
+<p><br /></p>
+
+<h3 id="step-3-appium-drivers-execute-commands">Step 3: Appium Drivers Execute Commands</h3>
+
+<p>Specific to each platform (Android or iOS) and responsible for executing the translated commands on the mobile app elements. One of the core roles of what Appium Development community does.</p>
+
+<p><br /></p>
+
+<h3 id="step-4-interaction-with-mobile-app-elements">Step 4: Interaction with Mobile App Elements</h3>
+
+<p>The Appium drivers interact with the mobile app elements based on the translated commands ( coming from Test Scripts), such as clicking buttons or entering text.</p>
+
+<blockquote>
+  <p>Appium acts as a mediator, translating your high-level commands (from test scripts) into actions that the mobile app can understand and execute. This simple yet powerful process allows you to emulate and automate testing scenarios efficiently.</p>
+</blockquote>
+
+<p><br /></p>
+
+<p>But wait, how does that translate to the automation code? I need code to see all the above steps in reality.</p>
+
+<p>Not to worry, I have you covered.</p>
+
+<hr />
+
+<p>Let me use the <em>simplest way to explain how a login scenario works for a social media app</em> ( with respect to the above steps ).</p>
+
+<p><strong>Reference code</strong> : All of the above steps can be roughly mapped to below code, using <code class="language-plaintext highlighter-rouge">JavaScript</code> syntax.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Step 1: Test Script - Setting Desired Capabilities</span>
+<span class="kd">const</span> <span class="nx">desiredCapabilities</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">platformName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Android</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// or 'iOS'</span>
+    <span class="na">platformVersion</span><span class="p">:</span> <span class="dl">'</span><span class="s1">11.0</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// replace with your device version</span>
+    <span class="na">deviceName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">emulator-5554</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// replace with your device name</span>
+    <span class="na">appPackage</span><span class="p">:</span> <span class="dl">'</span><span class="s1">com.example.socialmediaapp</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">appActivity</span><span class="p">:</span> <span class="dl">'</span><span class="s1">com.example.socialmediaapp.LoginActivity</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="c1">// Step 2: Creating Appium Driver Instance</span>
+<span class="kd">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nx">webdriver</span><span class="p">.</span><span class="nx">Builder</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">usingServer</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://localhost:4723/wd/hub</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">withCapabilities</span><span class="p">(</span><span class="nx">desiredCapabilities</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">build</span><span class="p">();</span>
+
+<span class="c1">// Step 3: Connect to App</span>
+<span class="c1">// (Implicitly assumes that the app is already open)</span>
+
+<span class="c1">// Step 4: Execute Commands</span>
+<span class="kd">const</span> <span class="nx">usernameField</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">driver</span><span class="p">.</span><span class="nx">findElement</span><span class="p">(</span><span class="nx">By</span><span class="p">.</span><span class="nx">id</span><span class="p">(</span><span class="dl">'</span><span class="s1">username_input</span><span class="dl">'</span><span class="p">));</span>
+<span class="kd">const</span> <span class="nx">passwordField</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">driver</span><span class="p">.</span><span class="nx">findElement</span><span class="p">(</span><span class="nx">By</span><span class="p">.</span><span class="nx">id</span><span class="p">(</span><span class="dl">'</span><span class="s1">password_input</span><span class="dl">'</span><span class="p">));</span>
+<span class="kd">const</span> <span class="nx">loginButton</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">driver</span><span class="p">.</span><span class="nx">findElement</span><span class="p">(</span><span class="nx">By</span><span class="p">.</span><span class="nx">id</span><span class="p">(</span><span class="dl">'</span><span class="s1">login_button</span><span class="dl">'</span><span class="p">));</span>
+
+<span class="c1">// Step 5: Translate to UIAutomator or XCUITest (Happens behind the scenes)</span>
+
+<span class="c1">// Step 6: Automation Actions</span>
+<span class="k">await</span> <span class="nx">usernameField</span><span class="p">.</span><span class="nx">sendKeys</span><span class="p">(</span><span class="dl">'</span><span class="s1">your_username</span><span class="dl">'</span><span class="p">);</span>
+<span class="k">await</span> <span class="nx">passwordField</span><span class="p">.</span><span class="nx">sendKeys</span><span class="p">(</span><span class="dl">'</span><span class="s1">your_password</span><span class="dl">'</span><span class="p">);</span>
+<span class="k">await</span> <span class="nx">loginButton</span><span class="p">.</span><span class="nx">click</span><span class="p">();</span>
+
+</code></pre></div></div>
+
+<p><br />
+<br /></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<p>Want to learn more❓
+<br /> 
+Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/post/2024/01/how-appium-works-01.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />]]></content><author><name>Millan Kaul</name></author><category term="article" /><category term="testing" /><category term="automation" /><category term="appium" /><category term="mobile-automation" /><summary type="html"><![CDATA[Written by - Millan Kaul]]></summary></entry></feed>

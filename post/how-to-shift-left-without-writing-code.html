@@ -1,0 +1,944 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>How to Shift-Left without writing Code 👩‍💻 | Quality With Millan</title>
+<meta name="description" content="Written by -       Millan Kaul">
+
+
+  <meta name="author" content="Millan Kaul">
+  
+  <meta property="article:author" content="Millan Kaul">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Quality With Millan">
+<meta property="og:title" content="How to Shift-Left without writing Code 👩‍💻">
+<meta property="og:url" content="https://qualitywithmillan.github.io/post/how-to-shift-left-without-writing-code.html">
+
+
+  <meta property="og:description" content="Written by -       Millan Kaul">
+
+
+
+  <meta property="og:image" content="https://qualitywithmillan.github.io/assets/images/2023/06/shift_Left/shift-left.png">
+
+
+
+  <meta name="twitter:site" content="@millankaul">
+  <meta name="twitter:title" content="How to Shift-Left without writing Code 👩‍💻">
+  <meta name="twitter:description" content="Written by -       Millan Kaul">
+  <meta name="twitter:url" content="https://qualitywithmillan.github.io/post/how-to-shift-left-without-writing-code.html">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://qualitywithmillan.github.io/assets/images/2023/06/shift_Left/shift-left.png">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2023-06-03T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://qualitywithmillan.github.io/post/how-to-shift-left-without-writing-code.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Millan Kaul",
+      "url": "https://qualitywithmillan.github.io/",
+      "sameAs": ["https://twitter.com/millankaul","https://www.linkedin.com/in/millankaul"]
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Quality With Millan Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- ToDo QualityWithMillan -->
+
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="millankaul" data-description="Support me on Buy me a coffee!" data-message="Support this blog - click here to Donate! ❤️ " data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+
+
+
+    <!-- start custom head snippets -->
+
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/fav/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/fav/android-chrome-512x512.png">
+<link rel="apple-touch-icon type" type="image/png" sizes="512x512" href="/assets/images/fav/apple-touch-icon.png">
+
+<!-- <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/fav/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="16x16" href="/assets/images/fav/favicon-16x16.png"> -->
+
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/fav/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="shortcut icon" href="/assets/images/fav/favicon.ico">
+<link rel="manifest" href="/assets/images/fav/site.webmanifest">
+
+<!-- new files generated https://favicon.io/favicon-converter/ -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/88x88.png" alt="Quality With Millan"></a>
+        
+        <a class="site-title" href="/">
+          Quality With Millan
+          <span class="site-subtitle">All about #QualityWithMillan</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About ℹ️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags 🏷️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/">Tools ⚒️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/funding">Support 🙏</a>
+            </li><li class="masthead__menu-item">
+              <a href="/terms/">Terms & Privacy</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://qualitywithmillan.github.io/">
+        <img src="/assets/images/bio-photo.jpg" alt="Millan Kaul" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://qualitywithmillan.github.io/" itemprop="url">Millan Kaul</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">AU 🇦🇺 | CA 🇨🇦</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="How to Shift-Left without writing Code 👩‍💻">
+    <meta itemprop="description" content=" Written by -    Millan Kaul         ">
+    <meta itemprop="datePublished" content="2023-06-03T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://qualitywithmillan.github.io/post/how-to-shift-left-without-writing-code.html" class="u-url" itemprop="url">How to Shift-Left without writing Code 👩‍💻
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-06-03T00:00:00+00:00">June 3, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <hr />
+
+<p>
+ Written by -
+
+
+    Millan Kaul         
+
+</p>
+
+<hr />
+
+<p>From one of my connection <a href="https://www.linkedin.com/in/gituto/">Dennis Nyawira</a> on this <a href="https://www.linkedin.com/feed/update/urn:li:activity:7068990608341635072">LinkedIn Post</a></p>
+
+<blockquote>
+  <p>I’m talking about “Shift-Left Testing” - not just a phrase, but a mindset. This is us, saying “<strong>Hapana</strong>” to last-minute testing hassles and “<strong>Karibu</strong>” to integrating QA right from the start of our development process.</p>
+</blockquote>
+
+<p><br /><br />
+For this post, I will keep the definition of <code class="language-plaintext highlighter-rouge">shift-left</code> or <code class="language-plaintext highlighter-rouge">Karibu</code> as:
+<br /></p>
+
+<blockquote>
+  <p>Think of <code class="language-plaintext highlighter-rouge">shift-left</code> as the <em>practice</em> of “emphasizing early involvement in various aspects of the development process to deliver high-quality software.”</p>
+</blockquote>
+
+<p>I will share the best practices <em>from my personal experience</em> and success stories ⭐️⭐️⭐️⭐️⭐️ on “How we can achieve that without writing code or getting involved in code writing” (unit tests, mock tests, etc.)</p>
+
+<p>I have made my best effort to limit this post to selected sections to save both our time, focusing only on proven pointers 🎯.</p>
+
+<p><br /><br /></p>
+
+<p><img src="/assets/images/2023/06/shift_Left/shift-left.png" alt="shift-left" />
+Image credits : vijay verma 🙌🏼</p>
+
+<p><br /><br /></p>
+
+<p>In this article, I will share four <em>simple techniques</em> that will allow you to experience and implement <code class="language-plaintext highlighter-rouge">shift-left</code> practices firsthand, without needing to write code.</p>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p><a href="#collaborating-with-uiux-designers">Collaborating with Designers</a></p>
+  </li>
+  <li>
+    <p><a href="#managing-and-setting-multi-vendor-expectations-and-delivery-plan">Managing Multi-Vendor Expectations</a></p>
+  </li>
+  <li>
+    <p><a href="#involvement-in-platform-and-architecture-design-decisions">Contributing to Architecture Design Decisions</a></p>
+  </li>
+  <li>
+    <p><a href="#early-feedback-through-cultural-and-mindset-changes">Early Feedback &amp; Culture Change</a></p>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+
+<h2 id="collaborating-with-uiux-designers">Collaborating with UI/UX Designers</h2>
+
+<p>If your work involves front-end development, such as mobile apps, web apps, internal portals, or technical interfaces, it is essential to identify the design team or your user experience (UX) colleague and actively engage with them as soon as they start gathering requirements.</p>
+
+<p>Your involvement can take the form of a casual coffee chat, one-on-one sessions, or joining their requirement gathering meetings as a silent listener. 
+By working closely with designers, you gain an early platform to share your experience-based feedback, which can be immensely valuable.</p>
+
+<p>Many system design defects can be identified and resolved during this phase, preventing them from becoming production bugs in the future.</p>
+
+<p>⭐️ <em>Example from my own experience:</em> ⭐️ 
+A few years back, I was working on a banking project where a new product was being developed that included a fancy fund transfer feature. 
+Our UX team had done a great job designing it. However, once I started actively collaborating with them,</p>
+
+<p>I realized that they hadn’t considered transfers from joint accounts. 
+Questions arose about whether multi-person approval was required, if this feature needed to be excluded, and the special reporting and auditing requirements for joint accounts as per banking regulations (in this case, specific to Australia).</p>
+
+<p>By raising these considerations early on, we were able to address them and avoid potential issues down the line.</p>
+
+<p>The <strong>second</strong> technique ⏩</p>
+
+<p><br /><br /></p>
+
+<h2 id="managing-and-setting-multi-vendor-expectations-and-delivery-plan">Managing and Setting Multi-Vendor Expectations and Delivery Plan</h2>
+
+<p>In today’s fast-paced software development landscape, companies often leverage existing products or engage multiple partners (vendors) to integrate various components. As a non-technical professional, you can play a crucial role in managing expectations and creating a cohesive delivery plan in such scenarios.</p>
+
+<p>Acting as a bridge between vendors, you can facilitate communication, align goals, and ensure a shared understanding of project requirements. By addressing potential conflicts and streamlining collaboration, you can save valuable time and prevent delays in delivery and testing phases.</p>
+
+<p>⭐️ <em>Here’s how I have successfully managed multi-vendor projects in the past:</em> ⭐️</p>
+
+<p>I have employed a documentation-driven approach. By creating detailed documentation and inviting all stakeholders to review and provide their feedback. 
+That way we were able to ensure clarity and consensus on project requirements.</p>
+
+<p>This iterative process of reviewing and incorporating corrections helped eliminate potential misunderstandings and minimized back-and-forth communication later in the project.</p>
+
+<p>As a result, we achieved smoother collaboration, reduced delays, and improved overall efficiency in the development process.</p>
+
+<p>Next, <strong>third</strong> technique  ⏩</p>
+
+<p><br /><br /></p>
+
+<h2 id="involvement-in-platform-and-architecture-design-decisions">Involvement in Platform and Architecture Design Decisions</h2>
+
+<p>Remember, even if you’re not writing code, you can still actively participate in design decisions to contribute to the shift-left approach.</p>
+
+<p>Engage with stakeholders, particularly the development team, during the early stages of a project to provide your perspective on design choices.</p>
+
+<p>Ensure factors such as usability and scalability are given due consideration.</p>
+
+<p>By doing so, you can help shape the direction of the product, ensuring it aligns with business objectives and requirements. 
+Your early involvement allows for the identification and rectification of potential issues, ultimately reducing the cost of fixing them later.</p>
+
+<p>⭐️ <em>Here’s a memorable example:</em> ⭐️</p>
+
+<p>I once worked on a pure API project where the development team was highly skilled. However, they had designed everything assuming that only one API would be accessed at a time. I had to intervene and inform them that I would be running a parallel load test using k6 with at least 500 users, which would likely expose the limitations of their design. To address this, I suggested implementing a smart solution such as queuing (using SQS) or utilizing async/await functionality. 
+By providing this insight early on, we were able to address scalability concerns and avoid potential performance issues.</p>
+
+<p>Last one 👇🏼 for this post.</p>
+
+<p><br /><br /></p>
+
+<h2 id="early-feedback-through-cultural-and-mindset-changes">Early Feedback through Cultural and Mindset Changes:</h2>
+
+<p>While I have touched upon this point earlier, I would like to provide some specific advice if you are planning to introduce shift-left practices to your team for the first time.</p>
+
+<p>Always start actively seek opportunities to provide early feedback on prototypes, wireframes, and mockups. 
+Don’t hesitate to share your insights on user experience, visual design, and functionality. 
+Become an advocate for quality in the product you are building.</p>
+
+<p>That way you achieve clear alignment within the team. 👈</p>
+
+<p><br /><br /></p>
+
+<p>⭐️ Remember, <em>shift-left is not just a methodology</em>; it <strong>requires a cultural and mindset change</strong>. ⭐️</p>
+
+<ul>
+  <li>It should be approached iteratively.</li>
+  <li>Your early feedback empowers the team to make informed decisions, leading to a more refined end product.</li>
+</ul>
+
+<p>By embracing this cultural shift, you encourage a collaborative and proactive approach to development. 
+It fosters a sense of ownership and responsibility among team members, ultimately leading to improved quality and customer satisfaction 🙌🏼 .</p>
+
+<p><br /><br /></p>
+
+<p>Make a note of these <strong>keywords</strong> to remember this post : 
+<br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">#️⃣ Collaboration</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">#️⃣ UXDesign</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">#️⃣ MultiVendorManagement</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">#️⃣ ArchitectureDecisions</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">#️⃣ EarlyFeedback</code></p>
+
+<p><br /><br />
+I’m sure you have something new and even better than my top <em><strong>How to Shift-Left without Writing Code 👩‍💻</strong></em>  techniques.</p>
+
+<p>I invite you to share your ideas and experiences in thread under this post: <a href="https://www.linkedin.com/posts/millankaul_how-to-shift-left-without-writing-code-activity-7071208899739070464--fIw">On LinkedIn : How to Shift-Left without Writing Code</a></p>
+
+<p>Follow my hash tag <a href="https://www.linkedin.com/feed/hashtag/?keywords=qualitywithmillan">#QualityWithMillan</a> for more posts and Quality updates.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#collaboration" class="page__taxonomy-item p-category" rel="tag">collaboration</a><span class="sep">, </span>
+    
+      <a href="/tags/#earlyfeedback" class="page__taxonomy-item p-category" rel="tag">EarlyFeedback</a><span class="sep">, </span>
+    
+      <a href="/tags/#qualityandtesting" class="page__taxonomy-item p-category" rel="tag">qualityAndTesting</a><span class="sep">, </span>
+    
+      <a href="/tags/#shift-left" class="page__taxonomy-item p-category" rel="tag">shift-left</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">blog</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-06-03T00:00:00+00:00">June 3, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=millankaul&text=How+to+Shift-Left+without+writing+Code+%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB%20https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Fhow-to-shift-left-without-writing-code.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Fhow-to-shift-left-without-writing-code.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Fhow-to-shift-left-without-writing-code.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/post/the-paradigm-of-quality-optimised.html" class="pagination--pager" title="The paradigm of Quality - Optimised
+">Previous</a>
+    
+    
+      <a href="/tutorial/run-your-first-restful-api-service-using-docker.html" class="pagination--pager" title="Run your first RESTful API service using docker
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/11/triangle/speed-quality-cost.gif" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/choosing-between-speed-quality-and-cost-in-test-automation.html" rel="permalink">Choosing between : Speed, Quality, Cost - in Test Automation
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-11-11T00:00:00+00:00">November 11, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/10/json/json_n_lang_logo.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/json-parsing-guide-with-code-examples.html" rel="permalink">The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-10-16T00:00:00+00:00">October 16, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/09/test_data/data.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/test-data-generation-in-test-automation.html" rel="permalink">Importance of Test Data - with code example
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-09-14T00:00:00+00:00">September 14, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/04/webdriver/webdriver-saga.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/web-driver-saga.html" rel="permalink">WebDriver Saga
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-04-24T00:00:00+00:00">April 24, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Neelam Pal
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Search a blog...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Search a blog..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="https://qualitywithmillan.github.io/" rel="nofollow noopener noreferrer"><i class="fa fa-hashtag" aria-hidden="true"></i> QualityWithMillan</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Millan Kaul. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+  
+    <script src="/assets/js/custom/format.js"></script>
+  
+    <script src="/assets/js/custom/main.js"></script>
+  
+
+
+   
+  <!--custom External JavaScript file-->
+	<script src="/assets/js/custom/format.js"></script>
+
+  </body>
+</html>

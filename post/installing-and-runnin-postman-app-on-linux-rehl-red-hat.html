@@ -1,0 +1,1001 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Installing and running Postman app on linux (REHL 8.x) | Quality With Millan</title>
+<meta name="description" content="Written by -       Millan Kaul">
+
+
+  <meta name="author" content="Millan Kaul">
+  
+  <meta property="article:author" content="Millan Kaul">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Quality With Millan">
+<meta property="og:title" content="Installing and running Postman app on linux (REHL 8.x)">
+<meta property="og:url" content="https://qualitywithmillan.github.io/post/installing-and-runnin-postman-app-on-linux-rehl-red-hat.html">
+
+
+  <meta property="og:description" content="Written by -       Millan Kaul">
+
+
+
+  <meta property="og:image" content="https://qualitywithmillan.github.io/assets/images/2023/01/RELH/rehl_postman_hero.png">
+
+
+
+  <meta name="twitter:site" content="@millankaul">
+  <meta name="twitter:title" content="Installing and running Postman app on linux (REHL 8.x)">
+  <meta name="twitter:description" content="Written by -       Millan Kaul">
+  <meta name="twitter:url" content="https://qualitywithmillan.github.io/post/installing-and-runnin-postman-app-on-linux-rehl-red-hat.html">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://qualitywithmillan.github.io/assets/images/2023/01/RELH/rehl_postman_hero.png">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2023-01-20T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://qualitywithmillan.github.io/post/installing-and-runnin-postman-app-on-linux-rehl-red-hat.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Millan Kaul",
+      "url": "https://qualitywithmillan.github.io/",
+      "sameAs": ["https://twitter.com/millankaul","https://www.linkedin.com/in/millankaul"]
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Quality With Millan Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- ToDo QualityWithMillan -->
+
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="millankaul" data-description="Support me on Buy me a coffee!" data-message="Support this blog - click here to Donate! ❤️ " data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+
+
+
+    <!-- start custom head snippets -->
+
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/fav/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/fav/android-chrome-512x512.png">
+<link rel="apple-touch-icon type" type="image/png" sizes="512x512" href="/assets/images/fav/apple-touch-icon.png">
+
+<!-- <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/fav/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="16x16" href="/assets/images/fav/favicon-16x16.png"> -->
+
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/fav/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="shortcut icon" href="/assets/images/fav/favicon.ico">
+<link rel="manifest" href="/assets/images/fav/site.webmanifest">
+
+<!-- new files generated https://favicon.io/favicon-converter/ -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/88x88.png" alt="Quality With Millan"></a>
+        
+        <a class="site-title" href="/">
+          Quality With Millan
+          <span class="site-subtitle">All about #QualityWithMillan</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About ℹ️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags 🏷️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/">Tools ⚒️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/funding">Support 🙏</a>
+            </li><li class="masthead__menu-item">
+              <a href="/terms/">Terms & Privacy</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://qualitywithmillan.github.io/">
+        <img src="/assets/images/bio-photo.jpg" alt="Millan Kaul" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://qualitywithmillan.github.io/" itemprop="url">Millan Kaul</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">AU 🇦🇺 | CA 🇨🇦</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Installing and running Postman app on linux (REHL 8.x)">
+    <meta itemprop="description" content=" Written by -    Millan Kaul         ">
+    <meta itemprop="datePublished" content="2023-01-20T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://qualitywithmillan.github.io/post/installing-and-runnin-postman-app-on-linux-rehl-red-hat.html" class="u-url" itemprop="url">Installing and running Postman app on linux (REHL 8.x)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-20T00:00:00+00:00">January 20, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <hr />
+
+<p>
+ Written by -
+
+
+    Millan Kaul         
+
+</p>
+
+<h2 id="installing-and-running-postman-app-on-linux-rehl8x">Installing and running Postman app on linux (REHL 8.x)</h2>
+<blockquote>
+  <p>in less than 5 minutes</p>
+</blockquote>
+
+<p>If you are a Linux user such as Red Hat ( REHL), chances are high that you are a fan of command line (CLI / terminal).
+If the answer is YES ! ✔️</p>
+
+<p>Let us set up postman for you in less than 5 minutes; yes 🖐️ five !</p>
+
+<blockquote>
+  <p>For simplification I will use the term <code class="language-plaintext highlighter-rouge">"terminal"</code> ⬛ in this article</p>
+</blockquote>
+
+<p><img src="/assets/images/2023/01/RELH/rehl_postman_hero.png" alt="Screen shot of rehat desktop with postman app on left sidebar" /></p>
+<figcaption align="center">Rehat desktop with postman app on left sidebar</figcaption>
+
+<hr />
+
+<h1 id="lets-get-started">Lets get started !</h1>
+
+<p>Snaps are app packages for desktop, cloud and IoT….</p>
+
+<p>Tip! Think of snap (snapd) as a playstore /appstore for your linux OS need more info go here</p>
+
+<p>Pro Tip! - If you already have Snap installed jump to 🔗 <strong>Step #4</strong></p>
+
+<p><br /></p>
+
+<h3 id="step-1-install-epel-release-latest">Step 1: Install epel-release-latest</h3>
+
+<p>EPEL has an ‘epel-release’ package that includes gpg keys for package signing and repository information.More about epel here
+we will use ( -q, - quiet : quiet operation) to get less noise on terminal, you can skip using -q if you like the noise :)
+Open your terminal and copy paste the command and hit enter !</p>
+
+<p><strong>so, 🏃 run on terminal ⬛</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>dnf <span class="nt">-q</span> <span class="nb">install </span>https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+</code></pre></div></div>
+
+<p><strong>**Something like this will happen**</strong></p>
+
+<blockquote>
+  <p>💡<em>Note</em>: You may have timestamp in your local time format</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>dnf <span class="nt">-q</span> <span class="nb">install </span>https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+Last metadata expiration check: 0:15:36 ago on Sat 11 Sep 2021 11:20:48 AEST.
+epel-release-latest-8.noarch.rpm 20 kB/s | 23 kB 00:01
+Package epel-release-8–11.el8.noarch is already installed.
+Dependencies resolved.
+Nothing to <span class="k">do</span><span class="nb">.</span>
+Complete!
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="step-2-update-current-state-of-yourdnf">Step 2: Update current state of your dnf</h3>
+
+<p>DNF or Dandified YUM is the next-generation version of the Yellowdog Updater, Modified, a package manager for .rpm-based distributions.</p>
+
+<p><strong>🏃 run on terminal ⬛ ️</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>dnf <span class="nt">-q</span> upgrade
+</code></pre></div></div>
+
+<blockquote>
+  <p>💡<em>Note</em>: If you see any prompt like this , have a look and type y + enter</p>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="step-3-install-snapd-akasnap">Step 3: Install snapd a.k.a snap</h3>
+<p>🏃 run on terminal ⬛ ️
+sudo yum install snapd</p>
+
+<hr />
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nb">install </span>snapd
+Last metadata expiration check: 0:56:46 ago on Sat 11 Sep 2021 11:20:48 AEST.
+Package snapd-2.51.7–1.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to <span class="k">do</span><span class="nb">.</span>
+Complete!
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h4 id="step-31-enablesystemd">Step 3.1: Enable systemd:</h4>
+
+<p>Once installed, the systemd unit that manages the main snap communication socket needs to be enabled
+sudo systemctl enable - now snapd.socket</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Created symlink /etc/systemd/system/sockets.target.wants/snapd.socket → /usr/lib/systemd/system/snapd.socket.
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h4 id="step-32-verify-installation-ofsnap">Step 3.2: verify installation of snap</h4>
+<p>Open a new terminal or if you can reboot your system for changes to take effect</p>
+
+<p><strong>🏃 run on terminal ⬛</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snap version
+snap 2.51.7–1.el8
+snapd 2.51.7–1.el8
+series 16
+rhel 8.4
+kernel 4.18.0–305.17.1.el8_4.x86_64
+</code></pre></div></div>
+
+<blockquote>
+  <p>💡<em>Note</em>: All the details above are updated as on Mid September 2021. 
+Your versions may be different for you, the idea is to get similar output successfully.</p>
+</blockquote>
+
+<hr />
+
+<h1 id="finally-">Finally 🎉</h1>
+
+<p><br /></p>
+
+<h3 id="step-4-install-postman-app">Step 4: Install postman app 🎽</h3>
+<p>Tip ( you can install any app/package available on snap(d) if you are at this step</p>
+
+<p><strong>🏃 run on terminal ⬛ ️</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>snap <span class="nb">install </span>postman
+</code></pre></div></div>
+
+<hr />
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>snap <span class="nb">install </span>postman
+Download snap <span class="s2">"snapd"</span> <span class="o">(</span>12883<span class="o">)</span> from channel <span class="s2">"stable"</span> 2021–09–11T12:27:50+10:00 INFO Waiting <span class="k">for </span>automatic snapd restart…
+postman <span class="o">(</span>v8/stable<span class="o">)</span> 8.12.2 from Postman, Inc. <span class="o">(</span>postman-inc✓<span class="o">)</span> installed
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="step-41-verify-installation-of-postman️">Step 4.1: verify installation of postman ✔️</h3>
+
+<p><strong>🏃 run on terminal ⬛</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">snap list</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snap list
+Name Version Rev Tracking Publisher Notes
+core18 20210722 2128 latest/stable canonical✓ base
+postman 8.12.2 147 v8/stable postman-inc✓ -
+snapd 2.51.4 12883 latest/stable canonical✓ snapd
+</code></pre></div></div>
+
+<p>👀 <strong>That’s it 👉 postman 8.12.2 147 v8/stable postman-inc✓ -</strong></p>
+
+<p><br /></p>
+
+<h3 id="step-42-just-verify-postman-specifically️️">Step 4.2: Just verify postman specifically ! ✔️✔️</h3>
+
+<p>If you have a very long list of snap apps, perhaps try this:</p>
+
+<p><strong>🏃 run on terminal ⬛</strong> ️</p>
+
+<p><code class="language-plaintext highlighter-rouge">snap list postman</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snap list postman
+Name Version Rev Tracking Publisher Notes
+postman 8.12.2 147 v8/stable postman-inc✓ -
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="step-5-running-launching-the-postman-app">Step 5: Running /Launching the postman app 🏃</h3>
+
+<p><strong>🏃 run on terminal ⬛</strong> ️</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postman
+</code></pre></div></div>
+
+<p><strong>or</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snap run postman
+</code></pre></div></div>
+
+<p><img src="/assets/images/2023/01/RELH/rehl_postman_launch.png" alt="postman app launching on linux system" /></p>
+<figcaption align="center">Postman app launching on linux system</figcaption>
+
+<p><img src="/assets/images/2023/01/RELH/rehl_postman_runnning.png" alt="postman app runnning on linux system" /></p>
+<figcaption align="center">Postman app running on linux system</figcaption>
+
+<h3 id="by-the-way-by-this-time-you-may-see-it-installed-under-your-apps--type-postman">By the way, by this time you may see it installed under your apps.. 💻 type “ postman”</h3>
+
+<p><img src="/assets/images/2023/01/RELH/rehl_postman_shortcut.png" alt="postman app shortcut on rehl" /></p>
+<figcaption align="center">Postman app shortcut on rehl</figcaption>
+
+<h1 id="step-x-troubleshooting-">Step #X: Troubleshooting 👷</h1>
+
+<p>Sometimes the sky is not that blue ☁️ and you may get some error 😩</p>
+
+<p>You have my hand 👐 here is what I faced and worked around , hopefully will save some of your time</p>
+
+<p>💥 If you start seeing some weird issues around GPU.. that I faced during my setup (  <em>screen: postman app launching on linux system</em> ) 🚧</p>
+
+<p>The disableGPU setting is set to undefined
+Not disabling GPU</p>
+
+<p>Don’t worry its a known and open issue at postman. See my comment <a href="https://github.com/postmanlabs/postman-app-support/issues/10252#issuecomment-917332351">here on postman support</a></p>
+<blockquote>
+  <p>probably might have been solved whne you will be reading this post.</p>
+</blockquote>
+
+<p>Solution 💠 for me a simple machine reboot did the magic ♻️</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#linux" class="page__taxonomy-item p-category" rel="tag">linux</a><span class="sep">, </span>
+    
+      <a href="/tags/#tools" class="page__taxonomy-item p-category" rel="tag">tools</a><span class="sep">, </span>
+    
+      <a href="/tags/#tutorial" class="page__taxonomy-item p-category" rel="tag">tutorial</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">blog</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-01-20T00:00:00+00:00">January 20, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=millankaul&text=Installing+and+running+Postman+app+on+linux+%28REHL+8.x%29%20https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Finstalling-and-runnin-postman-app-on-linux-rehl-red-hat.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Finstalling-and-runnin-postman-app-on-linux-rehl-red-hat.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Finstalling-and-runnin-postman-app-on-linux-rehl-red-hat.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/post/what-is-nvm--in-5-minutes.html" class="pagination--pager" title="What is 𝗻𝘃𝗺 ❓️ - ⓝⓥⓜ 𝟭𝟬𝟭 in 5 minutes !
+">Previous</a>
+    
+    
+      <a href="/post/co-author/paul/plus-ca-change-in-test-automation.html" class="pagination--pager" title="Plus Ca Change in Test Automation
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/11/triangle/speed-quality-cost.gif" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/choosing-between-speed-quality-and-cost-in-test-automation.html" rel="permalink">Choosing between : Speed, Quality, Cost - in Test Automation
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-11-11T00:00:00+00:00">November 11, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/10/json/json_n_lang_logo.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/json-parsing-guide-with-code-examples.html" rel="permalink">The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-10-16T00:00:00+00:00">October 16, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/09/test_data/data.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/test-data-generation-in-test-automation.html" rel="permalink">Importance of Test Data - with code example
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-09-14T00:00:00+00:00">September 14, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/04/webdriver/webdriver-saga.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/web-driver-saga.html" rel="permalink">WebDriver Saga
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-04-24T00:00:00+00:00">April 24, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Neelam Pal
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Search a blog...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Search a blog..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="https://qualitywithmillan.github.io/" rel="nofollow noopener noreferrer"><i class="fa fa-hashtag" aria-hidden="true"></i> QualityWithMillan</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Millan Kaul. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+  
+    <script src="/assets/js/custom/format.js"></script>
+  
+    <script src="/assets/js/custom/main.js"></script>
+  
+
+
+   
+  <!--custom External JavaScript file-->
+	<script src="/assets/js/custom/format.js"></script>
+
+  </body>
+</html>

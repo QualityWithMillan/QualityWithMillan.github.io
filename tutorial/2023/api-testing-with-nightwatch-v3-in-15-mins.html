@@ -1,0 +1,1013 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>API testing with nightwatch in 15 mins | Quality With Millan</title>
+<meta name="description" content="Written by -       Millan Kaul">
+
+
+  <meta name="author" content="Millan Kaul">
+  
+  <meta property="article:author" content="Millan Kaul">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Quality With Millan">
+<meta property="og:title" content="API testing with nightwatch in 15 mins">
+<meta property="og:url" content="https://qualitywithmillan.github.io/tutorial/2023/api-testing-with-nightwatch-v3-in-15-mins.html">
+
+
+  <meta property="og:description" content="Written by -       Millan Kaul">
+
+
+
+  <meta property="og:image" content="https://qualitywithmillan.github.io/assets/images/2023/07/nightwatch-js-api/nightwatch-js-api-00.png">
+
+
+
+  <meta name="twitter:site" content="@millankaul">
+  <meta name="twitter:title" content="API testing with nightwatch in 15 mins">
+  <meta name="twitter:description" content="Written by -       Millan Kaul">
+  <meta name="twitter:url" content="https://qualitywithmillan.github.io/tutorial/2023/api-testing-with-nightwatch-v3-in-15-mins.html">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://qualitywithmillan.github.io/assets/images/2023/07/nightwatch-js-api/nightwatch-js-api-00.png">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2023-07-03T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://qualitywithmillan.github.io/tutorial/2023/api-testing-with-nightwatch-v3-in-15-mins.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Millan Kaul",
+      "url": "https://qualitywithmillan.github.io/",
+      "sameAs": ["https://twitter.com/millankaul","https://www.linkedin.com/in/millankaul"]
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Quality With Millan Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- ToDo QualityWithMillan -->
+
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="millankaul" data-description="Support me on Buy me a coffee!" data-message="Support this blog - click here to Donate! ❤️ " data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+
+
+
+    <!-- start custom head snippets -->
+
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/fav/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/fav/android-chrome-512x512.png">
+<link rel="apple-touch-icon type" type="image/png" sizes="512x512" href="/assets/images/fav/apple-touch-icon.png">
+
+<!-- <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/fav/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="16x16" href="/assets/images/fav/favicon-16x16.png"> -->
+
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/fav/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="shortcut icon" href="/assets/images/fav/favicon.ico">
+<link rel="manifest" href="/assets/images/fav/site.webmanifest">
+
+<!-- new files generated https://favicon.io/favicon-converter/ -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/88x88.png" alt="Quality With Millan"></a>
+        
+        <a class="site-title" href="/">
+          Quality With Millan
+          <span class="site-subtitle">All about #QualityWithMillan</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About ℹ️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags 🏷️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/">Tools ⚒️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/funding">Support 🙏</a>
+            </li><li class="masthead__menu-item">
+              <a href="/terms/">Terms & Privacy</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://qualitywithmillan.github.io/">
+        <img src="/assets/images/bio-photo.jpg" alt="Millan Kaul" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://qualitywithmillan.github.io/" itemprop="url">Millan Kaul</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">AU 🇦🇺 | CA 🇨🇦</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="API testing with nightwatch in 15 mins">
+    <meta itemprop="description" content=" Written by -    Millan Kaul         ">
+    <meta itemprop="datePublished" content="2023-07-03T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://qualitywithmillan.github.io/tutorial/2023/api-testing-with-nightwatch-v3-in-15-mins.html" class="u-url" itemprop="url">API testing with nightwatch in 15 mins
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-07-03T00:00:00+00:00">July 3, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <hr />
+
+<p>
+ Written by -
+
+
+    Millan Kaul         
+
+</p>
+
+<hr />
+
+<h1 id="here-is-api-testing-using--nightwatch-️">Here is <code class="language-plaintext highlighter-rouge">API testing</code> using 🦉 nightwatch ↘️</h1>
+
+<ol>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#prerequisites">Prerequisites</a></li>
+  <li><a href="#1-set-up-%EF%B8%8F">Set up ⚙️</a>
+    <ul>
+      <li><a href="#11-update-config-for-api-test">Update config for api testing</a></li>
+    </ul>
+  </li>
+  <li><a href="#2-run-%EF%B8%8F">Run 🏃🏻‍♂️ API test’s</a></li>
+  <li><a href="#bonus-automated-html-report-">HTML result report 📊</a></li>
+</ol>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The official <a href="https://nightwatchjs.org/">Nightwatch</a> website states that “it’s one framework for all platforms”</p>
+
+<ul>
+  <li>Mobile web</li>
+  <li>Native mobile</li>
+  <li>Real desktop browsers</li>
+  <li>Accessibility</li>
+  <li>Visual testing</li>
+</ul>
+
+<blockquote>
+  <p>But what caught my attention was its lightweight, quick and easy setup. For API testing in as little as 15 minutes (including setup!)</p>
+</blockquote>
+
+<p><img src="/assets/images/2023/07/nightwatch-js-api/nightwatch-js-api-00.png" alt="shift-left" class="align-center" /></p>
+
+<p>Without a wait, let me show you how easy it is set up and run your first API test withing minutes in just <strong>2 steps</strong> ✌️.</p>
+
+<p><code class="language-plaintext highlighter-rouge">set up</code> &amp; <code class="language-plaintext highlighter-rouge">run</code>  <em>++ <code class="language-plaintext highlighter-rouge">HTML report</code> no complex configuration required..</em></p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Latest LTS version of NodeJS, you may download it from <a href="https://nodejs.org/en/download">here</a></p>
+
+<p>and if you are in a rush, here my github repo with complete source code 👉 <a href="https://github.com/eaccmk/nightwatch-api-automation">nightwatch-api-automation repo</a></p>
+
+<h2 id="1-set-up-️">1. Set up ⚙️</h2>
+
+<p>Open your terminal and start following the steps AS-IS please.</p>
+
+<hr />
+
+<p>A. Create a directory named <code class="language-plaintext highlighter-rouge">nightwatch-api-automation</code> or anything you like, this is where you will setup your project + nightwatch</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir nightwatch-api-automation
+</code></pre></div></div>
+
+<hr />
+
+<p>B. Install using below command or follow steps to <a href="https://nightwatchjs.org/guide/quickstarts/create-and-run-a-nightwatch-test.html">install nightwatchJS</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init nightwatch nightwatch-api-automation
+</code></pre></div></div>
+
+<blockquote>
+  <p>Choose the config options as per below screen shot [ I kept my choice simple ]</p>
+</blockquote>
+
+<p><img src="/assets/images/2023/07/nightwatch-js-api/nightwatch-js-api-01_setup_nightwatch.png" alt="set up nightwatch config steps screenshot" /></p>
+
+<p>Now let’s go inside the <code class="language-plaintext highlighter-rouge">nightwatch-api-automation</code> directory.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd nightwatch-api-automation
+</code></pre></div></div>
+
+<p>And add <code class="language-plaintext highlighter-rouge">nightwatch apitesting</code> dependency to this project.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i @nightwatch/apitesting --save-dev
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="11-update-config-for-api-test">1.1. Update config for api test</h3>
+
+<p>Let the project config know that you want to run <strong>API test’s only</strong>, so :</p>
+
+<p>Go to <code class="language-plaintext highlighter-rouge">nightwatch.conf.js</code> file and add <code class="language-plaintext highlighter-rouge">apitesting</code> as a plugin.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Replace</span> <span class="o">&gt;&gt;</span> <span class="s2">`plugins: [],`</span>
+
+<span class="kd">with</span>    <span class="o">&gt;&gt;</span> <span class="s2">`plugins: ['@nightwatch/apitesting'],`</span>
+</code></pre></div></div>
+
+<p>In same config file (<code class="language-plaintext highlighter-rouge">nightwatch.conf.js</code>) add details about <code class="language-plaintext highlighter-rouge">api_testing{}</code> object like this ( 📝 copy paste is fun)</p>
+
+<p>So  this  ⬇️</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">webdriver</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">start_process</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">server_path</span><span class="p">:</span> <span class="dl">''</span>
+      <span class="p">},</span>
+      
+    <span class="p">},</span>
+    
+    <span class="nx">chrome</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">desiredCapabilities</span><span class="p">:</span> <span class="p">{</span>
+</code></pre></div></div>
+
+<p>Becomes ⬇️</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">webdriver</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">start_process</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">server_path</span><span class="p">:</span> <span class="dl">''</span>
+      <span class="p">},</span>
+      
+    <span class="p">},</span>
+
+	<span class="nx">api_testing</span><span class="p">:</span> <span class="p">{</span>                 <span class="c1">// start</span>
+	  <span class="nl">start_session</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+	    <span class="nx">webdriver</span><span class="p">:</span> <span class="p">{</span>
+	      <span class="nl">start_process</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+	  <span class="p">}</span>
+	<span class="p">},</span>                             <span class="c1">// end </span>
+    
+    <span class="nx">chrome</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">desiredCapabilities</span><span class="p">:</span> <span class="p">{</span>
+</code></pre></div></div>
+
+<p>That’s it, end of set up step ! 🙌🏼</p>
+
+<hr />
+
+<h2 id="2-run-️">2. Run 🏃🏻‍♂️</h2>
+
+<p>Let’s create a simple API test and run that.</p>
+
+<ol>
+  <li>Create a folder named <code class="language-plaintext highlighter-rouge">API</code> under <code class="language-plaintext highlighter-rouge">test</code> folder.</li>
+  <li>Then create your test file named <code class="language-plaintext highlighter-rouge">api-test.js</code> under <code class="language-plaintext highlighter-rouge">API</code> folder or simply run:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>touch ./test/API/api-test.js
+</code></pre></div></div>
+
+<p>Copy this code in the newly crerated file <code class="language-plaintext highlighter-rouge">api-test.js</code> ( 📝 copy paste is fun again !). Reference from <a href="https://github.com/nightwatchjs/nightwatch-docs/blob/versions/3.0/guide/writing-tests/api-testing.md#test-api-headers--responses">nightwatch</a></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//api-test.js</span>
+<span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">api testing</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">get api test</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span><span class="p">({</span><span class="nx">supertest</span><span class="p">})</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="nx">supertest</span>
+      <span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://petstore.swagger.io/v2</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/pet/findByStatus?status=available</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">,</span> <span class="sr">/json/</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+          <span class="nx">expect</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">_body</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">greaterThan</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+      <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Although it’s pretty self explanatory if you have used javascript/Typescript. <strong>TL;DR</strong></p>
+
+<blockquote>
+  <p>We hit the endpoint <code class="language-plaintext highlighter-rouge">https://petstore.swagger.io/v2/pet/findByStatus?status=available</code> 
+and then assert reponse code (<code class="language-plaintext highlighter-rouge">200</code>) and (<code class="language-plaintext highlighter-rouge">json</code>) response value.</p>
+</blockquote>
+
+<p><strong>Time to run the API test 🧑🏻‍💻</strong></p>
+
+<p>On your terminal run this command to start your <code class="language-plaintext highlighter-rouge">API test</code> by :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx nightwatch test/API/api-test.js --env api_testing
+</code></pre></div></div>
+
+<p>You should see run result like this.</p>
+
+<p><img src="/assets/images/2023/07/nightwatch-js-api/nightwatch-js-api-02_cli_run.png" alt="CLI run for nightwatch API tests" /></p>
+
+<p><strong>Note:</strong> Here <code class="language-plaintext highlighter-rouge">api_testing</code> is to run API test as per our config we did above during set up. This way <code class="language-plaintext highlighter-rouge">nightwatch</code> does not mix API test’s with UI tests run.</p>
+
+<h3 id="bonus-automated-html-report-">Bonus automated HTML report 📊</h3>
+
+<p>Not to worry, <strong>automated reports are already generated</strong> and waiting for you to open.</p>
+
+<blockquote>
+  <p>Go ahead and look for <code class="language-plaintext highlighter-rouge">index.html</code> file here</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nightwatch-api-automation/tests_output/nightwatch-html-report/index.html
+</code></pre></div></div>
+
+<p>Right click &amp; open <code class="language-plaintext highlighter-rouge">index.html</code> using any browser, for example see my html run result, report on chrome.</p>
+
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">HTML result report 📊</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/images/2023/07/nightwatch-js-api/nightwatch-js-api-03_html_report.png" alt="HTML report results for nightwatch API testing" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<h1 id="and-thats-it-">And that’s it! 🙌🏼</h1>
+
+<p><br /></p>
+
+<p>Have fun with 🚀 API testing and HTML reports 🟢 🌕 🔴</p>
+
+<p>This post was first posted by same author on <code class="language-plaintext highlighter-rouge">27.6.2023</code> at <a href="https://engineering.kablamo.com.au/posts/2023/api-testing-with-nightwatch-in-15-mins/">Kablamo Engineering Blog</a></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#api" class="page__taxonomy-item p-category" rel="tag">api</a><span class="sep">, </span>
+    
+      <a href="/tags/#api-testing" class="page__taxonomy-item p-category" rel="tag">api-testing</a><span class="sep">, </span>
+    
+      <a href="/tags/#automated-testing" class="page__taxonomy-item p-category" rel="tag">automated-testing</a><span class="sep">, </span>
+    
+      <a href="/tags/#e2e" class="page__taxonomy-item p-category" rel="tag">e2e</a><span class="sep">, </span>
+    
+      <a href="/tags/#end-to-end" class="page__taxonomy-item p-category" rel="tag">end-to-end</a><span class="sep">, </span>
+    
+      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">javaScript</a><span class="sep">, </span>
+    
+      <a href="/tags/#nightwatch" class="page__taxonomy-item p-category" rel="tag">nightwatch</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#tutorial" class="page__taxonomy-item p-category" rel="tag">tutorial</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-07-03T00:00:00+00:00">July 3, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=millankaul&text=API+testing+with+nightwatch+in+15+mins%20https%3A%2F%2Fqualitywithmillan.github.io%2Ftutorial%2F2023%2Fapi-testing-with-nightwatch-v3-in-15-mins.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fqualitywithmillan.github.io%2Ftutorial%2F2023%2Fapi-testing-with-nightwatch-v3-in-15-mins.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fqualitywithmillan.github.io%2Ftutorial%2F2023%2Fapi-testing-with-nightwatch-v3-in-15-mins.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/tutorial/run-your-first-restful-api-service-using-docker.html" class="pagination--pager" title="Run your first RESTful API service using docker
+">Previous</a>
+    
+    
+      <a href="/blog/2023/starting-my-corporate-journey-by-jing.html" class="pagination--pager" title="Starting My Corporate Journey: working as an intern/graduate
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/11/triangle/speed-quality-cost.gif" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/choosing-between-speed-quality-and-cost-in-test-automation.html" rel="permalink">Choosing between : Speed, Quality, Cost - in Test Automation
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-11-11T00:00:00+00:00">November 11, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/10/json/json_n_lang_logo.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/json-parsing-guide-with-code-examples.html" rel="permalink">The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-10-16T00:00:00+00:00">October 16, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/09/test_data/data.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/test-data-generation-in-test-automation.html" rel="permalink">Importance of Test Data - with code example
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-09-14T00:00:00+00:00">September 14, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/04/webdriver/webdriver-saga.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/web-driver-saga.html" rel="permalink">WebDriver Saga
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-04-24T00:00:00+00:00">April 24, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Neelam Pal
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Search a blog...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Search a blog..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="https://qualitywithmillan.github.io/" rel="nofollow noopener noreferrer"><i class="fa fa-hashtag" aria-hidden="true"></i> QualityWithMillan</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Millan Kaul. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+  
+    <script src="/assets/js/custom/format.js"></script>
+  
+    <script src="/assets/js/custom/main.js"></script>
+  
+
+
+   
+  <!--custom External JavaScript file-->
+	<script src="/assets/js/custom/format.js"></script>
+
+  </body>
+</html>

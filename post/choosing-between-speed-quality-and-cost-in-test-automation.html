@@ -1,0 +1,899 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Choosing between : Speed, Quality, Cost - in Test Automation | Quality With Millan</title>
+<meta name="description" content="Written by -                         Millan Kaul">
+
+
+  <meta name="author" content="Millan Kaul">
+  
+  <meta property="article:author" content="Millan Kaul">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Quality With Millan">
+<meta property="og:title" content="Choosing between : Speed, Quality, Cost - in Test Automation">
+<meta property="og:url" content="https://qualitywithmillan.github.io/post/choosing-between-speed-quality-and-cost-in-test-automation.html">
+
+
+  <meta property="og:description" content="Written by -                         Millan Kaul">
+
+
+
+  <meta property="og:image" content="https://qualitywithmillan.github.io/assets/images/2024/11/triangle/speed-quality-cost.gif">
+
+
+
+  <meta name="twitter:site" content="@millankaul">
+  <meta name="twitter:title" content="Choosing between : Speed, Quality, Cost - in Test Automation">
+  <meta name="twitter:description" content="Written by -                         Millan Kaul">
+  <meta name="twitter:url" content="https://qualitywithmillan.github.io/post/choosing-between-speed-quality-and-cost-in-test-automation.html">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://qualitywithmillan.github.io/assets/images/2024/11/triangle/speed-quality-cost.gif">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2024-11-11T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://qualitywithmillan.github.io/post/choosing-between-speed-quality-and-cost-in-test-automation.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Millan Kaul",
+      "url": "https://qualitywithmillan.github.io/",
+      "sameAs": ["https://twitter.com/millankaul","https://www.linkedin.com/in/millankaul"]
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Quality With Millan Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- ToDo QualityWithMillan -->
+
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="millankaul" data-description="Support me on Buy me a coffee!" data-message="Support this blog - click here to Donate! ❤️ " data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+
+
+
+    <!-- start custom head snippets -->
+
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/fav/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/fav/android-chrome-512x512.png">
+<link rel="apple-touch-icon type" type="image/png" sizes="512x512" href="/assets/images/fav/apple-touch-icon.png">
+
+<!-- <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/fav/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="16x16" href="/assets/images/fav/favicon-16x16.png"> -->
+
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/fav/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="shortcut icon" href="/assets/images/fav/favicon.ico">
+<link rel="manifest" href="/assets/images/fav/site.webmanifest">
+
+<!-- new files generated https://favicon.io/favicon-converter/ -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/88x88.png" alt="Quality With Millan"></a>
+        
+        <a class="site-title" href="/">
+          Quality With Millan
+          <span class="site-subtitle">All about #QualityWithMillan</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About ℹ️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags 🏷️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/">Tools ⚒️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/funding">Support 🙏</a>
+            </li><li class="masthead__menu-item">
+              <a href="/terms/">Terms & Privacy</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://qualitywithmillan.github.io/">
+        <img src="/assets/images/bio-photo.jpg" alt="Millan Kaul" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://qualitywithmillan.github.io/" itemprop="url">Millan Kaul</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">AU 🇦🇺 | CA 🇨🇦</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Choosing between : Speed, Quality, Cost - in Test Automation">
+    <meta itemprop="description" content=" Written by -                    Millan Kaul    ">
+    <meta itemprop="datePublished" content="2024-11-11T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://qualitywithmillan.github.io/post/choosing-between-speed-quality-and-cost-in-test-automation.html" class="u-url" itemprop="url">Choosing between : Speed, Quality, Cost - in Test Automation
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-11-11T00:00:00+00:00">November 11, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>
+ Written by -
+
+    
+    
+    
+        <strong>Millan Kaul</strong>
+    
+
+</p>
+
+<hr style="border: none; height:2px; background-color: #A9F1E4; position: relative;" />
+
+<p>In the world of test automation, teams often have to make the difficult choice of focusing on two out of three aspects:</p>
+
+<ol>
+  <li>🚀 <strong>Speed</strong></li>
+  <li>👌 <strong>Quality</strong></li>
+  <li>💰 <strong>Cost</strong></li>
+</ol>
+
+<p>Achieving all three in balance is an attractive goal, yet <u>incredibly challenging</u>, especially with tight deadlines and limited resources ( here by resources I mean : Tools, Technology, Skill’s etc..)</p>
+
+<p>Let’s explore the different combinations, why balancing all three is nearly impossible and how a long-term vision can bring us closer to that ideal.</p>
+
+<blockquote>
+  <p>“Quality is never an accident; it is always the result of intelligent effort.” – <strong>John Ruskin</strong></p>
+</blockquote>
+
+<hr />
+
+<hr />
+
+<p><img src="/assets/images/2024/11/triangle/speed-quality-cost.gif" alt="Image showing a moving triangle of choice between - Speed, Quality and Cost" /></p>
+<figcaption align="center">Image showing a moving triangle of choice between - Speed, Quality and Cost</figcaption>
+
+<p><br /></p>
+
+<h2 id="the-three-choices-why-not-all-three-">The Three Choices: Why Not All Three? 🤔</h2>
+
+<p>When teams attempt to achieve speed, quality and low cost all at once, they often stretch themselves too thin, resulting in suboptimal results in each area. While the end goal of balancing all three is commendable, limited resources and unrealistic timelines often hinder these efforts. As a result, teams may ultimately fail to meet any of the objectives effectively, particularly when the pursuit lacks a strategic, long-term approach.</p>
+
+<h3 id="combination-1-speed--quality-higher-cost-">Combination 1: Speed + Quality (Higher Cost) 💰</h3>
+
+<p>Prioritizing speed and quality can yield robust results in a short time, but it often comes at a <u>financial cost</u>. When speed and quality are prioritized, automation tools and resources, such as high-end testing environments and skilled testers, require a significant budget.</p>
+
+<blockquote>
+  <p><strong><em>Example</em></strong>: Consider a software development team launching a new mobile app. By investing heavily in advanced automation tools and a dedicated testing team, they can meet quality standards and deliver in record time. However, the costs might be unsustainable long-term, making this a viable choice only for critical projects.</p>
+</blockquote>
+
+<blockquote>
+  <p>I have delivered 5+ mobile apps and this has happened in almost 3 of them. Yes, I was able to deliver high quality app with my team ( 4.7+/5 star on app/play store) as that mattered to the brand and cost was a short term issue.</p>
+</blockquote>
+
+<h3 id="combination-2-speed--cost-lower-quality-">Combination 2: Speed + Cost (Lower Quality) 🤒</h3>
+
+<p>Choosing speed and low cost often means <u>sacrificing quality</u>, as there is limited time for thorough testing. This approach typically leads to minimal test coverage and can overlook critical errors, impacting the end-user experience.</p>
+
+<blockquote>
+  <p><strong><em>Example</em></strong>: A startup aiming to quickly release new features might opt for a lean testing approach to minimize costs and speed up delivery. However, without rigorous testing, there’s a higher risk of bugs affecting the product. That could hurt user satisfaction and lead to more expenses in the future.</p>
+</blockquote>
+
+<blockquote>
+  <p>I have been through this too ( feature deliver over quality)</p>
+</blockquote>
+
+<h3 id="combination-3-quality--cost-slower-speed-">Combination 3: Quality + Cost (Slower Speed) 🐌</h3>
+
+<p>When quality and cost-efficiency are prioritized, delivery <u>timelines are extended</u> to allow detailed and comprehensive testing. This is common in regulated industries, such as finance or healthcare, where thorough testing is necessary to ensure safety and compliance.</p>
+
+<blockquote>
+  <p><strong><em>Example</em></strong>: A healthcare software provider may allocate limited resources but dedicate significant time to testing each feature meticulously. This approach ensures that the software meets stringent regulatory requirements but results in a longer time-to-market.</p>
+</blockquote>
+
+<blockquote>
+  <p>Think of next spaceX rocket rocket launch.</p>
+</blockquote>
+
+<h2 id="why-teams-may-fail-when-pursuing-all-three-at-once">Why teams may <code class="language-plaintext highlighter-rouge">Fail</code> when pursuing all three at once?</h2>
+
+<p>Teams frequently fail in test automation when attempting to achieve <strong>speed, quality and low cost</strong> simultaneously, often due to <u>limited time and resources</u>. This approach tends to :</p>
+
+<ul>
+  <li>Dilute focus</li>
+  <li>Stretching teams too thin and</li>
+  <li>Often leading to quick-fix solutions that do not align with sustainable quality goals.</li>
+</ul>
+
+<p>Attempting to achieve all three at once <u>without a clear, long-term strategy</u> ultimately impacts productivity and reduces the overall effectiveness of testing.</p>
+
+<hr />
+
+<h1 id="we-still-need-all-3-can-we-">We still need all 3, can we ?</h1>
+
+<p>Okay… let’s cover that as well.</p>
+
+<h2 id="getting-close-to-achieving-all-three-the-long-term-vision-">Getting close to achieving all three: The long-term Vision 🎯</h2>
+
+<p>While achieving a perfect balance is <em>unrealistic</em>, teams can approach it by adopting a <strong>long-term vision</strong> focused on continuous improvement and strategic investment in automation.</p>
+
+<ul>
+  <li>By building a reusable automation framework</li>
+  <li>Leveraging modular testing and</li>
+  <li>Automating critical paths, teams can increase efficiency over time, gradually reducing costs and maintaining high-quality standards.</li>
+</ul>
+
+<blockquote>
+  <p>“Vision without action is a daydream. Action without vision is a nightmare.” – <strong>Japanese Proverb</strong></p>
+</blockquote>
+
+<p>With the right approach, it’s possible to get close to balancing speed, quality and cost in test automation, if teams can build a foundation for sustainable success in testing, achieving a balance that works over time.</p>
+
+<p><br /></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<p>Want to learn more❓
+<br /> 
+Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/post/choosing-between-speed-quality-and-cost-in-test-automation.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#leadership" class="page__taxonomy-item p-category" rel="tag">leadership</a><span class="sep">, </span>
+    
+      <a href="/tags/#strategic" class="page__taxonomy-item p-category" rel="tag">strategic</a><span class="sep">, </span>
+    
+      <a href="/tags/#test-automation" class="page__taxonomy-item p-category" rel="tag">test automation</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">blog</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-11-11T00:00:00+00:00">November 11, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=millankaul&text=Choosing+between+%3A+Speed%2C+Quality%2C+Cost+-+in+Test+Automation%20https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Fchoosing-between-speed-quality-and-cost-in-test-automation.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Fchoosing-between-speed-quality-and-cost-in-test-automation.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fqualitywithmillan.github.io%2Fpost%2Fchoosing-between-speed-quality-and-cost-in-test-automation.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/post/json-parsing-guide-with-code-examples.html" class="pagination--pager" title="The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/10/json/json_n_lang_logo.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/json-parsing-guide-with-code-examples.html" rel="permalink">The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-10-16T00:00:00+00:00">October 16, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/09/test_data/data.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/test-data-generation-in-test-automation.html" rel="permalink">Importance of Test Data - with code example
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-09-14T00:00:00+00:00">September 14, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/04/webdriver/webdriver-saga.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/web-driver-saga.html" rel="permalink">WebDriver Saga
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-04-24T00:00:00+00:00">April 24, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Neelam Pal
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/04/multiple/multiple_teaser.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/new-performance-testing-tool-multiple.html" rel="permalink">Say hello to <code class="language-plaintext highlighter-rouge">Multiple</code> : New Performance testing tool
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-04-06T00:00:00+00:00">April 6, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Search a blog...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Search a blog..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="https://qualitywithmillan.github.io/" rel="nofollow noopener noreferrer"><i class="fa fa-hashtag" aria-hidden="true"></i> QualityWithMillan</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Millan Kaul. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+  
+    <script src="/assets/js/custom/format.js"></script>
+  
+    <script src="/assets/js/custom/main.js"></script>
+  
+
+
+   
+  <!--custom External JavaScript file-->
+	<script src="/assets/js/custom/format.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1131 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Running a local server and API testing in less than 10 minutes | Quality With Millan</title>
+<meta name="description" content="Written by -       Millan Kaul">
+
+
+  <meta name="author" content="Millan Kaul">
+  
+  <meta property="article:author" content="Millan Kaul">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Quality With Millan">
+<meta property="og:title" content="Running a local server and API testing in less than 10 minutes">
+<meta property="og:url" content="https://qualitywithmillan.github.io/tutorial/running-api-server-in-10-minutes.html">
+
+
+  <meta property="og:description" content="Written by -       Millan Kaul">
+
+
+
+  <meta property="og:image" content="https://qualitywithmillan.github.io/assets/images/2021/12/local-serv/run-api-server-in-10-mins.jpg">
+
+
+
+  <meta name="twitter:site" content="@millankaul">
+  <meta name="twitter:title" content="Running a local server and API testing in less than 10 minutes">
+  <meta name="twitter:description" content="Written by -       Millan Kaul">
+  <meta name="twitter:url" content="https://qualitywithmillan.github.io/tutorial/running-api-server-in-10-minutes.html">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://qualitywithmillan.github.io/assets/images/2021/12/local-serv/run-api-server-in-10-mins.jpg">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2021-09-20T18:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://qualitywithmillan.github.io/tutorial/running-api-server-in-10-minutes.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Millan Kaul",
+      "url": "https://qualitywithmillan.github.io/",
+      "sameAs": ["https://twitter.com/millankaul","https://www.linkedin.com/in/millankaul"]
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Quality With Millan Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- ToDo QualityWithMillan -->
+
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="millankaul" data-description="Support me on Buy me a coffee!" data-message="Support this blog - click here to Donate! ❤️ " data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+
+
+
+    <!-- start custom head snippets -->
+
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/fav/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/images/fav/android-chrome-512x512.png">
+<link rel="apple-touch-icon type" type="image/png" sizes="512x512" href="/assets/images/fav/apple-touch-icon.png">
+
+<!-- <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/fav/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="16x16" href="/assets/images/fav/favicon-16x16.png"> -->
+
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/fav/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/fav/favicon-32x32.png">
+<link rel="shortcut icon" href="/assets/images/fav/favicon.ico">
+<link rel="manifest" href="/assets/images/fav/site.webmanifest">
+
+<!-- new files generated https://favicon.io/favicon-converter/ -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/88x88.png" alt="Quality With Millan"></a>
+        
+        <a class="site-title" href="/">
+          Quality With Millan
+          <span class="site-subtitle">All about #QualityWithMillan</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About ℹ️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags 🏷️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/">Tools ⚒️</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tools/funding">Support 🙏</a>
+            </li><li class="masthead__menu-item">
+              <a href="/terms/">Terms & Privacy</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://qualitywithmillan.github.io/">
+        <img src="/assets/images/bio-photo.jpg" alt="Millan Kaul" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://qualitywithmillan.github.io/" itemprop="url">Millan Kaul</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">AU 🇦🇺 | CA 🇨🇦</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Running a local server and API testing in less than 10 minutes">
+    <meta itemprop="description" content=" Written by -    Millan Kaul         ">
+    <meta itemprop="datePublished" content="2021-09-20T18:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://qualitywithmillan.github.io/tutorial/running-api-server-in-10-minutes.html" class="u-url" itemprop="url">Running a local server and API testing in less than 10 minutes
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-20T18:00:00+00:00">September 20, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <hr />
+
+<p>
+ Written by -
+
+
+    Millan Kaul         
+
+</p>
+
+<hr />
+
+<h2 id="time-is-money-">Time is money 💲</h2>
+
+<blockquote>
+  <p>So in next 10 minutes or less 🤞 I promise, we will:</p>
+</blockquote>
+
+<ol>
+  <li>Start an <strong>API server</strong> on your machine (<em>localhost</em>)</li>
+  <li>Run independent <strong>API test</strong> on server.
+    <ul>
+      <li>Test’s include <em>assertion</em></li>
+    </ul>
+  </li>
+</ol>
+
+<p>✔️ All this without using any dependency !!! ✔</p>
+<hr style="border:12px solid grep" />
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gi">+                      Time starts now ⏱️
+</span></code></pre></div></div>
+
+<p><img src="/assets/images/2021/12/local-serv/10-minutes-timer.png" alt="ten minutes timer" /></p>
+<figcaption align="center">Fig.1 - 10 minute timer</figcaption>
+<p><br /></p>
+
+<p><strong>Step 1</strong> : Set up the node / NodeJS</p>
+<blockquote>
+  <p>💡 Think of <code class="language-plaintext highlighter-rouge">NodeJs</code> like <code class="language-plaintext highlighter-rouge">JVM</code> if you are familiar with <code class="language-plaintext highlighter-rouge">java</code></p>
+</blockquote>
+
+<p>If you already have it setup then you can jump to <a href="#run-and-test-in-4-simple-steps">Code and run</a></p>
+
+<p>Go to <a href="https://nodejs.org/en/download/">nodejs.org</a> and download / install <strong>NodeJs</strong> on your platform. You may also Check their <a href="https://nodejs.org/en/about/releases/#releases">official Releases page</a></p>
+
+<blockquote>
+  <p><strong>macos</strong> users : <code class="language-plaintext highlighter-rouge">brew install node</code> 
+<strong>linux</strong> users : <code class="language-plaintext highlighter-rouge">sudo apt install node</code></p>
+</blockquote>
+
+<p>Check installation by running this <code class="language-plaintext highlighter-rouge">node -v</code> on your terminal / cmd and you will see :</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">node -v
+v16.8.0
+</span></code></pre></div></div>
+
+<blockquote>
+  <p><strong>Version 16</strong> was the latest while writing this article.</p>
+</blockquote>
+
+<p>☑️ And that’s all you need today in terms of setup
+<br />
+<br /></p>
+<h3 id="run-and-test-in-4-simple-steps">Run and Test in 4 simple steps</h3>
+
+<p>1️⃣ <strong>Setup</strong> server ✔️</p>
+
+<p>2️⃣ Run <strong>server</strong> 🏃🎽</p>
+
+<p>3️⃣ Write <strong>tests</strong> 📝</p>
+
+<p>4️⃣ <strong>Run</strong> API test’s 🚀</p>
+
+<p>To keep it simple, we will keep server and test files in the same folder/directory.</p>
+
+<p>So lets create a folder named <strong>dev</strong> on <strong>Desktop</strong></p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Desktop/dev
+</code></pre></div></div>
+<p><strong>Let’s Start !</strong></p>
+
+<h2 id="1️⃣-setup-server️">1️⃣ Setup server✔️</h2>
+
+<p>Go to <strong>dev</strong> folder (<code class="language-plaintext highlighter-rouge">cd Desktop/dev</code>) and create a file named <code class="language-plaintext highlighter-rouge">server.js</code> and copy this code:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//server.js</span>
+
+<span class="kd">const</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">http</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">HOST</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">localhost</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="mi">8020</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Request on server received :  </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">method</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+
+  <span class="cm">/**
+   * Health check endpoint `/health`
+   * 
+   * @path {HOST}:{PORT}/health
+   * @return status : {200}
+   * @return message : text : "If you see this message, your API server is all set , Welcome !"
+   */</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">req</span><span class="p">.</span><span class="nx">method</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// set the status code, and content-type</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span> <span class="p">});</span>
+    <span class="c1">// send the response data as text</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="dl">"</span><span class="s2">If you see this message, your API server is all set , Welcome !</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">}</span> 
+
+
+  <span class="cm">/**
+   * Health check endpoint `/health`
+   * 
+   * @path {HOST}:{PORT}/health
+   * @return status {200:OK}
+   * @return uptime : how long has been server up &amp; running
+   * @return timestamp : Time of response from server  
+   */</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">/health</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">req</span><span class="p">.</span><span class="nx">method</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">healthcheck</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">uptime</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">uptime</span><span class="p">(),</span>
+      <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">OK</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">timestamp</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+    <span class="p">};</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">healthcheck</span><span class="p">));</span>
+  <span class="p">}</span> 
+
+  
+  <span class="cm">/**
+   * Endpoint not implemented / invalid endpoint
+   * @path {optional} `/`
+   * @return {404} - Route is not implemented (Page Not Found)
+   */</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span> <span class="p">});</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span>
+      <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span> <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Route is not implemented</span><span class="dl">"</span> <span class="p">})</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`server started on : </span><span class="p">${</span><span class="nx">HOST</span><span class="p">}</span><span class="s2">  port: </span><span class="p">${</span><span class="nx">PORT</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>So we created a javaScript file to set up a <code class="language-plaintext highlighter-rouge">local server</code> that we will run (in next step).</p>
+
+<blockquote>
+  <p>In same file we created 2 endpoints:</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">http</span><span class="p">:</span><span class="c1">//localhost:8020/        //Base url : GET Home Page</span>
+<span class="nx">http</span><span class="p">:</span><span class="c1">//localhost:8020/health  //Health   : GET server status</span>
+</code></pre></div></div>
+
+<h2 id="2️⃣-run-server">2️⃣ Run server🏃🎽</h2>
+
+<p>Open your terminal/cmd and navigate to <strong>Desktop/dev</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">cd</span> <span class="o">~</span><span class="sr">/Desktop/</span><span class="nx">dev</span> 
+</code></pre></div></div>
+
+<p>and run your server using this command:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">node</span> <span class="nx">server</span><span class="p">.</span><span class="nx">js</span>
+</code></pre></div></div>
+
+<p>If you see this message, it means your API Server is all set !</p>
+
+<p><img src="/assets/images/2021/12/local-serv/start-node-server.png" alt="server" /></p>
+<figcaption align="center">Fig.2 - server started on http://localhost:8020</figcaption>
+
+<p>You can even check it on your browser:</p>
+
+<p><img src="/assets/images/2021/12/local-serv/server-start-on-browser.png" alt="server verified on browser" /></p>
+<figcaption align="center">Fig2.1 - server ( http://localhost:8020) accessible on browser</figcaption>
+
+<h2 id="3️⃣-write-tests-">3️⃣ Write tests 📝</h2>
+
+<p>Under same folder <code class="language-plaintext highlighter-rouge">Desktop/dev</code> now create a file named <code class="language-plaintext highlighter-rouge">test.js</code> and copy this code:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//test.js</span>
+
+<span class="kd">const</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">http</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">assert</span>  <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">assert</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">BASE_URL</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://localhost:8020</span><span class="dl">"</span><span class="p">;</span>
+
+
+  <span class="cm">/**
+   * Test 1 : Hit BASE_URL and assert response statusCode to be  === 200
+   * 
+   * @path {BASE_URL}
+   * @return expect : {200}
+   */</span>
+<span class="nx">http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">BASE_URL</span><span class="p">,</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Response: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">);</span>
+      <span class="nx">assert</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">===</span> <span class="mi">200</span><span class="p">);</span>
+    <span class="p">});</span>
+
+  <span class="cm">/**
+   * Test 2 : Hit `/health` endpoint and assert response statusCode to be  === 200
+   * 
+   * @path {BASE_URL}/health
+   * @return status : {200}
+   */</span>
+<span class="nx">http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">BASE_URL</span><span class="o">+</span><span class="dl">'</span><span class="s1">/health</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Response: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">);</span>
+      <span class="nx">assert</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">===</span> <span class="mi">200</span><span class="p">);</span>
+    <span class="p">});</span>
+
+
+  <span class="cm">/**
+   * Test 3 : Hit random endpoint `/thisIsNotAValidEndpoint` and assert response statusCode to be  === 404
+   * 
+   * @path {BASE_URL}/thisIsNotAValidEndpoint
+   * @return status : {404}
+   */</span>
+<span class="nx">http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">BASE_URL</span><span class="o">+</span><span class="dl">'</span><span class="s1">/thisIsNotAValidEndpoint</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Response: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">);</span>
+      <span class="nx">assert</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">===</span> <span class="mi">200</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="4️⃣-run-api-tests-">4️⃣ Run API test’s 🚀</h2>
+
+<ol>
+  <li>Make sure you open a new terminal/cmd window to run this.</li>
+  <li>Be sure that our server is still running (step <strong>2️⃣ Run server🏃🎽</strong> ) on separate terminal/cmd.</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">node</span> <span class="nx">test</span><span class="p">.</span><span class="nx">js</span>
+</code></pre></div></div>
+
+<p>you will see something like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">dev</span> <span class="nx">$</span> <span class="nx">node</span> <span class="nx">test</span><span class="p">.</span><span class="nx">js</span> 
+<span class="nx">Response</span><span class="p">:</span> <span class="mi">200</span>
+<span class="nx">Response</span><span class="p">:</span> <span class="mi">200</span>
+<span class="nx">Response</span><span class="p">:</span> <span class="mi">404</span>
+<span class="nx">node</span><span class="p">:</span><span class="nx">assert</span><span class="p">:</span><span class="mi">400</span>
+    <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+    <span class="o">^</span>
+
+<span class="nx">AssertionError</span> <span class="p">[</span><span class="nx">ERR_ASSERTION</span><span class="p">]:</span> <span class="nx">The</span> <span class="nx">expression</span> <span class="nx">evaluated</span> <span class="nx">to</span> <span class="nx">a</span> <span class="nx">falsy</span> <span class="nx">value</span><span class="p">:</span>
+
+  <span class="nx">assert</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span>
+
+    <span class="nx">at</span> <span class="nx">ClientRequest</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(...</span><span class="o">/</span><span class="nx">Desktop</span><span class="o">/</span><span class="nx">dev</span><span class="o">/</span><span class="nx">test</span><span class="p">.</span><span class="nx">js</span><span class="p">:</span><span class="mi">40</span><span class="p">:</span><span class="mi">7</span><span class="p">)</span>
+    <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">onceWrapper</span> <span class="p">(</span><span class="nx">node</span><span class="p">:</span><span class="nx">events</span><span class="p">:</span><span class="mi">514</span><span class="p">:</span><span class="mi">26</span><span class="p">)</span>
+    <span class="nx">at</span> <span class="nx">ClientRequest</span><span class="p">.</span><span class="nx">emit</span> <span class="p">(</span><span class="nx">node</span><span class="p">:</span><span class="nx">events</span><span class="p">:</span><span class="mi">394</span><span class="p">:</span><span class="mi">28</span><span class="p">)</span>
+    <span class="nx">at</span> <span class="nx">HTTPParser</span><span class="p">.</span><span class="nx">parserOnIncomingClient</span> <span class="p">[</span><span class="k">as</span> <span class="nx">onIncoming</span><span class="p">]</span> <span class="p">(</span><span class="nx">node</span><span class="p">:</span><span class="nx">_http_client</span><span class="p">:</span><span class="mi">621</span><span class="p">:</span><span class="mi">27</span><span class="p">)</span>
+    <span class="nx">at</span> <span class="nx">HTTPParser</span><span class="p">.</span><span class="nx">parserOnHeadersComplete</span> <span class="p">(</span><span class="nx">node</span><span class="p">:</span><span class="nx">_http_common</span><span class="p">:</span><span class="mi">128</span><span class="p">:</span><span class="mi">17</span><span class="p">)</span>
+    <span class="nx">at</span> <span class="nx">Socket</span><span class="p">.</span><span class="nx">socketOnData</span> <span class="p">(</span><span class="nx">node</span><span class="p">:</span><span class="nx">_http_client</span><span class="p">:</span><span class="mi">487</span><span class="p">:</span><span class="mi">22</span><span class="p">)</span>
+    <span class="nx">at</span> <span class="nx">Socket</span><span class="p">.</span><span class="nx">emit</span> <span class="p">(</span><span class="nx">node</span><span class="p">:</span><span class="nx">events</span><span class="p">:</span><span class="mi">394</span><span class="p">:</span><span class="mi">28</span><span class="p">)</span>
+    <span class="nx">at</span> <span class="nx">addChunk</span> <span class="p">(</span><span class="nx">node</span><span class="p">:</span><span class="nx">internal</span><span class="o">/</span><span class="nx">streams</span><span class="o">/</span><span class="nx">readable</span><span class="p">:</span><span class="mi">315</span><span class="p">:</span><span class="mi">12</span><span class="p">)</span>
+    <span class="nx">at</span> <span class="nx">readableAddChunk</span> <span class="p">(</span><span class="nx">node</span><span class="p">:</span><span class="nx">internal</span><span class="o">/</span><span class="nx">streams</span><span class="o">/</span><span class="nx">readable</span><span class="p">:</span><span class="mi">289</span><span class="p">:</span><span class="mi">9</span><span class="p">)</span>
+    <span class="nx">at</span> <span class="nx">Socket</span><span class="p">.</span><span class="nx">Readable</span><span class="p">.</span><span class="nx">push</span> <span class="p">(</span><span class="nx">node</span><span class="p">:</span><span class="nx">internal</span><span class="o">/</span><span class="nx">streams</span><span class="o">/</span><span class="nx">readable</span><span class="p">:</span><span class="mi">228</span><span class="p">:</span><span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nl">generatedMessage</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">code</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ERR_ASSERTION</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">actual</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">expected</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">operator</span><span class="p">:</span> <span class="dl">'</span><span class="s1">==</span><span class="dl">'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h1 id="what--">WHAT ❗ ❗</h1>
+
+<p>What just happened ❓ , why all these logs are printed.</p>
+
+<p>Don’t panic, it was expected, here is why ⬇️</p>
+
+<p>In the above <code class="language-plaintext highlighter-rouge">test.js</code> this was intentionally put to demo,  what will happen when an test fails on assertion.</p>
+
+<p><strong>Troubleshooting</strong> : Start by reading error printed:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">AssertionError</span> <span class="p">[</span><span class="nx">ERR_ASSERTION</span><span class="p">]:</span> <span class="nx">The</span> <span class="nx">expression</span> <span class="nx">evaluated</span> <span class="nx">to</span> <span class="nx">a</span> <span class="nx">falsy</span> <span class="nx">value</span><span class="p">:</span>
+
+  <span class="nx">assert</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>What it tells is that “the expected response code <code class="language-plaintext highlighter-rouge">200</code> was not received”.</p>
+
+<p><strong>Question</strong> : But which one ❓</p>
+
+<p><strong>Answer</strong> : Read just 1 more line from logs it tells you exactly where <code class="language-plaintext highlighter-rouge">test.js:40:7</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">at</span> <span class="nx">ClientRequest</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(...</span><span class="o">/</span><span class="nx">Desktop</span><span class="o">/</span><span class="nx">dev</span><span class="o">/</span><span class="nx">test</span><span class="p">.</span><span class="nx">js</span><span class="p">:</span><span class="mi">40</span><span class="p">:</span><span class="mi">7</span><span class="p">)</span>
+</code></pre></div></div>
+<blockquote>
+  <p>Let’s Fix this :</p>
+</blockquote>
+
+<ul>
+  <li>Open <code class="language-plaintext highlighter-rouge">test.js</code> in your text editor.</li>
+  <li>Go to <strong>line # 40</strong></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">assert</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">===</span> <span class="mi">200</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>Change <code class="language-plaintext highlighter-rouge">200</code> to <code class="language-plaintext highlighter-rouge">404</code></strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">assert</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">===</span> <span class="mi">404</span><span class="p">);</span>
+</code></pre></div></div>
+<p>now save and close this file.</p>
+
+<blockquote>
+  <p>Self assignment:  Try to explore the reason yourself.
+ hint: line # 33 of <code class="language-plaintext highlighter-rouge">test.js</code></p>
+</blockquote>
+
+<hr />
+
+<p>Let’s try to run test’s once again 🏃 🚀</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">node</span> <span class="nx">test</span><span class="p">.</span><span class="nx">js</span>
+</code></pre></div></div>
+
+<h1 id="done-">Done !</h1>
+
+<p><img src="/assets/images/2021/12/local-serv/response-test.png" alt="successful test run" /></p>
+<figcaption align="center"><b>Fig.3 - Successful Test run ✔️ </b></figcaption>
+
+<blockquote>
+  <p>Time over :)</p>
+</blockquote>
+
+<p><img src="/assets/images/2021/12/local-serv/01-sec-timer.png" alt="1 second left on timer" /></p>
+<figcaption align="center"><b>Fig.3.1 - Time over</b></figcaption>
+
+<blockquote>
+  <p>Credits for <a target="_blank" href="https://icons8.com/icon/b3uCTpcS-NiY/api">API icon</a></p>
+</blockquote>
+
+<p><br />
+<br /></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<p>Want to learn more❓
+<br /> 
+Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/tutorial/running-api-server-in-10-minutes.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">javascript</a><span class="sep">, </span>
+    
+      <a href="/tags/#node" class="page__taxonomy-item p-category" rel="tag">node</a><span class="sep">, </span>
+    
+      <a href="/tags/#serverless" class="page__taxonomy-item p-category" rel="tag">serverless</a><span class="sep">, </span>
+    
+      <a href="/tags/#testing" class="page__taxonomy-item p-category" rel="tag">testing</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#tutorial" class="page__taxonomy-item p-category" rel="tag">tutorial</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-09-20T18:00:00+00:00">September 20, 2021</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=millankaul&text=Running+a+local+server+and+API+testing+in+less+than+10+minutes%20https%3A%2F%2Fqualitywithmillan.github.io%2Ftutorial%2Frunning-api-server-in-10-minutes.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fqualitywithmillan.github.io%2Ftutorial%2Frunning-api-server-in-10-minutes.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fqualitywithmillan.github.io%2Ftutorial%2Frunning-api-server-in-10-minutes.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/post/5-misconceptions-regarding-test-automation.html" class="pagination--pager" title="5 misconceptions regarding Test Automation
+">Previous</a>
+    
+    
+      <a href="/welcome.html" class="pagination--pager" title="Welcome to #QualityWithMillan
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/11/triangle/speed-quality-cost.gif" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/choosing-between-speed-quality-and-cost-in-test-automation.html" rel="permalink">Choosing between : Speed, Quality, Cost - in Test Automation
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-11-11T00:00:00+00:00">November 11, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/10/json/json_n_lang_logo.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/json-parsing-guide-with-code-examples.html" rel="permalink">The Ultimate guide to complex JSON parsing using JavaScript, Python, Go, and Java
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-10-16T00:00:00+00:00">October 16, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/09/test_data/data.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/test-data-generation-in-test-automation.html" rel="permalink">Importance of Test Data - with code example
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-09-14T00:00:00+00:00">September 14, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Millan Kaul
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/2024/04/webdriver/webdriver-saga.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post/web-driver-saga.html" rel="permalink">WebDriver Saga
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-04-24T00:00:00+00:00">April 24, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+ Written by -
+
+    
+    
+    
+        Neelam Pal
+    
+
+
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Search a blog...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Search a blog..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/MillanKaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eaccmk" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://au.linkedin.com/in/millankaul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="https://qualitywithmillan.github.io/" rel="nofollow noopener noreferrer"><i class="fa fa-hashtag" aria-hidden="true"></i> QualityWithMillan</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Millan Kaul. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+  
+    <script src="/assets/js/custom/format.js"></script>
+  
+    <script src="/assets/js/custom/main.js"></script>
+  
+
+
+   
+  <!--custom External JavaScript file-->
+	<script src="/assets/js/custom/format.js"></script>
+
+  </body>
+</html>
