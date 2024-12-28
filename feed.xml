@@ -1,4 +1,162 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://qualitywithmillan.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://qualitywithmillan.github.io/" rel="alternate" type="text/html" /><updated>2024-12-23T06:07:20+00:00</updated><id>https://qualitywithmillan.github.io/feed.xml</id><title type="html">Quality With Millan</title><subtitle></subtitle><author><name>Millan Kaul</name></author><entry><title type="html">Choosing between : Speed, Quality, Cost - in Test Automation</title><link href="https://qualitywithmillan.github.io/post/choosing-between-speed-quality-and-cost-in-test-automation.html" rel="alternate" type="text/html" title="Choosing between : Speed, Quality, Cost - in Test Automation" /><published>2024-11-11T00:00:00+00:00</published><updated>2024-11-11T00:00:00+00:00</updated><id>https://qualitywithmillan.github.io/post/choosing-between-speed-quality-and-cost</id><content type="html" xml:base="https://qualitywithmillan.github.io/post/choosing-between-speed-quality-and-cost-in-test-automation.html"><![CDATA[<p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://qualitywithmillan.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://qualitywithmillan.github.io/" rel="alternate" type="text/html" /><updated>2024-12-28T00:42:40+00:00</updated><id>https://qualitywithmillan.github.io/feed.xml</id><title type="html">Quality With Millan</title><subtitle></subtitle><author><name>Millan Kaul</name></author><entry><title type="html">2024 in Review: QA, AI and Quality Engineering in Reflection at #QWM</title><link href="https://qualitywithmillan.github.io/post/2024-wrap-up.html" rel="alternate" type="text/html" title="2024 in Review: QA, AI and Quality Engineering in Reflection at #QWM" /><published>2024-12-25T00:00:00+00:00</published><updated>2024-12-25T00:00:00+00:00</updated><id>https://qualitywithmillan.github.io/post/2024-wrap-up-qwm</id><content type="html" xml:base="https://qualitywithmillan.github.io/post/2024-wrap-up.html"><![CDATA[<p>
+ Written by -
+
+    
+    
+    
+        <strong>Millan Kaul</strong>
+    
+
+</p>
+
+<hr style="border: none; height:2px; background-color: #A9F1E4; position: relative;" />
+
+<p>As the <strong>2024</strong> draws to a close, I’m overwhelmed with gratitude for the incredible support and love you—our readers—have shown this year.</p>
+
+<hr />
+
+<h1 id="-highlights-of-2024-">🌟 Highlights of 2024 🌟</h1>
+
+<hr />
+
+<p><img src="/assets/images/2024/12/qwm-wrap-up-2024.gif" alt="Animated visualization of Quality With Millan blog statistics for 2024, showing key metrics including page views, user engagement and content growth" /></p>
+<figcaption align="center" aria-label="Annual blog statistics summary">2024 Year in Review - Animated visualization showcasing blog growth, engagement metrics and content milestones achieved throughout the year</figcaption>
+
+<p><br /></p>
+
+<h1 id="global-reach">Global Reach:</h1>
+<p>This year, <a href="https://qualitywithmillan.github.io"><strong>QualityWithMillan.github.io</strong></a> had a readership audience in..</p>
+
+<h1 id="113-countries--and-counting">113 Countries 🌏 and counting…</h1>
+
+<p>To each and every one of you—thank you :heart: for being a part of this journey.</p>
+
+<p>This level of engagement has truly shown the power of connection through shared stories and ideas. It’s humbling to know that our content resonates with such a diverse and wide audience.</p>
+
+<blockquote>
+  <p><sub>Geographic distribution map highlighting blog readership across continents with highest engagement from United States 🇺🇸, India 🇮🇳, Canada 🇨🇦, United Kingdom 🇬🇧 and many other nations including Australia 🇦🇺</sub></p>
+</blockquote>
+
+<hr />
+
+<p><img src="/assets/images/2024/12/2024-qwm-global-audiance.png" alt="Geographic distribution map highlighting blog readership across continents with highest engagement from United States, India, Canada, United Kingdom and manu other nations including Australia" /></p>
+<figcaption align="center" aria-label="Global audience distribution statistics">Global Readership 2024 - Blog audience spans multiple continents with strong presence in major technology markets, showcasing the international reach of Quality With Millan</figcaption>
+
+<p><br /></p>
+
+<h1 id="active-readers-and-community-growth">Active Readers and Community Growth</h1>
+<p>Our active user base grew significantly this year, with <u>thousands of you returning time and again to engage</u>, comment and share your thoughts. You’ve turned this blog into a thriving community and I’m honored to have you all here.</p>
+
+<blockquote>
+  <p><sub> Achieved milestone of 6K unique users with 8K total sessions…</sub></p>
+</blockquote>
+
+<hr />
+
+<p><img src="/assets/images/2024/12/2024-qwm-6kusers-8ksessions.png" alt="Google Analytics dashboard showing 6,000 unique users and 8,000 total sessions, indicating strong user engagement and repeat visits throughout 2024" /></p>
+<figcaption align="center" aria-label="Annual website traffic statistics">Website Analytics 2024 - Achieved milestone of 6K unique users with 8K total sessions, demonstrating consistent growth in readership and engagement</figcaption>
+
+<p><br /></p>
+
+<h4 id="most-viewed-blog-post-of-2024">Most Viewed Blog Post of 2024</h4>
+<p>Among the many stories shared this year, one stood out as the most loved and viewed: <a href="/post/2024/01/k6-with-real-time-performance-monitoring-with-web-dashboards.html"><strong>k6 - web dashboards + HTML report 📊</strong></a> with more than <strong><u>3k views🤯</u></strong>.</p>
+
+<p>Whether it was the insights, the storytelling or the relevance of the topic, your engagement with this post was phenomenal. For those of you who revisited, shared, or commented—you made this happen 💚!</p>
+
+<hr />
+
+<p><img src="/assets/images/2024/01/k6_dash/04_overview.png" alt="K6 Performance Dashboard displaying real-time metrics: Average response time of 1.2s, 95th percentile at 2.5s, 100 requests per second and 0.1% error rate across a 30-minute test duration" /></p>
+<figcaption align="center" aria-label="Detailed performance metrics from K6 load testing dashboard">K6 Performance Dashboard - Real-time monitoring showing response times, throughput and error rates during load test execution. Data indicates healthy system performance with acceptable response times and minimal errors.</figcaption>
+
+<p><br /></p>
+
+<h1 id="celebrating-milestones">Celebrating Milestones</h1>
+<p>This year also marked several personal and professional milestones for the blog.</p>
+
+<h2 id="-key-achievements-of-2024-">🎉 Key Achievements of 2024 🎉</h2>
+
+<ul>
+  <li>🌟 <strong><code class="language-plaintext highlighter-rouge">6k</code></strong> first time visitors</li>
+  <li>👀 <strong><code class="language-plaintext highlighter-rouge">3k views</code></strong> to most viewed blog</li>
+  <li>✍️ <strong><code class="language-plaintext highlighter-rouge">6 new</code></strong> guest authors (2023-24)</li>
+  <li>🌏 <strong><code class="language-plaintext highlighter-rouge">113 countries</code></strong> visitors</li>
+  <li>📈 <strong><code class="language-plaintext highlighter-rouge">8k-9k sessions</code></strong> in 2024</li>
+</ul>
+
+<blockquote>
+  <p><sub>These achievements remind me why I started this journey and inspire me to keep going.</sub></p>
+</blockquote>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<h1 id="meet-the-authors-behind-the-magic">Meet the Authors Behind the Magic</h1>
+<p>This year, these talented authors contributed their expertise in Quality Engineering, QA, Automation Testing, AI and more. Here’s a look at the incredible team and their contributions:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Author Name</th>
+      <th style="text-align: right">Link to Blog(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/images/co-author/alejandro-sanchez-giraldo.jpeg" alt="Alejandro" style="width: 100px; height: 100px; border-radius: 50%;" />  <br /><a href="https://www.linkedin.com/in/alejandrosanchezgiraldo">Alejandro Sanchez Giraldo</a></td>
+      <td style="text-align: right"><a href="/post/two-timeless-concepts.html">Two Timeless Concepts </a> <br /> <a href="/post/the-paradigm-of-quality-embedded.html">The paradigm of Quality - Embedded </a> <br /> <a href="/post/the-paradigm-of-quality-built-in.html">The paradigm of Quality - Built-In </a> <br /> <a href="/post/the-paradigm-of-quality-optimised.html">The paradigm of Quality - Optimised</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="/assets/images/co-author/Dennis_Nyawiara.jpeg" alt="Dennis" style="width: 100px; height: 100px; border-radius: 50%;" />  <br /><a href="https://www.linkedin.com/in/gituto">Dennis Nyawira</a></td>
+      <td style="text-align: right"><a href="/post/qa-in-the-age-of-hyper-driven-development.html">Navigating the Tempest</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="/assets/images/co-author/jing-deng.jpg" alt="Jing" style="width: 100px; height: 100px; border-radius: 50%;" />  <br /><a href="https://www.linkedin.com/in/jing-deng-357554206">Jing Deng</a></td>
+      <td style="text-align: right"><a href="/post/2023/starting-my-corporate-journey-by-jing.html">Starting My Corporate Journey: working as an intern/graduate</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="/assets/images/co-author/karthik-hariharan.jpg" alt="Karthik" style="width: 100px; height: 100px; border-radius: 50%;" />  <br /><a href="https://www.linkedin.com/in/0karthik0">Karthik Hariharan</a></td>
+      <td style="text-align: right"><a href="/post/co-author/Karthik/evolution-of-reliability-tester-and-ai-testing.html">Evolution of Reliability Tester and AI testing</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="/assets/images/co-author/neelam-pal.jpeg" alt="Neelam" style="width: 100px; height: 100px; border-radius: 50%;" />  <br /><a href="https://www.linkedin.com/in/palneelam">Neelam Pal</a></td>
+      <td style="text-align: right"><a href="/post/web-driver-saga.html">WebDriver Saga</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="/assets/images/co-author/paul-maxwell-walters.png" alt="Paul" style="width: 100px; height: 100px; border-radius: 50%;" />  <br /><a href="https://www.linkedin.com/in/paulwaltersuk">Paul Maxwell-Walters</a></td>
+      <td style="text-align: right"><a href="/post/co-author/paul/plus-ca-change-in-test-automation.html">Plus Ca Change in Test Automation</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
+
+<h2 id="looking-ahead-to-2025-">Looking Ahead to 2025 🚀</h2>
+
+<p>As we step into the new year, I’m excited to bring you more engaging content, explore new ideas 💡 and continue shared learning to this amazing global community. Your feedback and suggestions are always welcome—after all, this blog is as much yours as it is mine.</p>
+
+<h3 id="a-big-thank-you">A Big Thank You</h3>
+
+<p>To everyone who has read, shared, commented or simply stopped by—<strong>thank you</strong>. Your support fuels my passion and drives the creative spirit behind every post, stay tuned for more!</p>
+
+<p>Here’s to an even better <strong>2025!</strong> ✨ Let’s continue to inspire, learn and grow together. Feel free to reach me out if you have an idea or a story to share. And we will get it pusblished together. :rocket: :rocket:</p>
+
+<p><a href="https://www.buymeacoffee.com/qualitywithmillan" target="_blank" style="color: white;           padding: 10px 20px;           border-radius: 5px;           text-decoration: none;           font-weight: bold;           margin: 10px 0;           display: inline-block;           background-color: darkgreen;           color: white;">Support Our Mission</a></p>
+
+<p>This blog is and always will be <code class="language-plaintext highlighter-rouge">#free</code> for you and everyone worldwide. If you’ve found value in the content I share, consider making a small donation. Your contributions help me stay caffeinated and keep sharing high-quality knowledge with you all.</p>
+
+<p><strong>I pledge to donate 80% of all funds to charity</strong> and use the remaining 20% to sustain this blog. Together, we can make a difference while continuing to learn and grow.</p>
+
+<p><a href="/tools/funding/">Click Here</a> to Donate</p>
+
+<p>With gratitude :heart: :pray:,<br />
+<strong>Millan Kaul</strong></p>
+
+<p><a href="https://www.linkedin.com/company/quality-with-millan/">#QualityWithMillan</a></p>
+
+<p><code class="language-plaintext highlighter-rouge">#FreeKnowledge</code> <code class="language-plaintext highlighter-rouge">#QualityEngineering</code> <code class="language-plaintext highlighter-rouge">#SupportAndGiveBack</code></p>
+
+<p><br /></p>
+
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />]]></content><author><name>Millan Kaul</name></author><category term="blog" /><category term="2024-reflection" /><category term="test automation" /><category term="quality engineering" /><category term="quality assurance" /><category term="QA" /><category term="automation testing" /><category term="AI" /><category term="SDETs" /><summary type="html"><![CDATA[Written by - Millan Kaul]]></summary></entry><entry><title type="html">Choosing between : Speed, Quality, Cost - in Test Automation</title><link href="https://qualitywithmillan.github.io/post/choosing-between-speed-quality-and-cost-in-test-automation.html" rel="alternate" type="text/html" title="Choosing between : Speed, Quality, Cost - in Test Automation" /><published>2024-11-11T00:00:00+00:00</published><updated>2024-11-11T00:00:00+00:00</updated><id>https://qualitywithmillan.github.io/post/choosing-between-speed-quality-and-cost</id><content type="html" xml:base="https://qualitywithmillan.github.io/post/choosing-between-speed-quality-and-cost-in-test-automation.html"><![CDATA[<p>
  Written by -
 
     
@@ -32,7 +190,7 @@
 <hr />
 
 <p><img src="/assets/images/2024/11/triangle/speed-quality-cost.gif" alt="Image showing a moving triangle of choice between - Speed, Quality and Cost" /></p>
-<figcaption align="center">Image showing a moving triangle of choice between - Speed, Quality and Cost</figcaption>
+<figcaption align="center">Animated image showing a moving triangle of choice between - Speed, Quality and Cost</figcaption>
 
 <p><br /></p>
 
@@ -1262,125 +1420,4 @@ You can use that by specifying a filename to automatically export the <code clas
 <br /> 
 Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/post/2024/01/k6-with-real-time-performance-monitoring-with-web-dashboards.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
 
-<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />]]></content><author><name>Millan Kaul</name></author><category term="article" /><category term="testing" /><category term="automation" /><category term="performance-testing" /><category term="k6" /><category term="html-reporting" /><summary type="html"><![CDATA[Written by - Millan Kaul]]></summary></entry><entry><title type="html">Easiest way to understand `How Appium works`</title><link href="https://qualitywithmillan.github.io/post/2024/01/how-appium-works-01.html" rel="alternate" type="text/html" title="Easiest way to understand `How Appium works`" /><published>2024-01-08T00:00:00+00:00</published><updated>2024-01-08T00:00:00+00:00</updated><id>https://qualitywithmillan.github.io/post/2024/01/how-appium-works-01</id><content type="html" xml:base="https://qualitywithmillan.github.io/post/2024/01/how-appium-works-01.html"><![CDATA[<hr />
-
-<p>
- Written by -
-
-
-    Millan Kaul         
-
-</p>
-
-<hr />
-
-<h3 id="appium">APPIUM</h3>
-
-<blockquote>
-  <p>In case you don’t know : <code class="language-plaintext highlighter-rouge">Appium</code> is an open-source project and ecosystem of related software, designed to facilitate UI automation of many app platforms, including mobile (iOS, Android, Tizen), browser (Chrome, Firefox, Safari), desktop (macOS, Windows), TV (Roku, tvOS, Android TV, Samsung), and more! ref - <a href="https://appium.io">appium.io</a></p>
-</blockquote>
-
-<p>Although it’s not required to for this article, here how to <a href="https://appium.io/docs/en/2.4/quickstart/install/">Install Appium</a></p>
-
-<h3 id="simplest-way-to-explain-how-appium-works-">Simplest way to explain how Appium works ?</h3>
-
-<p>Before you reach a point of demonstration of a straightforward login scenario in a mobile test automation demo, it’s essential to recognize the intricate blend of science, mathematics, and engineering that forms the backbone of this process.</p>
-
-<p>In this blog, I’ll break down the intricacies and shed light on the most crucial element’s, explaining it in the simplest way possible.</p>
-
-<p><br /></p>
-
-<p>You can get a deeper understanding of “How Appium works?” form <a href="https://appium.io/docs/en/2.4/intro/">Appium in a Nutshell</a>, for now let me present some easy and simple steps to provide you with a clearer understanding of the role of Appium in test automation.
-<br /> 
-<br /></p>
-
-<p><img src="/assets/images/2024/01/appium_24/how-appium-works-01.png" alt="&quot;Image showing 4 steps of how appium works in mobile app automation&quot;" class="align-center" /></p>
-
-<hr />
-
-<p>▸ <strong>Test Script</strong>:</p>
-
-<p>This is where your testing journey begins. You have a script that defines the actions you want to perform on a mobile application. To simplify this is your test automation framework. That has to ultimately interact with <code class="language-plaintext highlighter-rouge">Mobile App Elements</code> (Step #4).</p>
-
-<h3 id="step-1-test-script-to-appium-server">Step 1: Test Script to Appium Server</h3>
-
-<p>Using your <code class="language-plaintext highlighter-rouge">Test Script</code>, you create a test that outlines the actions you want to perform on the mobile app.</p>
-
-<p>And <code class="language-plaintext highlighter-rouge">Appium Server</code> serves as the bridge between your test script and the mobile app elements. Simple and easy: It’s responsible for receiving commands from the test script.</p>
-
-<p><br /></p>
-
-<h3 id="step-2-appium-server-translates-commands">Step 2: Appium Server Translates Commands</h3>
-
-<p>Upon receiving commands, the <code class="language-plaintext highlighter-rouge">Appium server</code> translates them into a format understandable by the WebDriver protocol.</p>
-
-<p><br /></p>
-
-<h3 id="step-3-appium-drivers-execute-commands">Step 3: Appium Drivers Execute Commands</h3>
-
-<p>Specific to each platform (Android or iOS) and responsible for executing the translated commands on the mobile app elements. One of the core roles of what Appium Development community does.</p>
-
-<p><br /></p>
-
-<h3 id="step-4-interaction-with-mobile-app-elements">Step 4: Interaction with Mobile App Elements</h3>
-
-<p>The Appium drivers interact with the mobile app elements based on the translated commands ( coming from Test Scripts), such as clicking buttons or entering text.</p>
-
-<blockquote>
-  <p>Appium acts as a mediator, translating your high-level commands (from test scripts) into actions that the mobile app can understand and execute. This simple yet powerful process allows you to emulate and automate testing scenarios efficiently.</p>
-</blockquote>
-
-<p><br /></p>
-
-<p>But wait, how does that translate to the automation code? I need code to see all the above steps in reality.</p>
-
-<p>Not to worry, I have you covered.</p>
-
-<hr />
-
-<p>Let me use the <em>simplest way to explain how a login scenario works for a social media app</em> ( with respect to the above steps ).</p>
-
-<p><strong>Reference code</strong> : All of the above steps can be roughly mapped to below code, using <code class="language-plaintext highlighter-rouge">JavaScript</code> syntax.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Step 1: Test Script - Setting Desired Capabilities</span>
-<span class="kd">const</span> <span class="nx">desiredCapabilities</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">platformName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Android</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// or 'iOS'</span>
-    <span class="na">platformVersion</span><span class="p">:</span> <span class="dl">'</span><span class="s1">11.0</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// replace with your device version</span>
-    <span class="na">deviceName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">emulator-5554</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">// replace with your device name</span>
-    <span class="na">appPackage</span><span class="p">:</span> <span class="dl">'</span><span class="s1">com.example.socialmediaapp</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">appActivity</span><span class="p">:</span> <span class="dl">'</span><span class="s1">com.example.socialmediaapp.LoginActivity</span><span class="dl">'</span><span class="p">,</span>
-<span class="p">};</span>
-
-<span class="c1">// Step 2: Creating Appium Driver Instance</span>
-<span class="kd">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nx">webdriver</span><span class="p">.</span><span class="nx">Builder</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">usingServer</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://localhost:4723/wd/hub</span><span class="dl">'</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">withCapabilities</span><span class="p">(</span><span class="nx">desiredCapabilities</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">build</span><span class="p">();</span>
-
-<span class="c1">// Step 3: Connect to App</span>
-<span class="c1">// (Implicitly assumes that the app is already open)</span>
-
-<span class="c1">// Step 4: Execute Commands</span>
-<span class="kd">const</span> <span class="nx">usernameField</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">driver</span><span class="p">.</span><span class="nx">findElement</span><span class="p">(</span><span class="nx">By</span><span class="p">.</span><span class="nx">id</span><span class="p">(</span><span class="dl">'</span><span class="s1">username_input</span><span class="dl">'</span><span class="p">));</span>
-<span class="kd">const</span> <span class="nx">passwordField</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">driver</span><span class="p">.</span><span class="nx">findElement</span><span class="p">(</span><span class="nx">By</span><span class="p">.</span><span class="nx">id</span><span class="p">(</span><span class="dl">'</span><span class="s1">password_input</span><span class="dl">'</span><span class="p">));</span>
-<span class="kd">const</span> <span class="nx">loginButton</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">driver</span><span class="p">.</span><span class="nx">findElement</span><span class="p">(</span><span class="nx">By</span><span class="p">.</span><span class="nx">id</span><span class="p">(</span><span class="dl">'</span><span class="s1">login_button</span><span class="dl">'</span><span class="p">));</span>
-
-<span class="c1">// Step 5: Translate to UIAutomator or XCUITest (Happens behind the scenes)</span>
-
-<span class="c1">// Step 6: Automation Actions</span>
-<span class="k">await</span> <span class="nx">usernameField</span><span class="p">.</span><span class="nx">sendKeys</span><span class="p">(</span><span class="dl">'</span><span class="s1">your_username</span><span class="dl">'</span><span class="p">);</span>
-<span class="k">await</span> <span class="nx">passwordField</span><span class="p">.</span><span class="nx">sendKeys</span><span class="p">(</span><span class="dl">'</span><span class="s1">your_password</span><span class="dl">'</span><span class="p">);</span>
-<span class="k">await</span> <span class="nx">loginButton</span><span class="p">.</span><span class="nx">click</span><span class="p">();</span>
-
-</code></pre></div></div>
-
-<p><br />
-<br /></p>
-
-<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />
-
-<p>Want to learn more❓
-<br /> 
-Follow <a href="https://www.linkedin.com/company/quality-with-millan">Quality With Millan</a> or <a href="https://www.linkedin.com/shareArticle?url=https://qualitywithmillan.github.io/post/2024/01/how-appium-works-01.html&amp;title=I+came+through+this+awesome+blogs+on+%0A%23QualityWithMillan" title="I came through this awesome blogs on #QualityWithMillan" target="_blank">Share it on LinkedIn</a></p>
-
-<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />]]></content><author><name>Millan Kaul</name></author><category term="article" /><category term="testing" /><category term="automation" /><category term="appium" /><category term="mobile-automation" /><summary type="html"><![CDATA[Written by - Millan Kaul]]></summary></entry></feed>
+<hr style="border: none; height:1px; background-color: #0F4CCC; position: relative;" />]]></content><author><name>Millan Kaul</name></author><category term="article" /><category term="testing" /><category term="automation" /><category term="performance-testing" /><category term="k6" /><category term="html-reporting" /><summary type="html"><![CDATA[Written by - Millan Kaul]]></summary></entry></feed>

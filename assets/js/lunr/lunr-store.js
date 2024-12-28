@@ -110,7 +110,7 @@ var store = [{
         "title": "Evolution of Reliability Tester and AI testing",
         "excerpt":"Written by - Karthik Hariharan In today’s fast-paced digital world, testing has become a critical aspect of software development. Companies are shifting from manual testing to automation testing, and now, artificial intelligence (AI) aided testing is on the rise. With AI aided testing, the process of software testing has become...","categories": ["blog"],
         "tags": ["testing","ai"],
-        "url": "/post/co-author/Karthik/evolution-of-eliability-ester-and-ai-testing.html",
+        "url": "/post/co-author/Karthik/evolution-of-reliability-tester-and-ai-testing.html",
         "teaser": "/assets/images/2023/02/evol-of-reliability/evolution-of-reliability.png"
       },{
         "title": "The paradigm of Quality - Embedded",
@@ -221,11 +221,17 @@ var store = [{
         "url": "/post/choosing-between-speed-quality-and-cost-in-test-automation.html",
         "teaser": "/assets/images/2024/11/triangle/speed-quality-cost.gif"
       },{
+        "title": "2024 in Review: QA, AI and Quality Engineering in Reflection at #QWM",
+        "excerpt":"Written by - Millan Kaul As the 2024 draws to a close, I’m overwhelmed with gratitude for the incredible support and love you—our readers—have shown this year. 🌟 Highlights of 2024 🌟 2024 Year in Review - Animated visualization showcasing blog growth, engagement metrics and content milestones achieved throughout the...","categories": ["blog"],
+        "tags": ["2024-reflection","test automation","quality engineering","quality assurance","QA","automation testing","AI","SDETs"],
+        "url": "/post/2024-wrap-up.html",
+        "teaser": "/assets/images/2024/12/qwm-wrap-up-2024.gif"
+      },{
     "title": "About #QualityWithMillan",
     "excerpt":"Welcome to #QualityWithMillan ( to be read as: hash tag quality with millan)! My name is Millan Kaul and I am the primary creator of this space, joined by many fantastic authors. I started this blog as a way to share my thoughts, experiences, and insights on a variety of...","url": "https://qualitywithmillan.github.io/about/"
   },{
     "title": null,
-    "excerpt":"                                              Alejandro &#8599;                                Karthik &#8599;                                Paul &#8599;                                Jing &#8599;                                Dennis &#8599;                                Dennis &#8599;                   ","url": "https://qualitywithmillan.github.io/tools/authors/"
+    "excerpt":"                                              Alejandro &#8599;                                Karthik &#8599;                                Paul &#8599;                                Jing &#8599;                                Dennis &#8599;                                Neelam &#8599;                   ","url": "https://qualitywithmillan.github.io/tools/authors/"
   },{
     "title": "All categories",
     "excerpt":" ","url": "https://qualitywithmillan.github.io/categories/"
@@ -239,8 +245,8 @@ var store = [{
     "title": null,
     "excerpt":"\r \r \r \r   \r   Plain Text Formatter\r   \r   \r   \r \r   \r   \r \r \r \r   \r     Simple text Formatter \r     \r       \r          🔄\r       \r       𝗕\r       𝐼\r       𝗕𝐼\r       U&#x0332;\r       S&#x0336;\r \r       𝚖ono\r       \r         \r         Copy text 📑\r       \r     \r   \r \r \r \r ","url": "https://qualitywithmillan.github.io/tools/format/"
   },{
-    "title": null,
-    "excerpt":"Support #QualityWithMillan Support Our Blog If you enjoy our content and would like to support our work, you can contribute in the following ways: Funding: You can make a financial contribution to help us cover hosting costs and create more valuable content. Tips: Leave us a tip or donation to...","url": "https://qualitywithmillan.github.io/tools/funding/"
+    "title": "Support Our Blog",
+    "excerpt":"Support #QualityWithMillan Starting 1st Jan 2025, I pledge to donate 80% of your tips to charity. ❤️. Read more on this 2024 wrap-up blog post. If you enjoy our content and would like to support our work, you can contribute in the following ways: Funding: You can make a financial...","url": "https://qualitywithmillan.github.io/tools/funding/"
   },{
     "title": null,
     "excerpt":"","url": "https://qualitywithmillan.github.io/"
