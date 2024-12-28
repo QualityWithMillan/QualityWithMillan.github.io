@@ -224,7 +224,7 @@ var store = [{
         "title": "2024 in Review: QA, AI and Quality Engineering in Reflection at #QWM",
         "excerpt":"Written by - Millan Kaul As the 2024 draws to a close, I’m overwhelmed with gratitude for the incredible support and love you—our readers—have shown this year. 🌟 Highlights of 2024 🌟 2024 Year in Review - Animated visualization showcasing blog growth, engagement metrics and content milestones achieved throughout the...","categories": ["blog"],
         "tags": ["2024-reflection","test automation","quality engineering","quality assurance","QA","automation testing","AI","SDETs"],
-        "url": "/post/2024-wrap-up.html",
+        "url": "/post/2024-wrap-up-blog.html",
         "teaser": "/assets/images/2024/12/qwm-wrap-up-2024.gif"
       },{
     "title": "About #QualityWithMillan",
